@@ -1,0 +1,140 @@
+@use "../abstracts/variables" as vars;
+@use "../abstracts/mixins" as mixins;
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: vars.$color-surface;
+  border-bottom: 1px solid vars.$color-border;
+}
+
+.navbar {
+  min-height: 4.5rem;
+  padding-block: 0.75rem;
+
+  .navbar-container {
+    padding-inline: 1.25rem;
+  }
+
+  .navbar-brand {
+    margin: 0;
+    color: vars.$color-text;
+    font-family: vars.$font-heading;
+    font-size: 1.5rem;
+    line-height: 1;
+    letter-spacing: 0.02em;
+
+    &:hover,
+    &:focus {
+      color: vars.$color-text;
+    }
+  }
+
+  .navbar-toggler {
+    padding: 0.35rem;
+    border: 0;
+    border-radius: 0;
+
+    &:focus {
+      box-shadow: none;
+      outline: 1px solid vars.$color-text;
+      outline-offset: 0.25rem;
+    }
+  }
+
+  .navbar-collapse {
+    padding-top: 1.5rem;
+  }
+
+  .navbar-nav {
+    gap: 0.25rem;
+  }
+
+  .nav-link {
+    position: relative;
+    padding-block: 0.75rem;
+    color: vars.$color-text-muted;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color vars.$transition-base;
+
+    &:hover,
+    &:focus,
+    &.active {
+      color: vars.$color-text;
+    }
+
+    &::after {
+      position: absolute;
+      right: 0;
+      bottom: 0.4rem;
+      left: 0;
+      width: 0;
+      height: 1px;
+      margin-inline: auto;
+      background-color: vars.$color-text;
+      content: "";
+      transition: width vars.$transition-base;
+    }
+
+    &:hover::after,
+    &:focus::after,
+    &.active::after {
+      width: 100%;
+    }
+  }
+}
+
+.navbar-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid vars.$color-border;
+
+  .navbar-action {
+    color: vars.$color-text;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: opacity vars.$transition-base;
+
+    &:hover,
+    &:focus {
+      opacity: 0.55;
+    }
+  }
+}
+
+@include mixins.respond-to(desktop) {
+  .navbar {
+    min-height: 5rem;
+
+    .navbar-container {
+      padding-inline: 3rem;
+    }
+
+    .navbar-collapse {
+      padding-top: 0;
+    }
+
+    .navbar-nav {
+      gap: 1.75rem;
+    }
+
+    .nav-link {
+      padding-inline: 0;
+    }
+  }
+
+  .navbar-actions {
+    flex-direction: row;
+    gap: 1.5rem;
+    padding-top: 0;
+    border-top: 0;
+  }
+}

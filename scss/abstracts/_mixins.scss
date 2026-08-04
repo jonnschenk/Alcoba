@@ -1,0 +1,15 @@
+@use "variables" as vars;
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == tablet {
+    @media (min-width: vars.$breakpoint-tablet) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == desktop {
+    @media (min-width: vars.$breakpoint-desktop) {
+      @content;
+    }
+  }
+}
