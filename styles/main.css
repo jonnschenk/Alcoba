@@ -171,4 +171,58 @@ a {
     padding-top: 0;
     border-top: 0;
   }
+}
+.hero {
+  display: flex;
+  align-items: center;
+  min-height: 95vh;
+  padding-block: 4rem;
+  background-color: #ffffff;
+}
+
+.hero-content {
+  max-width: 52rem;
+}
+
+.hero-subtitle {
+  display: inline-block;
+  margin-bottom: 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #68645f;
+}
+
+.hero-title {
+  margin-bottom: 1.5rem;
+  font-family: "DM Serif Display", serif;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 1.1;
+  color: #171717;
+}
+
+.hero-text {
+  max-width: 36rem;
+  margin-bottom: 2rem;
+  color: #68645f;
+  line-height: 1.7;
+}
+
+.hero-grid {
+  display: grid;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
 }/*# sourceMappingURL=main.css.map */

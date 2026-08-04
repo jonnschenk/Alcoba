@@ -1,0 +1,64 @@
+@use "../abstracts/variables" as vars;
+@use "../abstracts/mixins" as mixins;
+
+.hero {
+    display: flex;
+    align-items: center;
+    min-height: 95vh;
+    padding-block: 4rem;
+    background-color: vars.$color-surface;
+}
+
+.hero-content {
+    max-width: 52rem;
+}
+
+.hero-subtitle {
+    display: inline-block;
+    margin-bottom: 1rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: vars.$color-text-muted;
+}
+
+.hero-title {
+    margin-bottom: 1.5rem;
+    font-family: vars.$font-heading;
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    line-height: 1.1;
+    color: vars.$color-text;
+}
+
+.hero-text {
+    max-width: 36rem;
+    margin-bottom: 2rem;
+    color: vars.$color-text-muted;
+    line-height: 1.7;
+}
+
+.hero-grid {
+    display: grid;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.hero {
+//   background-image: url("../../assets/images/alcoba.jpg");
+//   background-size: cover;
+//   background-position: center;
+//   position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
