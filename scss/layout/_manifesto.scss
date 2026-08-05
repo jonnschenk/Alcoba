@@ -1,0 +1,33 @@
+@use "../abstracts/variables" as vars;
+
+.manifesto {
+  padding-block: 4rem;
+  text-align: center;
+  background-color: vars.$color-background;
+}
+
+.manifesto-label {
+  display: inline-block;
+  margin-bottom: 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: vars.$color-text-muted;
+}
+
+.manifesto-quote {
+  max-width: 900px;
+  margin: 0 auto 2rem;
+  font-family: vars.$font-heading;
+  font-size: clamp(1rem, 3vw, 4rem);
+  line-height: 1.15;
+  color: vars.$color-text;
+}
+
+.manifesto-text {
+  max-width: 650px;
+  margin: 0 auto;
+  color: vars.$color-text-muted;
+  line-height: 1.8;
+}
