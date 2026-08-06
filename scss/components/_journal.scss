@@ -1,0 +1,72 @@
+@use "../abstracts/variables" as vars;
+@use "../abstracts/mixins" as mixins;
+
+.journal {
+  padding-block: 6rem;
+}
+
+.journal-feature {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+}
+
+.journal-image {
+  overflow: hidden;
+}
+
+.journal-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 16 / 10;
+  transition: transform .5s ease;
+}
+
+.journal-feature:hover img {
+  transform: scale(1.04);
+}
+
+.journal-content {
+  max-width: 32rem;
+}
+
+.journal-category {
+  display: inline-block;
+  margin-bottom: .75rem;
+  color: vars.$color-text-muted;
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.journal-content h3 {
+  margin-bottom: 1rem;
+  font-family: vars.$font-heading;
+  font-size: clamp(2rem,4vw,3rem);
+  line-height: 1.1;
+}
+
+.journal-content p {
+  margin-bottom: 2rem;
+  color: vars.$color-text-muted;
+}
+
+.journal-link {
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+@include mixins.respond-to(desktop){
+
+    .journal-feature{
+
+        grid-template-columns: 1.2fr 1fr;
+        gap:4rem;
+
+    }
+
+}

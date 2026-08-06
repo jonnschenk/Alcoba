@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Noto+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
@@ -43,8 +44,8 @@
                     </ul>
 
                     <div class="navbar-actions">
-                        <a class="navbar-action" href="pages/shop.html" aria-label="Buscar productos">Buscar</a>
-                        <a class="navbar-action" href="pages/shop.html" aria-label="Carrito de compras">Bolsa</a>
+                        <a class="navbar-action" href="pages/shop.html" aria-label="Buscar productos"><i class="bi bi-search"></i></a>
+                        <a class="navbar-action" href="pages/shop.html" aria-label="Carrito de compras"><i class="bi bi-handbag"></i></a>
                     </div>
                 </div>
             </div>
@@ -56,9 +57,9 @@
             <div class="container">
                 <div class="hero-content">
                     <span class="hero-subtitle">Colección Invernal 2026</span>
-                    <h1 class="hero-title">Moda inspirada en la naturaleza y la arquitectura nórdica.</h1>
+                    <h1 class="hero-title">El Refugio Alpino</h1>
                     <p class="hero-text">Descubre prendas atemporales creadas para acompañarte temporada tras temporada.</p>
-                    <a href="pages/collections.html" class="btn btn-dark  hero-button">Explorar Colección</a>
+                    <a href="pages/collections.html" class="btn btn-dark  hero-button">Explorar colección</a>
                 </div>
             </div>
         </section>
@@ -91,8 +92,8 @@
                         <article class="collection-card">
                             <img src="../../assets/images/alcoba.jpg" alt="Colección Arctic">
                                 <div class="collection-info">
-                                    <h3>Arctic</h3>
-                                    <p>Outerwear</p>
+                                    <h3>Suiza</h3>
+                                    <p>Refugio Alpino</p>
                                     <a href="pages/collections.html">Explorar →</a>
                                 </div>
                         </article>
@@ -100,8 +101,8 @@
                         <article class="collection-card">
                             <img src="../../assets/images/alcoba.jpg" alt="Colección Nordic">
                                 <div class="collection-info">
-                                    <h3>Nordic</h3>
-                                    <p>knitwear</p>
+                                    <h3>Mongolia</h3>
+                                    <p>Invierno Nómada</p>
                                     <a href="pages/collections.html">Explorar →</a>
                                 </div>
                         </article>
@@ -109,8 +110,8 @@
                         <article class="collection-card">
                             <img src="../../assets/images/alcoba.jpg" alt="Colección Fjord">
                                 <div class="collection-info">
-                                    <h3>Fjord</h3>
-                                    <p>Essentials</p>
+                                    <h3>Islandia</h3>
+                                    <p>Silencio volcánico</p>
                                     <a href="pages/collections.html">Explorar →</a>
                                 </div>
                         </article>
@@ -127,11 +128,126 @@
             </div>
         </section>
 
+        <section class="categories">
+        <div class="container">
+                <div class="section-header">
+                    <span class="section-label">Shop</span>
+                    <h2 class="section-title">Explora por categoría</h2>
+                    <p class="section-description">Prendas esenciales diseñadas para permanecer más allá de una temporada.</p>
+                </div>
+
+            <div class="categories-grid">
+                <a href="pages/shop.html" class="category-card">
+                    <img src="/assets/images/unplash3.jpg" alt="Categoría Abrigos">
+                    <span>ABRIGOS</span>
+                </a>
+
+                <a href="pages/shop.html" class="category-card">
+                    <img src="/assets/images/unplash3.jpg"
+                        alt="Categoría Knitwear">
+                    <span>KNITWEAR</span>
+                </a>
+
+                <a href="pages/shop.html" class="category-card">
+                    <img src="/assets/images/unplash3.jpg"
+                        alt="Categoría Accesorios">
+                    <span>ACCESORIOS</span>
+                </a>
+
+                <a href="pages/shop.html" class="category-card">
+                    <img src="/assets/images/unplash3.jpg"
+                        alt="Categoría Calzado">
+                    <span>CALZADO</span>
+                </a>
+            </div>
+        </div>
+        </section>
+
+        <section class="journal">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <span class="section-label">Journal</span>
+                        <h2 class="section-title">Historias de invierno</h2>
+                    </div>
+                    <a href="pages/journal.html" class="section-link">Ver todas</a>
+                </div>
+                <article class="journal-feature">
+                    <div class="journal-image">
+                        <img src="assets/images/unplash3.jpg" alt="Paisaje nevado que inspira la colección">
+                    </div>
+                        <div class="journal-content">
+                            <span class="journal-category">Inspiración</span>
+                            <h3>The Quiet Beauty of Winter</h3>
+                            <p>Descubre cómo la arquitectura nórdica, los paisajes nevados y las texturas naturales inspiran la filosofía y las colecciones de ALCOBA.
+                            </p>
+                            <a href="pages/journal.html" class="journal link">Leer más →</a>
+                        </div>    
+                </article>
+            </div>
+        </section>
+
+        <section class="newsletter">
+            <div class="container">
+                <div class="newsletter-content">
+                    <span class="section-label">Newsletter</span>
+                    <h2 class="newsletter-title">Mantente conectado con Alcoba</h2>
+                    <p class="newsletter-description">Recibe acceso anticipado a nuevas colecciones, editoriales e inspiraciíon directamente en tu correo.</p>
+                    <form class="newsletter-form">
+                        <input type="email" name="email" placeholder="Ingresa tu correo electrónico" required aria-label="Correo electrónico">
+                        <button type="submit" class="btn btn-dark">Suscribirse</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <footer>
-        <!-- Footer content -->
-    </footer>
+    <footer class="site-footer">
+    <div class="container">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <a href="index.html" class="footer-logo">ALCOBA</a>
+                <p>Designed for every season.</p>
+            </div>
+
+            <div class="footer-links">
+                <div>
+                    <h4>Navegación</h4>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="pages/collections.html">Colecciones</a></li>
+                        <li><a href="pages/shop.html">Tienda</a></li>
+                        <li><a href="pages/journal.html">Journal</a></li>
+                        <li><a href="pages/about.html">Nosotros</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>Ayuda</h4>
+                    <ul>
+                        <li><a href="#">Contacto</a></li>
+                        <li><a href="#">Envíos</a></li>
+                        <li><a href="#">Devoluciones</a></li>
+                        <li><a href="#">Preguntas frecuentes</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>Síguenos</h4>
+                    <ul>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Pinterest</a></li>
+                        <li><a href="#">Behance</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div> 
+        <div class="footer-bottom">
+            <p>&copy; 2026 ALCOBA. Todos los derechos reservados.</p>
+        </div>
+    </div>
+</footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>

@@ -6,5 +6,10 @@
 
 @use "layout/navbar";
 @use "layout/hero";
-@use "components/collection-card";
 @use "layout/manifesto";
+@use "layout/footer";
+
+@use "components/categories";
+@use "components/collection-card";
+@use "components/journal";
+@use "components/newsletter";

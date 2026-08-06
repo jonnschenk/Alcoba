@@ -1,0 +1,68 @@
+@use "../abstracts/variables" as vars;
+@use "../abstracts/mixins" as mixins;
+
+.site-footer {
+  padding-top: 5rem;
+  border-top: 1px solid vars.$color-border;
+}
+.footer-top {
+    display: grid;
+    gap: 3rem;
+    padding-bottom: 3rem;
+}
+.footer-brand p {
+    margin-top: 1rem;
+    color: vars.$color-text-muted;
+}
+.footer-logo {
+    font-family: vars.$font-heading;
+    font-size: 2rem;
+    color: vars.$color-text;
+}
+.footer-links{
+    display: grid;
+    gap: 2rem;
+}
+.footer-links h4 {
+  margin-bottom: 1rem;
+  font-size: .85rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li + li {
+  margin-top: 0.2rem;
+}
+.footer-links a {
+  color: vars.$color-text-muted;
+  transition: color .3s ease;
+}
+
+.footer-links a:hover {
+  color: vars.$color-text;
+}
+
+.footer-bottom {
+  padding: 2rem 0;
+  border-top: 1px solid vars.$color-border;
+  color: vars.$color-text-muted;
+  font-size: .9rem;
+}
+
+@include mixins.respond-to(desktop) {
+
+  .footer-top {
+    grid-template-columns: 1fr 2fr;
+    align-items: start;
+  }
+
+  .footer-links {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+}
