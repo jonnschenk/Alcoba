@@ -305,14 +305,13 @@ a {
 
 .footer-links {
   display: grid;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .footer-links h4 {
   margin-bottom: 1rem;
-  font-size: 0.85rem;
+  font-size: 1rem;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
 }
 
 .footer-links ul {
@@ -339,6 +338,7 @@ a {
   border-top: 1px solid #d9d5ce;
   color: #68645f;
   font-size: 0.9rem;
+  text-align: center;
 }
 
 @media (min-width: 1024px) {

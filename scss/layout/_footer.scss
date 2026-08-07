@@ -21,13 +21,12 @@
 }
 .footer-links{
     display: grid;
-    gap: 2rem;
+    gap: 1rem;
 }
 .footer-links h4 {
   margin-bottom: 1rem;
-  font-size: .85rem;
+  font-size: 1rem;
   text-transform: uppercase;
-  letter-spacing: .1em;
 }
 .footer-links ul {
   list-style: none;
@@ -52,6 +51,7 @@
   border-top: 1px solid vars.$color-border;
   color: vars.$color-text-muted;
   font-size: .9rem;
+  text-align: center;
 }
 
 @include mixins.respond-to(desktop) {
