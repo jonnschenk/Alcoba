@@ -1,7 +1,6 @@
 @use "../abstracts/variables" as vars;
 @use "../abstracts/mixins" as mixins;
 
-
 .journal-featured {
   padding: 7rem 0;
 }
@@ -26,13 +25,7 @@
 .journal-featured__content {
 
   .section-label {
-    display: inline-block;
     margin-bottom: 1rem;
-    color: vars.$color-text-muted;
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
   }
 
   h2 {
@@ -67,8 +60,6 @@
   }
 }
 
-
-// MOBILE
 
 @include mixins.respond-to(mobile) {
 

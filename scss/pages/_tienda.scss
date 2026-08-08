@@ -1,19 +1,9 @@
 @use "../abstracts/variables" as vars;
 @use "../abstracts/mixins" as mixins;
 
-
-// ========================================
-// TIENDA
-// ========================================
-
 .shop {
   padding-block: 5rem;
 }
-
-
-// ========================================
-// LAYOUT
-// ========================================
 
 .shop-layout {
   display: grid;
@@ -21,11 +11,6 @@
   gap: 3rem;
   align-items: start;
 }
-
-
-// ========================================
-// FILTROS
-// ========================================
 
 .shop-filters {
   display: flex;
@@ -87,11 +72,6 @@
   }
 }
 
-
-// ========================================
-// PRODUCTOS
-// ========================================
-
 .shop-products {
   min-width: 0;
 }
@@ -101,11 +81,6 @@
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 3rem 1.5rem;
 }
-
-
-// ========================================
-// PRODUCT CARD
-// ========================================
 
 .product-card {
   min-width: 0;
@@ -178,11 +153,6 @@
   font-weight: 500;
 }
 
-
-// ========================================
-// TABLET
-// ========================================
-
 @include mixins.respond-to(tablet) {
   .shop-layout {
     grid-template-columns: 10rem 1fr;
@@ -195,10 +165,17 @@
   }
 }
 
+@include mixins.respond-to(desktop) {
+  .shop-layout {
+    grid-template-columns: 12rem 1fr;
+    gap: 3rem;
+  }
 
-// ========================================
-// MOBILE
-// ========================================
+  .products-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 3rem 1.5rem;
+  }
+}
 
 @include mixins.respond-to(mobile) {
   .shop {

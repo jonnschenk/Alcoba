@@ -1,170 +1,161 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Journal | Alcoba</title>
-    <meta name="description" content="Explora el Journal de ALCOBA. Historias, procesos creativos, inspiración arquitectónica y la filosofía detrás de nuestra indumentaria de invierno.">
-    <meta name="keywords" content="ALCOBA, journal, blog de moda, inspiración nórdica, diseño de moda, arquitectura de invierno, historias">
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Journal | Alcoba</title>
+        <meta name="description" content="Explora el Journal de ALCOBA. Historias, procesos creativos, inspiración arquitectónica y la filosofía detrás de nuestra indumentaria de invierno.">
+        <meta name="keywords" content="ALCOBA, journal, blog de moda, inspiración nórdica, diseño de moda, arquitectura de invierno, historias">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Noto+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" href="../styles/main.css">
+    </head>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Noto+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <body>
+        <header class="site-header">
+            <nav class="navbar navbar-expand-lg navbar-light" aria-label="Navegación principal">
+                <div class="container-fluid navbar-container">
+                    <a class="navbar-brand" href="../index.html">ALCOBA</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Abrir menú de navegación"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="mainNavbar">
+                        <ul class="navbar-nav mx-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="../index.html">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="collections.html">Colecciones</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="shop.html">Tienda</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="journal.html">Journal</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="about.html">Nosotros</a>
+                            </li>
+                        </ul>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="../styles/main.css">
-</head>
-<body>
-    
-    <header class="site-header">
-        <nav class="navbar navbar-expand-lg navbar-light" aria-label="Navegación principal">
-            <div class="container-fluid navbar-container">
-                <a class="navbar-brand" href="../index.html">ALCOBA</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Abrir menú de navegación"> 
-                    <span class="navbar-toggler-icon"></span> 
-                </button>
-
-                <div class="collapse navbar-collapse" id="mainNavbar">
-                    <ul class="navbar-nav mx-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="../index.html">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="collections.html">Colecciones</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="shop.html">Tienda</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="journal.html">Journal</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="about.html">Nosotros</a>
-                        </li>
-                    </ul>
-
-                    <div class="navbar-actions">
-                        <a class="navbar-action" href="shop.html" aria-label="Buscar productos"><i class="bi bi-search"></i></a>
-                        <a class="navbar-action" href="shop.html" aria-label="Carrito de compras"><i class="bi bi-handbag"></i></a>
+                        <div class="navbar-actions">
+                            <a class="navbar-action" href="shop.html" aria-label="Buscar productos"><i class="bi bi-search"></i></a>
+                            <a class="navbar-action" href="shop.html" aria-label="Carrito de compras"><i class="bi bi-handbag"></i></a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </nav>
-    </header>
-    <main>
-     <section class="collections-hero">
-        <div class="container">
-        <div class="hero-content-second">
-        <h1 class="page-hero__title">Journal</h1>
-        <p class="page-hero__text">
-            Historias sobre diseño, arquitectura y procesos creativos que inspiran nuestra indumentaria de invierno.
-        </p>
-        </div>
-    </div>
-    </section>
+            </nav>
+        </header>
 
-     <section class="journal-featured">
-
-        <div class="container">
-
-            <article class="journal-featured__article">
-
-                <div class="journal-featured__image">
-                    <img
-                        src="../assets/images/alcoba.jpg"
-                        alt="Paisaje de invierno que inspira a ALCOBA"
-                    >
+        <main>
+            <section class="page-hero">
+                <div class="container">
+                    <div class="page-hero__content">
+                        <h1 class="page-hero__title">Journal</h1>
+                        <p class="page-hero__text">Historias sobre diseño, arquitectura y procesos creativos que inspiran nuestra indumentaria de invierno.</p>
+                    </div>
                 </div>
+            </section>
 
-                <div class="journal-featured__content">
-
-                    <span class="section-label">
-                        Inspiración
-                    </span>
-
-                    <h2>
-                        El invierno como punto de partida.
-                    </h2>
-
-                    <p>
-                        Paisajes silenciosos, arquitectura y formas
-                        naturales inspiran una manera de vestir
-                        más pausada y esencial.
-                    </p>
-
-                    <a href="#">
-                        Leer artículo
-                    </a>
-
+            <section class="journal-featured">
+                <div class="container">
+                    <article class="journal-featured__article">
+                        <div class="journal-featured__image">
+                            <img src="../assets/images/alcoba.jpg" alt="Paisaje de invierno que inspira a ALCOBA">
+                        </div>
+                        <div class="journal-featured__content">
+                            <span class="section-label">Inspiración</span>
+                            <h2>El invierno como punto de partida.</h2>
+                            <p>Paisajes silenciosos, arquitectura y formas naturales inspiran una manera de vestir más pausada y esencial.</p>
+                            <a href="#">Leer artículo</a>
+                        </div>
+                    </article>
                 </div>
+            </section>
 
-            </article>
+            <section class="newsletter">
+                <div class="container">
+                    <div class="newsletter-content">
+                        <span class="section-label">Newsletter</span>
+                        <h2 class="newsletter-title">Mantente conectado con Alcoba</h2>
+                        <p class="newsletter-description">Recibe acceso anticipado a nuevas colecciones, editoriales e inspiración directamente en tu correo.</p>
+                        <form class="newsletter-form">
+                            <input type="email" name="email" placeholder="Ingresa tu correo electrónico" required aria-label="Correo electrónico">
+                            <button type="submit" class="btn btn-dark">Suscribirse</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
 
-        </div>
-
-    </section>
-
-
-    <section class="newsletter">
+        <footer class="site-footer">
             <div class="container">
-                <div class="newsletter-content">
-                    <span class="section-label">Newsletter</span>
-                    <h2 class="newsletter-title">Mantente conectado con Alcoba</h2>
-                    <p class="newsletter-description">Recibe acceso anticipado a nuevas colecciones, editoriales e inspiraciíon directamente en tu correo.</p>
-                    <form class="newsletter-form">
-                        <input type="email" name="email" placeholder="Ingresa tu correo electrónico" required aria-label="Correo electrónico">
-                        <button type="submit" class="btn btn-dark">Suscribirse</button>
-                    </form>
+                <div class="footer-top">
+                    <div class="footer-brand">
+                        <a href="../index.html" class="footer-logo">ALCOBA</a>
+                        <p>Designed for every season.</p>
+                    </div>
+                    <div class="footer-links">
+                        <div>
+                            <h4>Navegación</h4>
+                            <ul>
+                                <li>
+                                    <a href="../index.html">Inicio</a>
+                                </li>
+                                <li>
+                                    <a href="../pages/collections.html">Colecciones</a>
+                                </li>
+                                <li>
+                                    <a href="../pages/shop.html">Tienda</a>
+                                </li>
+                                <li>
+                                    <a href="../pages/journal.html">Journal</a>
+                                </li>
+                                <li>
+                                    <a href="../pages/about.html">Nosotros</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>Ayuda</h4>
+                            <ul>
+                                <li>
+                                    <a href="#">Contacto</a>
+                                </li>
+                                <li>
+                                    <a href="#">Envíos</a>
+                                </li>
+                                <li>
+                                    <a href="#">Devoluciones</a>
+                                </li>
+                                <li>
+                                    <a href="#">Preguntas frecuentes</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>Síguenos</h4>
+                            <ul>
+                                <li>
+                                    <a href="#">Instagram</a>
+                                </li>
+                                <li>
+                                    <a href="#">Pinterest</a>
+                                </li>
+                                <li>
+                                    <a href="#">Behance</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 ALCOBA. Todos los derechos reservados.</p>
                 </div>
             </div>
-        </section>
-</main>
+        </footer>
 
-    <footer class="site-footer">
-    <div class="container">
-        <div class="footer-top">
-            <div class="footer-brand">
-                <a href="index.html" class="footer-logo">ALCOBA</a>
-                <p>Designed for every season.</p>
-            </div>
-
-            <div class="footer-links">
-                <div>
-                    <h4>Navegación</h4>
-                    <ul>
-                        <li><a href="../index.html">Inicio</a></li>
-                        <li><a href="../pages/collections.html">Colecciones</a></li>
-                        <li><a href="../pages/shop.html">Tienda</a></li>
-                        <li><a href="../pages/journal.html">Journal</a></li>
-                        <li><a href="../pages/about.html">Nosotros</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4>Ayuda</h4>
-                    <ul>
-                        <li><a href="#">Contacto</a></li>
-                        <li><a href="#">Envíos</a></li>
-                        <li><a href="#">Devoluciones</a></li>
-                        <li><a href="#">Preguntas frecuentes</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4>Síguenos</h4>
-                    <ul>
-                        <li><a href="#">Instagram</a></li>
-                        <li><a href="#">Pinterest</a></li>
-                        <li><a href="#">Behance</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div> 
-        <div class="footer-bottom">
-            <p>&copy; 2026 ALCOBA. Todos los derechos reservados.</p>
-        </div>
-    </div>
-</footer>  
-</body>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
 </html>

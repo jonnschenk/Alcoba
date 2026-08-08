@@ -16,13 +16,7 @@
 .about-introduction__content {
 
   .section-label {
-    display: inline-block;
     margin-bottom: 1rem;
-    color: vars.$color-text-muted;
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
   }
 
   h2 {
@@ -69,13 +63,7 @@
   text-align: center;
 
   .section-label {
-    display: inline-block;
     margin-bottom: 1.5rem;
-    color: vars.$color-text-muted;
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
   }
 
   h2 {
@@ -156,9 +144,6 @@
 
 
 @include mixins.respond-to(desktop) {
-
-  // Historia
-
   .about-introduction {
     padding: 9rem 0;
   }

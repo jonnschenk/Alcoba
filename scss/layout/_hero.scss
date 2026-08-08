@@ -2,59 +2,53 @@
 @use "../abstracts/mixins" as mixins;
 
 .hero {
-    display: flex;
-    align-items: center;
-    min-height: 95vh;
-    padding-block: 4rem;
-    background-color: vars.$color-surface;
+  display: flex;
+  align-items: center;
+  min-height: 95vh;
+  padding-block: 4rem;
+  background-color: vars.$color-surface;
 }
 
 .hero-content {
-   max-width: 52rem;
-   padding: 2rem;
-   border-radius: 8px;
+  max-width: 52rem;
+  padding: 2rem;
+  border-radius: 8px;
 }
 
 .hero-subtitle {
-    display: inline-block;
-    margin-bottom: 1rem;
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: vars.$color-border;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: vars.$color-border;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+  text-transform: uppercase;
 }
 
 .hero-title {
-    margin-bottom: 1.5rem;
-    font-family: vars.$font-heading;
-    font-size: clamp(2.5rem, 6vw, 5rem);
-    line-height: 1.1;
-    color: vars.$color-background;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+  margin-bottom: 1.5rem;
+  color: vars.$color-background;
+  font-family: vars.$font-heading;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 1.1;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
 }
 
 .hero-text {
-    max-width: 30rem;
-    margin-bottom: 2rem;
-    color: vars.$color-background;
-    line-height: 1.7;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+  max-width: 30rem;
+  margin-bottom: 2rem;
+  color: vars.$color-background;
+  line-height: 1.7;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
 }
 
-// .hero-grid {
-//     display: grid;
-//     gap: 2.5rem;
-//     align-items: center;
-// }
-
 .hero {
+  position: relative;
   background-image: url("https://images.unsplash.com/photo-1545917992-dea2d782ef46?q=80&w=2789&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
   background-size: cover;
   background-position: bottom;
   background-attachment: fixed;
-  position: relative;
 }
 
 .hero::before {
@@ -68,9 +62,10 @@
   position: relative;
   z-index: 2;
 }
+
 .hero-button {
   background-color: #ffffff;
   color: #111111;
-  font-weight: 600;
   border: none;
+  font-weight: 600;
 }
