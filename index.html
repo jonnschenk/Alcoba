@@ -11,6 +11,7 @@
         <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Noto+Sans:wght@400;500;600&display=swap" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
         <link rel="stylesheet" href="styles/main.css">
     </head>
 
@@ -51,7 +52,7 @@
         <main>
             <section class="hero">
                 <div class="container">
-                    <div class="hero-content">
+                    <div class="hero-content" data-aos="fade-up">
                         <span class="hero-subtitle">Colección Invernal 2026</span>
                         <h1 class="hero-title">El Refugio Alpino</h1>
                         <p class="hero-text">Descubre prendas atemporales creadas para acompañarte temporada tras temporada.</p>
@@ -61,7 +62,7 @@
             </section>
 
             <section class="manifesto">
-                <div class="container">
+                <div class="container" data-aos="fade-up">
                     <span class="manifesto-label">Nuestro manifiesto</span>
                     <blockquote class="manifesto-quote">No diseñamos para seguir tendencias. Diseñamos piezas que acompañan el paso del tiempo.</blockquote>
                     <p class="manifesto-text">ALCOBA nace de la arquitectura, los paisajes del norte y la idea de un guardarropa consciente. Cada colección busca equilibrio entre funcionalidad, diseño y permanencia.</p>
@@ -78,7 +79,7 @@
                         <a href="pages/collections.html" class="section-link">Ver todas</a>
                     </div>
                     <div class="collections-grid">
-                        <article class="collection-card">
+                        <article class="collection-card" data-aos="fade-up">
                             <img src="assets/images/alcoba.jpg" alt="Colección Suiza">
                             <div class="collection-info">
                                 <h3>Suiza</h3>
@@ -87,7 +88,7 @@
                             </div>
                         </article>
 
-                        <article class="collection-card">
+                        <article class="collection-card" data-aos="fade-up" data-aos-delay="100">
                             <img src="assets/images/alcoba.jpg" alt="Colección Mongolia">
                             <div class="collection-info">
                                 <h3>Mongolia</h3>
@@ -96,7 +97,7 @@
                             </div>
                         </article>
 
-                        <article class="collection-card">
+                        <article class="collection-card" data-aos="fade-up" data-aos-delay="200">
                             <img src="assets/images/alcoba.jpg" alt="Colección Islandia">
                             <div class="collection-info">
                                 <h3>Islandia</h3>
@@ -105,7 +106,7 @@
                             </div>
                         </article>
 
-                        <article class="collection-card">
+                        <article class="collection-card" data-aos="fade-up" data-aos-delay="300">
                             <img src="assets/images/alcoba.jpg" alt="Colección Tundra">
                             <div class="collection-info">
                                 <h3>Tundra</h3>
@@ -125,19 +126,19 @@
                         <p class="section-description">Prendas esenciales diseñadas para permanecer más allá de una temporada.</p>
                     </div>
                     <div class="categories-grid">
-                        <a href="pages/shop.html" class="category-card">
+                        <a href="pages/shop.html" class="category-card" data-aos="fade-up">
                             <img src="assets/images/unplash3.jpg" alt="Categoría Abrigos">
                             <span>ABRIGOS</span>
                         </a>
-                        <a href="pages/shop.html" class="category-card">
+                        <a href="pages/shop.html" class="category-card" data-aos="fade-up" data-aos-delay="100">
                             <img src="assets/images/unplash3.jpg" alt="Categoría Knitwear">
                             <span>KNITWEAR</span>
                         </a>
-                        <a href="pages/shop.html" class="category-card">
+                        <a href="pages/shop.html" class="category-card" data-aos="fade-up" data-aos-delay="200">
                             <img src="assets/images/unplash3.jpg" alt="Categoría Accesorios">
                             <span>ACCESORIOS</span>
                         </a>
-                        <a href="pages/shop.html" class="category-card">
+                        <a href="pages/shop.html" class="category-card" data-aos="fade-up" data-aos-delay="300">
                             <img src="assets/images/unplash3.jpg" alt="Categoría Calzado">
                             <span>CALZADO</span>
                         </a>
@@ -154,7 +155,7 @@
                         </div>
                         <a href="pages/journal.html" class="section-link">Ver todas</a>
                     </div>
-                    <article class="journal-feature">
+                    <article class="journal-feature" data-aos="fade-up">
                         <div class="journal-image">
                             <img src="assets/images/unplash3.jpg" alt="Paisaje nevado que inspira la colección">
                         </div>
@@ -170,7 +171,7 @@
 
             <section class="newsletter">
                 <div class="container">
-                    <div class="newsletter-content">
+                    <div class="newsletter-content" data-aos="fade-up">
                         <span class="section-label">Newsletter</span>
                         <h2 class="newsletter-title">Mantente conectado con Alcoba</h2>
                         <p class="newsletter-description">Recibe acceso anticipado a nuevas colecciones, editoriales e inspiración directamente en tu correo.</p>
@@ -251,5 +252,14 @@
         </footer>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init({
+                duration: 700,
+                easing: 'ease-out-quart',
+                once: true,
+                offset: 80
+            });
+        </script>
     </body>
 </html>

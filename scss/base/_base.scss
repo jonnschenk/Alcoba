@@ -21,13 +21,17 @@ a {
   text-decoration: none;
 }
 
-.section-label,
-.manifesto-label,
-.journal-category {
+%eyebrow-label {
   display: inline-block;
   color: vars.$color-text-muted;
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+.section-label,
+.manifesto-label,
+.journal-category {
+  @extend %eyebrow-label;
 }

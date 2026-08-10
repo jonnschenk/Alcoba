@@ -16,14 +16,11 @@
 }
 
 .hero-subtitle {
-  display: inline-block;
+  @extend %eyebrow-label;
   margin-bottom: 1rem;
   color: vars.$color-border;
-  font-size: 0.75rem;
-  font-weight: 600;
   letter-spacing: 0.1em;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
-  text-transform: uppercase;
 }
 
 .hero-title {

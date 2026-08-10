@@ -11,6 +11,7 @@
         <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Noto+Sans:wght@400;500;600&display=swap" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
         <link rel="stylesheet" href="../styles/main.css">
     </head>
 
@@ -127,7 +128,7 @@
                         </aside>
                         <div class="shop-products">
                             <div class="products-grid">
-                                <article class="product-card">
+                                <article class="product-card" data-aos="fade-up">
                                     <div class="product-card__image">
                                         <img src="https://images.unsplash.com/photo-1785790145257-e05f523822e3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Chaqueta Alpina Alcoba">
                                         <span class="product-card__badge">Nuevo</span>
@@ -139,7 +140,7 @@
                                     </div>
                                 </article>
 
-                                <article class="product-card">
+                                <article class="product-card" data-aos="fade-up" data-aos-delay="100">
                                     <div class="product-card__image">
                                         <img src="https://images.unsplash.com/photo-1785790145257-e05f523822e3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Suéter de Lana Nómada">
                                     </div>
@@ -150,7 +151,7 @@
                                     </div>
                                 </article>
 
-                                <article class="product-card">
+                                <article class="product-card" data-aos="fade-up" data-aos-delay="200">
                                     <div class="product-card__image">
                                         <img src="https://images.unsplash.com/photo-1785790145257-e05f523822e3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Abrigo Estructura Blanca">
                                     </div>
@@ -161,7 +162,7 @@
                                     </div>
                                 </article>
 
-                                <article class="product-card">
+                                <article class="product-card" data-aos="fade-up" data-aos-delay="300">
                                     <div class="product-card__image">
                                         <img src="https://images.unsplash.com/photo-1785790145257-e05f523822e3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Bufanda Volcánica">
                                     </div>
@@ -179,7 +180,7 @@
 
             <section class="newsletter">
                 <div class="container">
-                    <div class="newsletter-content">
+                    <div class="newsletter-content" data-aos="fade-up">
                         <span class="section-label">Newsletter</span>
                         <h2 class="newsletter-title">Mantente conectado con Alcoba</h2>
                         <p class="newsletter-description">Recibe acceso anticipado a nuevas colecciones, editoriales e inspiración directamente en tu correo.</p>
@@ -260,5 +261,14 @@
         </footer>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init({
+                duration: 700,
+                easing: 'ease-out-quart',
+                once: true,
+                offset: 80
+            });
+        </script>
     </body>
 </html>

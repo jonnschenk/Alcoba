@@ -10,13 +10,9 @@
   }
 
   .section-subtitle {
-    display: inline-block;
+    @extend %eyebrow-label;
     margin-bottom: 0.75rem;
-    color: vars.$color-text-muted;
-    font-size: 0.75rem;
-    font-weight: 600;
     letter-spacing: 0.1em;
-    text-transform: uppercase;
   }
 
   .section-title {
