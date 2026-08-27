@@ -225,7 +225,7 @@ a {
 
 .hero {
   position: relative;
-  background-image: url("https://images.unsplash.com/photo-1545917992-dea2d782ef46?q=80&w=2789&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-image: url(../../assets/images/alcoba100.jpeg);
   background-size: cover;
   background-position: bottom;
   background-attachment: fixed;
@@ -347,7 +347,8 @@ a {
   }
 }
 .categories {
-  padding-block: 6rem;
+  padding-block: 7rem;
+  background-color: #ffffff;
 }
 
 .categories-grid {
@@ -414,6 +415,7 @@ a {
 }
 .featured-collections {
   padding-block: 6rem;
+  background-color: #ffffff;
 }
 .featured-collections .section-header {
   max-width: 40rem;
@@ -513,6 +515,7 @@ a {
 
 .journal-image {
   overflow: hidden;
+  border-radius: 16px;
 }
 
 .journal-image img {

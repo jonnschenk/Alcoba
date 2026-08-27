@@ -2,7 +2,9 @@
 @use "../abstracts/mixins" as mixins;
 
 .categories {
-  padding-block: 6rem;
+  padding-block: 7rem;
+    background-color: vars.$color-surface;
+
 }
 
 .categories-grid {

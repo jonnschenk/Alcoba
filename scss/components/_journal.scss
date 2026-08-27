@@ -13,6 +13,7 @@
 
 .journal-image {
   overflow: hidden;
+  border-radius: 16px;
 }
 
 .journal-image img {
@@ -22,6 +23,8 @@
   object-fit: cover;
   aspect-ratio: 16 / 10;
   transition: transform .5s ease;
+
+  // will-change: transform;
 }
 
 .journal-feature:hover img {
@@ -68,5 +71,4 @@
         gap:4rem;
 
     }
-
-}
+  }

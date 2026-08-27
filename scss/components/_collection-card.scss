@@ -4,6 +4,7 @@
 
 .featured-collections {
   padding-block: 6rem;
+  background-color: vars.$color-surface;
 
   .section-header {
     max-width: 40rem;
@@ -35,12 +36,14 @@
 }
 
 .collection-card {
-    border-radius: 12px;
+  border-radius: 12px;
   overflow: hidden;
   background-color: vars.$color-surface;
   border: 1px solid vars.$color-border;
   transition: transform vars.$transition-base,
               box-shadow vars.$transition-base;
+              
+              
 
   img {
     display: block;
