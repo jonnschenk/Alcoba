@@ -3,7 +3,7 @@
 ALCOBA es un proyecto web estático de indumentaria inspirado en paisajes, arquitectura y culturas del invierno.
 
 ## URL
-https://papaya-faloodeh-808235.netlify.app
+https://alcoba.netlify.app/
 
 ## Páginas
 
