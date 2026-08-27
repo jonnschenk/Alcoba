@@ -59,7 +59,7 @@ a {
   text-decoration: none;
 }
 
-.section-label,
+.shop-hero__eyebrow, .journal-hero__issue, .about-hero__eyebrow, .collections-hero__eyebrow, .featured-collections .section-subtitle, .hero-subtitle, .section-label,
 .manifesto-label,
 .journal-category {
   display: inline-block;
@@ -200,14 +200,10 @@ a {
 }
 
 .hero-subtitle {
-  display: inline-block;
   margin-bottom: 1rem;
   color: #d9d5ce;
-  font-size: 0.75rem;
-  font-weight: 600;
   letter-spacing: 0.1em;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
-  text-transform: uppercase;
 }
 
 .hero-title {
@@ -269,13 +265,13 @@ a {
   max-width: 900px;
   margin: 0 auto 2rem;
   font-family: "DM Serif Display", serif;
-  font-size: clamp(1rem, 3vw, 4rem);
+  font-size: clamp(1rem, 3vw, 2.5rem);
   line-height: 1.15;
   color: #171717;
 }
 
 .manifesto-text {
-  max-width: 650px;
+  max-width: 700px;
   margin: 0 auto;
   color: #68645f;
   line-height: 1.8;
@@ -370,7 +366,8 @@ a {
 .category-card img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   display: block;
   transition: transform 0.5s ease;
 }
@@ -423,13 +420,8 @@ a {
   margin-bottom: 3rem;
 }
 .featured-collections .section-subtitle {
-  display: inline-block;
   margin-bottom: 0.75rem;
-  color: #68645f;
-  font-size: 0.75rem;
-  font-weight: 600;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
 }
 .featured-collections .section-title {
   margin-bottom: 1rem;
@@ -458,7 +450,8 @@ a {
   display: block;
   width: 100%;
   aspect-ratio: 4/4;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   transition: transform 0.3s ease;
 }
 .collection-card:hover {
@@ -526,7 +519,8 @@ a {
   width: 100%;
   height: 100%;
   display: block;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   aspect-ratio: 16/10;
   transition: transform 0.5s ease;
 }
@@ -630,41 +624,90 @@ a {
     flex: 1;
   }
 }
-.page-hero {
+.collections-hero {
   position: relative;
   display: flex;
-  align-items: center;
-  min-height: 40vh;
-  padding-block: 4rem;
-  background-color: #ffffff;
-  background-image: url("https://images.unsplash.com/photo-1616951849649-74dd2dd7e662?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  align-items: flex-end;
+  min-height: 80vh;
+  overflow: hidden;
+  background-color: #171717;
+  background-image: url("../../assets/images/alcoba1.jpeg");
   background-size: cover;
   background-position: center;
 }
 
-.page-hero__content {
-  padding: 2rem;
+.collections-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(23, 23, 23, 0.75), rgba(23, 23, 23, 0) 55%);
 }
 
-.page-hero__title {
+.collections-hero__inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding-block: clamp(2.5rem, 6vw, 4rem);
+}
+
+.collections-hero__eyebrow {
   margin-bottom: 1.5rem;
   color: #f4f1eb;
-  font-family: "DM Serif Display", serif;
-  font-size: clamp(2.5rem, 6vw, 5rem);
-  line-height: 1.1;
-  text-align: center;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+  opacity: 0.75;
 }
 
-.page-hero__text {
-  margin-bottom: 2rem;
+.collections-hero__row {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(244, 241, 235, 0.3);
+}
+
+.collections-hero__title {
+  margin: 0;
   color: #f4f1eb;
-  font-size: 1rem;
-  line-height: 1.7;
-  text-align: center;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+  font-family: "DM Serif Display", serif;
+  font-weight: 400;
+  font-size: clamp(3rem, 5vw, 7rem);
+  line-height: 0.95;
+  letter-spacing: -0.01em;
 }
 
+.collections-hero__meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 20rem;
+}
+
+.collections-hero__text {
+  margin: 0 0 1rem;
+  color: #f4f1eb;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  opacity: 0.85;
+}
+
+.collections-hero__count {
+  color: #f4f1eb;
+  font-family: "DM Serif Display", serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  opacity: 0.6;
+}
+
+@media (min-width: 1024px) {
+  .collections-hero__row {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+  .collections-hero__meta {
+    align-items: flex-end;
+    text-align: right;
+  }
+}
 .collection-showcase {
   padding: 5rem 0;
 }
@@ -681,10 +724,12 @@ a {
 }
 
 .collection-image img {
+  border-radius: 16px;
   width: 100%;
   height: 380px;
   display: block;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .collection-content span {
@@ -734,6 +779,71 @@ a {
     order: 1;
   }
 }
+.about-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 90vh;
+  overflow: hidden;
+  background-color: #171717;
+  background-size: cover;
+  background-position: center;
+}
+
+.about-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(23, 23, 23, 0.55);
+}
+
+.about-hero__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 38rem;
+  padding-inline: 1.5rem;
+  text-align: center;
+}
+
+.about-hero__rule {
+  width: 3rem;
+  height: 1px;
+  margin: 0 auto 1.5rem;
+  background-color: rgba(244, 241, 235, 0.5);
+}
+
+.about-hero__eyebrow {
+  margin-bottom: 1.25rem;
+  color: #f4f1eb;
+  opacity: 0.8;
+}
+
+.about-hero__title {
+  margin-bottom: 1.5rem;
+  color: #f4f1eb;
+  font-family: "DM Serif Display", serif;
+  font-weight: 400;
+  font-size: clamp(2.25rem, 5.5vw, 4rem);
+  line-height: 1.15;
+}
+
+.about-hero__text {
+  margin: 0 auto 1.5rem;
+  max-width: 26rem;
+  color: #f4f1eb;
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  opacity: 0.85;
+}
+
+.about-hero__rule--bottom {
+  width: 3rem;
+  height: 1px;
+  margin: 0 auto;
+  background-color: rgba(244, 241, 235, 0.5);
+}
+
 .about-introduction {
   padding: 6rem 0;
 }
@@ -771,7 +881,8 @@ a {
   display: block;
   width: 100%;
   height: 450px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .about-manifesto {
@@ -850,7 +961,8 @@ a {
   display: block;
   width: 100%;
   height: 450px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 @media (min-width: 1024px) {
@@ -887,6 +999,62 @@ a {
     height: 650px;
   }
 }
+.journal-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  border-bottom: 1px solid #d9d5ce;
+}
+
+.journal-hero__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  min-width: 0;
+  padding: clamp(3rem, 8vw, 6rem) clamp(1.25rem, 5vw, 4rem);
+  background-color: #f4f1eb;
+}
+
+.journal-hero__issue {
+  color: #68645f;
+}
+
+.journal-hero__title {
+  margin: 0;
+  max-width: 20ch;
+  color: #171717;
+  font-family: "DM Serif Display", serif;
+  font-weight: 400;
+  font-size: clamp(2.75rem, 7vw, 4.5rem);
+  line-height: 1;
+}
+
+.journal-hero__text {
+  max-width: 26rem;
+  margin: 0;
+  color: #68645f;
+  font-size: 0.9375rem;
+  line-height: 1.7;
+}
+
+.journal-hero__media {
+  position: relative;
+  min-height: 16rem;
+  background-color: #d9d5ce;
+  background-image: url("../../assets/images/alcoba1.jpeg");
+  background-size: cover;
+  background-position: center;
+}
+
+@media (min-width: 1024px) {
+  .journal-hero {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    min-height: 70vh;
+  }
+  .journal-hero__media {
+    min-height: 100%;
+  }
+}
 .journal-featured {
   padding: 7rem 0;
 }
@@ -902,7 +1070,8 @@ a {
   display: block;
   width: 100%;
   height: 520px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .journal-featured__content .section-label {
@@ -950,6 +1119,63 @@ a {
     font-size: 2.5rem;
   }
 }
+.shop-hero {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  min-height: 42vh;
+  overflow: hidden;
+  background-color: #171717;
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(0.4);
+}
+
+.shop-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(23, 23, 23, 0.45);
+}
+
+.shop-hero__inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+  padding-block: 2rem;
+  border-top: 1px solid rgba(244, 241, 235, 0.3);
+}
+
+.shop-hero__eyebrow {
+  display: block;
+  margin-bottom: 0.75rem;
+  color: #f4f1eb;
+  opacity: 0.75;
+}
+
+.shop-hero__title {
+  margin: 0;
+  color: #f4f1eb;
+  font-family: "DM Serif Display", serif;
+  font-weight: 400;
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.1;
+}
+
+.shop-hero__text {
+  max-width: 20rem;
+  margin: 0;
+  color: #f4f1eb;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  opacity: 0.85;
+}
+
 .shop {
   padding-block: 5rem;
 }
@@ -1036,7 +1262,8 @@ a {
   display: block;
   width: 100%;
   aspect-ratio: 3/4;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   transition: transform 300ms ease;
 }
 
@@ -1136,6 +1363,4 @@ a {
   .product-card__price {
     font-size: 0.65rem;
   }
-}
-
-/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */

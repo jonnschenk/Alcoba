@@ -1,5 +1,75 @@
 @use "../abstracts/variables" as vars;
 @use "../abstracts/mixins" as mixins;
+@use "../base/base";
+
+// Hero de "Nosotros": composición centrada tipo manifiesto, enmarcada
+// por dos filetes finos, sobre una imagen con velo oscuro uniforme.
+.about-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 90vh;
+  overflow: hidden;
+  background-color: vars.$color-text;
+  // background-image: url("../../assets/images/hero-about.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.about-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(23, 23, 23, 0.55);
+}
+
+.about-hero__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 38rem;
+  padding-inline: 1.5rem;
+  text-align: center;
+}
+
+.about-hero__rule {
+  width: 3rem;
+  height: 1px;
+  margin: 0 auto 1.5rem;
+  background-color: rgba(244, 241, 235, 0.5);
+}
+
+.about-hero__eyebrow {
+  @extend %eyebrow-label;
+  margin-bottom: 1.25rem;
+  color: vars.$color-background;
+  opacity: 0.8;
+}
+
+.about-hero__title {
+  margin-bottom: 1.5rem;
+  color: vars.$color-background;
+  font-family: vars.$font-heading;
+  font-weight: 400;
+  font-size: clamp(2.25rem, 5.5vw, 4rem);
+  line-height: 1.15;
+}
+
+.about-hero__text {
+  margin: 0 auto 1.5rem;
+  max-width: 26rem;
+  color: vars.$color-background;
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  opacity: 0.85;
+}
+
+.about-hero__rule--bottom {
+  width: 3rem;
+  height: 1px;
+  margin: 0 auto;
+  background-color: rgba(244, 241, 235, 0.5);
+}
 
 
 .about-introduction {

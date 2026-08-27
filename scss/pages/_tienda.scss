@@ -1,5 +1,67 @@
 @use "../abstracts/variables" as vars;
 @use "../abstracts/mixins" as mixins;
+@use "../base/base";
+
+// Hero de "Tienda": franja de catálogo corta y funcional, con la imagen
+// desaturada para que no compita con el grid de producto que sigue abajo.
+.shop-hero {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  min-height: 42vh;
+  overflow: hidden;
+  background-color: vars.$color-text;
+  // background-image: url("../../assets/images/hero-shop.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(0.4);
+}
+
+.shop-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(23, 23, 23, 0.45);
+}
+
+.shop-hero__inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+  padding-block: 2rem;
+  border-top: 1px solid rgba(244, 241, 235, 0.3);
+}
+
+.shop-hero__eyebrow {
+  @extend %eyebrow-label;
+  display: block;
+  margin-bottom: 0.75rem;
+  color: vars.$color-background;
+  opacity: 0.75;
+}
+
+.shop-hero__title {
+  margin: 0;
+  color: vars.$color-background;
+  font-family: vars.$font-heading;
+  font-weight: 400;
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.1;
+}
+
+.shop-hero__text {
+  max-width: 20rem;
+  margin: 0;
+  color: vars.$color-background;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  opacity: 0.85;
+}
 
 .shop {
   padding-block: 5rem;

@@ -1,5 +1,67 @@
 @use "../abstracts/variables" as vars;
 @use "../abstracts/mixins" as mixins;
+@use "../base/base";
+
+// Hero de "Journal": masthead de revista partido en dos, con una columna
+// de portadilla (número de edición) y un panel de imagen a la derecha.
+.journal-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  border-bottom: 1px solid vars.$color-border;
+}
+
+.journal-hero__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  min-width: 0;
+  padding: clamp(3rem, 8vw, 6rem) clamp(1.25rem, 5vw, 4rem);
+  background-color: vars.$color-background;
+}
+
+.journal-hero__issue {
+  @extend %eyebrow-label;
+  color: vars.$color-text-muted;
+}
+
+.journal-hero__title {
+  margin: 0;
+  max-width: 20ch;
+  color: vars.$color-text;
+  font-family: vars.$font-heading;
+  font-weight: 400;
+  font-size: clamp(2.75rem, 7vw, 4.5rem);
+  line-height: 1;
+}
+
+.journal-hero__text {
+  max-width: 26rem;
+  margin: 0;
+  color: vars.$color-text-muted;
+  font-size: 0.9375rem;
+  line-height: 1.7;
+}
+
+.journal-hero__media {
+  position: relative;
+  min-height: 16rem;
+  background-color: vars.$color-border;
+  background-image: url("../../assets/images/alcoba1.jpeg");
+  background-size: cover;
+  background-position: center;
+}
+
+@include mixins.respond-to(desktop) {
+  .journal-hero {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    min-height: 70vh;
+  }
+
+  .journal-hero__media {
+    min-height: 100%;
+  }
+}
 
 .journal-featured {
   padding: 7rem 0;
