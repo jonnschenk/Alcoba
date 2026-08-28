@@ -2,17 +2,15 @@
 @use "../abstracts/mixins" as mixins;
 @use "../base/base";
 
-// Hero de "Nosotros": composición centrada tipo manifiesto, enmarcada
-// por dos filetes finos, sobre una imagen con velo oscuro uniforme.
 .about-hero {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 90vh;
+  min-height: 100vh;
   overflow: hidden;
   background-color: vars.$color-text;
-  // background-image: url("../../assets/images/hero-about.jpg");
+  background-image: url("../../assets/images/nosotros.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -51,7 +49,7 @@
   color: vars.$color-background;
   font-family: vars.$font-heading;
   font-weight: 400;
-  font-size: clamp(2.25rem, 5.5vw, 4rem);
+  font-size: clamp(2.25rem, 3vw, 4rem);
   line-height: 1.15;
 }
 
@@ -70,7 +68,6 @@
   margin: 0 auto;
   background-color: rgba(244, 241, 235, 0.5);
 }
-
 
 .about-introduction {
   padding: 6rem 0;
@@ -94,7 +91,7 @@
     margin-bottom: 1.5rem;
     color: vars.$color-text;
     font-family: vars.$font-heading;
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 4vw, 3rem);
     line-height: 1.1;
   }
 
@@ -116,11 +113,10 @@
   img {
     display: block;
     width: 100%;
-    height: 450px;
+    aspect-ratio: 4 / 5;
     object-fit: cover;
   }
 }
-
 
 .about-manifesto {
   padding: 8rem 0;
@@ -152,7 +148,6 @@
     line-height: 1.8;
   }
 }
-
 
 .about-values {
   padding: 6rem 0;
@@ -194,8 +189,6 @@
   }
 }
 
-
-
 .about-editorial {
   padding: 2rem 0 6rem;
 }
@@ -206,12 +199,29 @@
   img {
     display: block;
     width: 100%;
-    height: 450px;
+    aspect-ratio: 16 / 9;
     object-fit: cover;
   }
 }
 
+.about-editorial__caption {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid vars.$color-border;
 
+  p {
+    margin: 0;
+    max-width: 28rem;
+    color: vars.$color-text-muted;
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+}
 
 @include mixins.respond-to(desktop) {
   .about-introduction {
@@ -221,13 +231,6 @@
   .about-introduction__grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 6rem;
-  }
-
-  .about-introduction__image {
-
-    img {
-      height: 600px;
-    }
   }
 
   .about-manifesto {
@@ -251,16 +254,7 @@
     }
   }
 
-
   .about-editorial {
     padding: 3rem 0 9rem;
   }
-
-  .about-editorial__image {
-
-    img {
-      height: 650px;
-    }
-  }
-
 }

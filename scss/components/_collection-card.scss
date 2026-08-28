@@ -5,37 +5,6 @@
 .featured-collections {
   padding-block: 6rem;
   background-color: vars.$color-surface;
-
-  .section-header {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem 2rem;
-    margin-bottom: 3rem;
-
-    > div {
-      max-width: 40rem;
-    }
-  }
-
-  .section-subtitle {
-    @extend %eyebrow-label;
-    margin-bottom: 0.75rem;
-    letter-spacing: 0.1em;
-  }
-
-  .section-title {
-    margin-bottom: 1rem;
-    font-family: vars.$font-heading;
-    font-size: clamp(2rem, 4vw, 3rem);
-    line-height: 1.1;
-  }
-
-  .section-description {
-    max-width: 32rem;
-    color: vars.$color-text-muted;
-  }
 }
 
 .collections-grid {
@@ -49,8 +18,6 @@
   border: 1px solid vars.$color-border;
   transition: transform vars.$transition-base,
               box-shadow vars.$transition-base;
-              
-              
 
   img {
     display: block;
@@ -103,7 +70,7 @@
 
 @include mixins.respond-to(tablet) {
   .collections-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -113,6 +80,7 @@
   }
 
   .collections-grid {
+    grid-template-columns: repeat(4, 1fr);
     gap: 2.5rem;
   }
 }

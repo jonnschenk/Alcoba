@@ -5,29 +5,35 @@
   padding-top: 5rem;
   border-top: 1px solid vars.$color-border;
 }
+
 .footer-top {
-    display: grid;
-    gap: 3rem;
-    padding-bottom: 3rem;
+  display: grid;
+  gap: 3rem;
+  padding-bottom: 3rem;
 }
+
 .footer-brand p {
-    margin-top: 1rem;
-    color: vars.$color-text-muted;
+  margin-top: 1rem;
+  color: vars.$color-text-muted;
 }
+
 .footer-logo {
-    font-family: vars.$font-heading;
-    font-size: 2rem;
-    color: vars.$color-text;
+  font-family: vars.$font-heading;
+  font-size: 2rem;
+  color: vars.$color-text;
 }
-.footer-links{
-    display: grid;
-    gap: 1rem;
+
+.footer-links {
+  display: grid;
+  gap: 1rem;
 }
+
 .footer-links h4 {
   margin-bottom: 1rem;
   font-size: 1rem;
   text-transform: uppercase;
 }
+
 .footer-links ul {
   list-style: none;
   padding: 0;
@@ -37,9 +43,10 @@
 .footer-links li + li {
   margin-top: 0.2rem;
 }
+
 .footer-links a {
   color: vars.$color-text-muted;
-  transition: color .3s ease;
+  transition: color 0.3s ease;
 }
 
 .footer-links a:hover {
@@ -50,12 +57,11 @@
   padding: 2rem 0;
   border-top: 1px solid vars.$color-border;
   color: vars.$color-text-muted;
-  font-size: .9rem;
+  font-size: 0.9rem;
   text-align: center;
 }
 
-@include mixins.respond-to(desktop) {
-
+@include mixins.respond-to(tablet) {
   .footer-top {
     grid-template-columns: 1fr 2fr;
     align-items: start;
@@ -64,5 +70,4 @@
   .footer-links {
     grid-template-columns: repeat(3, 1fr);
   }
-
 }

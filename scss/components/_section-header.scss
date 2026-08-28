@@ -1,0 +1,29 @@
+@use "../abstracts/variables" as vars;
+
+.section-header {
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  margin-bottom: 1rem;
+  font-family: vars.$font-heading;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+}
+
+.section-description {
+  max-width: 32rem;
+  color: vars.$color-text-muted;
+}
+
+.section-header--split {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+
+  > div {
+    max-width: 40rem;
+  }
+}

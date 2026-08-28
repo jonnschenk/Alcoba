@@ -1,4 +1,5 @@
 @use "../abstracts/variables" as vars;
+
 body {
   min-width: 320px;
   overflow-x: hidden;
@@ -19,6 +20,10 @@ h3 {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+.container {
+  max-width: vars.$container-max-width;
 }
 
 %eyebrow-label {

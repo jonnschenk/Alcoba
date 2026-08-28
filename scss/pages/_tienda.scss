@@ -2,8 +2,6 @@
 @use "../abstracts/mixins" as mixins;
 @use "../base/base";
 
-// Hero de "Tienda": franja de catálogo corta y funcional, con la imagen
-// desaturada para que no compita con el grid de producto que sigue abajo.
 .shop-hero {
   position: relative;
   display: flex;
@@ -11,7 +9,7 @@
   min-height: 42vh;
   overflow: hidden;
   background-color: vars.$color-text;
-  // background-image: url("../../assets/images/hero-shop.jpg");
+  background-image: url("../../assets/images/alcoba.jpg");
   background-size: cover;
   background-position: center;
   filter: grayscale(0.4);
@@ -64,24 +62,23 @@
 }
 
 .shop {
-  padding-block: 5rem;
+  padding-block: 3.5rem;
 }
 
 .shop-layout {
-  display: grid;
-  grid-template-columns: 12rem 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 3rem;
-  align-items: start;
 }
 
 .shop-filters {
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem 1.5rem;
 }
 
 .shop-filter {
-  padding-bottom: 1.5rem;
+  padding-bottom: 1rem;
   border-bottom: 1px solid vars.$color-border;
 
   .section-label {
@@ -140,8 +137,8 @@
 
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 3rem 1.5rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2.5rem 1rem;
 }
 
 .product-card {
@@ -186,7 +183,7 @@
 }
 
 .product-card__info {
-  padding-top: 1rem;
+  padding-top: 0.75rem;
 }
 
 .product-card__title {
@@ -194,36 +191,65 @@
 
   color: vars.$color-text;
 
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 600;
   line-height: 1.4;
 }
 
+.product-card__category,
+.product-card__price {
+  font-size: 0.65rem;
+}
+
 .product-card__category {
   margin: 0 0 0.4rem;
-
   color: vars.$color-text-muted;
-
-  font-size: 0.7rem;
   line-height: 1.4;
 }
 
 .product-card__price {
   color: vars.$color-text;
-
-  font-size: 0.75rem;
   font-weight: 500;
 }
 
 @include mixins.respond-to(tablet) {
+  .shop {
+    padding-block: 5rem;
+  }
+
   .shop-layout {
+    display: grid;
     grid-template-columns: 10rem 1fr;
     gap: 2rem;
+    align-items: start;
+  }
+
+  .shop-filters {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .shop-filter {
+    padding-bottom: 1.5rem;
   }
 
   .products-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 2.5rem 1.25rem;
+  }
+
+  .product-card__info {
+    padding-top: 1rem;
+  }
+
+  .product-card__title {
+    font-size: 0.8rem;
+  }
+
+  .product-card__category,
+  .product-card__price {
+    font-size: 0.7rem;
   }
 }
 
@@ -236,47 +262,5 @@
   .products-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 3rem 1.5rem;
-  }
-}
-
-@include mixins.respond-to(mobile) {
-  .shop {
-    padding-block: 3.5rem;
-  }
-
-  .shop-layout {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-  }
-
-  .shop-filters {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    width: 100%;
-    gap: 2rem 1.5rem;
-  }
-
-  .shop-filter {
-    padding-bottom: 1rem;
-  }
-
-  .products-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 2.5rem 1rem;
-    width: 100%;
-  }
-
-  .product-card__info {
-    padding-top: 0.75rem;
-  }
-
-  .product-card__title {
-    font-size: 0.75rem;
-  }
-
-  .product-card__category,
-  .product-card__price {
-    font-size: 0.65rem;
   }
 }

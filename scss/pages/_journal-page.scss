@@ -2,8 +2,6 @@
 @use "../abstracts/mixins" as mixins;
 @use "../base/base";
 
-// Hero de "Journal": masthead de revista partido en dos, con una columna
-// de portadilla (número de edición) y un panel de imagen a la derecha.
 .journal-hero {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -17,7 +15,7 @@
   gap: 2rem;
   min-width: 0;
   padding: clamp(3rem, 8vw, 6rem) clamp(1.25rem, 5vw, 4rem);
-  background-color: vars.$color-background;
+  background-color: vars.$color-surface;
 }
 
 .journal-hero__issue {
@@ -31,7 +29,7 @@
   color: vars.$color-text;
   font-family: vars.$font-heading;
   font-weight: 400;
-  font-size: clamp(2rem, 5vw, 3rem);
+  font-size: clamp(2rem, 5vw, 5rem);
   line-height: 1;
 }
 
@@ -47,7 +45,7 @@
   position: relative;
   min-height: 16rem;
   background-color: vars.$color-border;
-  background-image: url("../../assets/images/alcoba1.jpeg");
+  background-image: url("../../assets/images/alcoba6.jpeg");
   background-size: cover;
   background-position: center;
 }
@@ -55,7 +53,7 @@
 @include mixins.respond-to(desktop) {
   .journal-hero {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    min-height: 70vh;
+    min-height: 95vh;
   }
 
   .journal-hero__media {
@@ -64,26 +62,37 @@
 }
 
 .journal-featured {
-  padding: 7rem 0;
+  padding: 5rem 0;
 }
 
 .journal-featured__article {
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 5rem;
+  grid-template-columns: 1fr;
+  gap: 3rem;
   align-items: center;
 }
 
+@include mixins.respond-to(desktop) {
+  .journal-featured {
+    padding: 7rem 0;
+  }
+
+  .journal-featured__article {
+    grid-template-columns: 1.2fr 1fr;
+    gap: 5rem;
+  }
+}
 
 .journal-featured__image {
 
   img {
     display: block;
     width: 100%;
-    height: 520px;
+    aspect-ratio: 4 / 3;
     object-fit: cover;
   }
 }
+
 .journal-featured__content {
 
   .section-label {
@@ -95,7 +104,7 @@
     margin-bottom: 1.5rem;
     color: vars.$color-text;
     font-family: vars.$font-heading;
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 4vw, 3rem);
     line-height: 1.1;
   }
 
@@ -122,29 +131,99 @@
   }
 }
 
+.journal-grid-section {
+  padding: 2rem 0 7rem;
+}
 
-@include mixins.respond-to(mobile) {
+.journal-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
 
-  .journal-featured {
-    padding: 5rem 0;
+.journal-card {
+  display: block;
+  overflow: hidden;
+  background-color: vars.$color-surface;
+  border: 1px solid vars.$color-border;
+  transition: transform vars.$transition-base, box-shadow vars.$transition-base;
+
+  &:hover,
+  &:focus-within {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+  }
+}
+
+.journal-card__image {
+  overflow: hidden;
+
+  img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+}
+
+.journal-card:hover .journal-card__image img,
+.journal-card:focus-within .journal-card__image img {
+  transform: scale(1.05);
+}
+
+.journal-card__content {
+  padding: 1.75rem;
+
+  .journal-category {
+    margin-bottom: 0.75rem;
   }
 
-  .journal-featured__article {
-    grid-template-columns: 1fr;
-    gap: 3rem;
+  h3 {
+    margin-bottom: 0.75rem;
+    color: vars.$color-text;
+    font-family: vars.$font-heading;
+    font-size: 1.4rem;
+    line-height: 1.2;
   }
 
-  .journal-featured__image {
+  p {
+    margin-bottom: 1.5rem;
+    color: vars.$color-text-muted;
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
 
-    img {
-      height: 420px;
+  a {
+    color: vars.$color-text;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      opacity: 0.55;
     }
   }
+}
 
-  .journal-featured__content {
+@include mixins.respond-to(tablet) {
+  .journal-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
 
-    h2 {
-      font-size: 2.5rem;
-    }
+@include mixins.respond-to(desktop) {
+  .journal-grid-section {
+    padding: 3rem 0 9rem;
+  }
+
+  .journal-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
   }
 }

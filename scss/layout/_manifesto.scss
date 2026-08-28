@@ -12,7 +12,7 @@
 }
 
 .manifesto-quote {
-  max-width: 900px;
+  max-width: 56.25rem;
   margin: 0 auto 2rem;
   font-family: vars.$font-heading;
   font-size: clamp(1rem, 3vw, 2.5rem);
@@ -21,7 +21,7 @@
 }
 
 .manifesto-text {
-  max-width: 700px;
+  max-width: 43.75rem;
   margin: 0 auto;
   color: vars.$color-text-muted;
   line-height: 1.8;
