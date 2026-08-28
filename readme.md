@@ -21,6 +21,7 @@ https://alcoba.netlify.app/
 - Bootstrap 5
 - Bootstrap Icons
 - Google Fonts
+- AOS (Animate On Scroll)
 
 ## Organización de estilos
 
@@ -29,18 +30,28 @@ El proyecto usa SCSS dividido en parciales para mantener el código ordenado:
 - `abstracts`: variables y mixins.
 - `base`: reset y estilos generales.
 - `layout`: navegación, hero, manifiesto y footer.
-- `components`: tarjetas, categorías, journal y newsletter.
-- `pages`: estilos específicos de páginas internas.
+- `components`: encabezados de sección, tarjetas, categorías, journal y newsletter.
+- `pages`: estilos específicos de páginas internas (colecciones, about, journal y tienda).
 
 Hay dos tipos de hero:
 
 - `.hero`: hero principal del home.
 - `.page-hero`: hero reutilizable para páginas internas.
 
+Los parciales se compilan a `styles/main.css` (con source map) usando Sass.
+
 ## Cómo ver el proyecto
 
 Abrir `index.html` en el navegador. Desde ahí se puede navegar hacia el resto de las páginas.
 
+Para modificar los estilos, instalar las dependencias y compilar el SCSS:
+
+```bash
+npm install
+npm run build   # compila una vez
+npm run watch   # recompila automáticamente al guardar cambios
+```
+
 ## Notas
 
-El sitio conserva una estructura simple porque es un proyecto académico estático. No utiliza JavaScript propio; solo carga el bundle de Bootstrap para el funcionamiento del menú responsive.
+El sitio conserva una estructura simple porque es un proyecto académico estático. No utiliza JavaScript propio; solo carga los bundles de Bootstrap (menú responsive) y AOS (animaciones al hacer scroll), ambos vía CDN.
