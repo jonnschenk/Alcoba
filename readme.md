@@ -33,10 +33,13 @@ El proyecto usa SCSS dividido en parciales para mantener el código ordenado:
 - `components`: encabezados de sección, tarjetas, categorías, journal y newsletter.
 - `pages`: estilos específicos de páginas internas (colecciones, about, journal y tienda).
 
-Hay dos tipos de hero:
+Cada página tiene su propio hero, con estilos específicos en su parcial de `pages`:
 
-- `.hero`: hero principal del home.
-- `.page-hero`: hero reutilizable para páginas internas.
+- `.hero`: hero principal del home (`layout/_hero.scss`).
+- `.about-hero`: hero de `about.html`.
+- `.collections-hero`: hero de `collections.html`, con índice de capítulos.
+- `.journal-hero`: hero de `journal.html`.
+- `.shop-hero`: hero de `shop.html`.
 
 Los parciales se compilan a `styles/main.css` (con source map) usando Sass.
 
