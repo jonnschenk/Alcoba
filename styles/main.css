@@ -70,6 +70,37 @@ a {
   text-transform: uppercase;
 }
 
+.section-link {
+  position: relative;
+  flex-shrink: 0;
+  padding-bottom: 0.2rem;
+  color: #171717;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: color 300ms ease;
+}
+.section-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: currentColor;
+  transform: scaleX(0.35);
+  transform-origin: left;
+  transition: transform 300ms ease;
+}
+.section-link:hover, .section-link:focus-visible {
+  color: #68645f;
+}
+.section-link:hover::after, .section-link:focus-visible::after {
+  transform: scaleX(1);
+}
+
 .site-header {
   position: sticky;
   top: 0;
@@ -347,60 +378,97 @@ a {
   }
 }
 .categories {
-  padding-block: 7rem;
+  padding-bottom: 8rem;
   background-color: #ffffff;
+}
+
+.section-header {
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  margin-bottom: 1rem;
+  font-family: "DM Serif Display", serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+}
+
+.categories .section-description {
+  max-width: 28rem;
+  color: #68645f;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
 }
 
 .categories-grid {
   display: grid;
-  gap: 1.5rem;
+  gap: 2.5rem 2rem;
 }
 
 .category-card {
-  position: relative;
-  overflow: hidden;
   display: block;
-  aspect-ratio: 4/4;
+  color: #171717;
   text-decoration: none;
 }
 
-.category-card img {
+.category-card__media {
+  overflow: hidden;
+  aspect-ratio: 3/4;
+  background-color: #d9d5ce;
+}
+
+.category-card__media img {
+  display: block;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  display: block;
-  transition: transform 0.5s ease;
+  object-fit: cover;
+  transition: transform 0.6s ease;
 }
 
-.category-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.28);
-  transition: background 0.3s ease;
-  z-index: 1;
+.category-card:hover .category-card__media img,
+.category-card:focus-visible .category-card__media img {
+  transform: scale(1.05);
 }
 
-.category-card span {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  color: white;
-  font-size: 1.1rem;
+.category-card__caption {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  margin-top: 1.1rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid #d9d5ce;
+}
+
+.category-card__index {
+  color: #68645f;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+}
+
+.category-card__name {
+  position: relative;
+  font-size: 0.85rem;
   font-weight: 600;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
 }
-
-.category-card:hover img {
-  transform: scale(1.08);
+.category-card__name::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.3rem;
+  width: 100%;
+  height: 1px;
+  background-color: currentColor;
+  transform: scaleX(0.25);
+  transform-origin: left;
+  transition: transform 300ms ease;
 }
 
-.category-card:hover::before {
-  background: rgba(0, 0, 0, 0.15);
+.category-card:hover .category-card__name::after,
+.category-card:focus-visible .category-card__name::after {
+  transform: scaleX(1);
 }
 
 @media (min-width: 768px) {
@@ -411,6 +479,7 @@ a {
 @media (min-width: 1024px) {
   .categories-grid {
     grid-template-columns: repeat(4, 1fr);
+    gap: 2.5rem;
   }
 }
 .featured-collections {
@@ -418,8 +487,15 @@ a {
   background-color: #ffffff;
 }
 .featured-collections .section-header {
-  max-width: 40rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 2rem;
   margin-bottom: 3rem;
+}
+.featured-collections .section-header > div {
+  max-width: 40rem;
 }
 .featured-collections .section-subtitle {
   margin-bottom: 0.75rem;
@@ -442,7 +518,6 @@ a {
 }
 
 .collection-card {
-  border-radius: 12px;
   overflow: hidden;
   background-color: #ffffff;
   border: 1px solid #d9d5ce;
@@ -452,8 +527,7 @@ a {
   display: block;
   width: 100%;
   aspect-ratio: 4/4;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   transition: transform 0.3s ease;
 }
 .collection-card:hover {
@@ -506,6 +580,24 @@ a {
 .journal {
   padding-block: 6rem;
 }
+.journal .section-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+  margin-bottom: 3rem;
+}
+.journal .section-header > div {
+  max-width: 40rem;
+}
+
+.section-title {
+  margin-bottom: 1rem;
+  font-family: "DM Serif Display", serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+}
 
 .journal-feature {
   display: grid;
@@ -515,15 +607,13 @@ a {
 
 .journal-image {
   overflow: hidden;
-  border-radius: 16px;
 }
 
 .journal-image img {
   width: 100%;
   height: 100%;
   display: block;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   aspect-ratio: 16/10;
   transition: transform 0.5s ease;
 }
@@ -727,12 +817,10 @@ a {
 }
 
 .collection-image img {
-  border-radius: 16px;
   width: 100%;
   height: 380px;
   display: block;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .collection-content span {
@@ -884,8 +972,7 @@ a {
   display: block;
   width: 100%;
   height: 450px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .about-manifesto {
@@ -964,8 +1051,7 @@ a {
   display: block;
   width: 100%;
   height: 450px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 @media (min-width: 1024px) {
@@ -1073,8 +1159,7 @@ a {
   display: block;
   width: 100%;
   height: 520px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .journal-featured__content .section-label {
@@ -1265,8 +1350,7 @@ a {
   display: block;
   width: 100%;
   aspect-ratio: 3/4;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   transition: transform 300ms ease;
 }
 
@@ -1366,4 +1450,6 @@ a {
   .product-card__price {
     font-size: 0.65rem;
   }
-}/*# sourceMappingURL=main.css.map */
+}
+
+/*# sourceMappingURL=main.css.map */

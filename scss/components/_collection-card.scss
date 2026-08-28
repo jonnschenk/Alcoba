@@ -7,8 +7,16 @@
   background-color: vars.$color-surface;
 
   .section-header {
-    max-width: 40rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem 2rem;
     margin-bottom: 3rem;
+
+    > div {
+      max-width: 40rem;
+    }
   }
 
   .section-subtitle {
@@ -36,7 +44,6 @@
 }
 
 .collection-card {
-  border-radius: 12px;
   overflow: hidden;
   background-color: vars.$color-surface;
   border: 1px solid vars.$color-border;

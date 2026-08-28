@@ -3,7 +3,27 @@
 
 .journal {
   padding-block: 6rem;
+
+  .section-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem 2rem;
+    margin-bottom: 3rem;
+
+    > div {
+      max-width: 40rem;
+    }
+  }
 }
+ .section-title {
+    margin-bottom: 1rem;
+    font-family: vars.$font-heading;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.1;
+  }
+
 
 .journal-feature {
   display: grid;
@@ -13,7 +33,6 @@
 
 .journal-image {
   overflow: hidden;
-  border-radius: 16px;
 }
 
 .journal-image img {
