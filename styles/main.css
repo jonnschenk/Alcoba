@@ -229,9 +229,13 @@ a {
   background-image: url(../../assets/images/alcoba100.jpeg);
   background-size: cover;
   background-position: bottom;
-  background-attachment: fixed;
 }
 
+@media (min-width: 1024px) {
+  .hero {
+    background-attachment: fixed;
+  }
+}
 .hero::before {
   content: "";
   position: absolute;
@@ -455,8 +459,7 @@ a {
   display: block;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   transition: transform 0.6s ease;
 }
 
@@ -536,8 +539,7 @@ a {
   display: block;
   width: 100%;
   aspect-ratio: 3/2;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   transition: transform 0.3s ease;
 }
 .collection-card:hover {
@@ -606,8 +608,7 @@ a {
   width: 100%;
   height: 100%;
   display: block;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   aspect-ratio: 16/10;
   transition: transform 0.5s ease;
 }
@@ -854,8 +855,7 @@ a {
   width: 100%;
   aspect-ratio: 3/2;
   display: block;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   transition: transform 700ms ease;
 }
 .collection-image:hover img {
@@ -1026,8 +1026,7 @@ a {
   display: block;
   width: 100%;
   aspect-ratio: 4/5;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .about-manifesto {
@@ -1106,8 +1105,7 @@ a {
   display: block;
   width: 100%;
   aspect-ratio: 16/9;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .about-editorial__caption {
@@ -1236,8 +1234,7 @@ a {
   display: block;
   width: 100%;
   aspect-ratio: 4/3;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .journal-featured__content .section-label {
@@ -1300,8 +1297,7 @@ a {
   display: block;
   width: 100%;
   aspect-ratio: 3/2;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   transition: transform 0.5s ease;
 }
 
@@ -1363,6 +1359,9 @@ a {
   min-height: 42vh;
   overflow: hidden;
   background-color: #171717;
+  background-image: url("../../assets/images/unplash6.jpg");
+  background-size: cover;
+  background-position: center;
   filter: grayscale(0.4);
 }
 
@@ -1496,8 +1495,7 @@ a {
   display: block;
   width: 100%;
   aspect-ratio: 3/4;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   transition: transform 300ms ease;
 }
 
@@ -1589,4 +1587,6 @@ a {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 3rem 1.5rem;
   }
-}/*# sourceMappingURL=main.css.map */
+}
+
+/*# sourceMappingURL=main.css.map */
