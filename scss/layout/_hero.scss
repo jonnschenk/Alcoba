@@ -3,17 +3,29 @@
 @use "../base/base";
 
 .hero {
+  position: relative;
   display: flex;
   align-items: center;
   min-height: 95vh;
   padding-block: 4rem;
-  background-color: vars.$color-surface;
+  background-image: url(../../assets/images/alcoba100.jpeg);
+  background-size: cover;
+  background-position: bottom;
+  background-attachment: fixed;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
 }
 
 .hero-content {
+  position: relative;
+  z-index: 2;
   max-width: 52rem;
   padding: 2rem;
-  border-radius: 8px;
 }
 
 .hero-subtitle {
@@ -41,30 +53,36 @@
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
 }
 
-.hero {
+// Link editorial del hero: mismo lenguaje que "Ver todas" / "Explorar colección →"
+// en el resto del sitio, en vez de un botón sólido tipo retail.
+.hero-link {
   position: relative;
-  background-image: url(../../assets/images/alcoba100.jpeg);
-  // background-image: url("https://images.unsplash.com/photo-1545917992-dea2d782ef46?q=80&w=2789&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
-  background-size: cover;
-  background-position: bottom;
-  background-attachment: fixed;
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.35);
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-}
-
-.hero-button {
-  background-color: #ffffff;
-  color: #111111;
-  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding-bottom: 0.3rem;
+  color: vars.$color-background;
+  font-size: 0.8rem;
   font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: currentColor;
+    transform: scaleX(0.35);
+    transform-origin: left;
+    transition: transform vars.$transition-base;
+  }
+
+  &:hover::after,
+  &:focus-visible::after {
+    transform: scaleX(1);
+  }
 }
