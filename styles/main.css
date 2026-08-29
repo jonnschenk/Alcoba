@@ -226,7 +226,7 @@ a {
   align-items: center;
   min-height: 95vh;
   padding-block: 4rem;
-  background-image: url(../../assets/images/alcoba100.jpeg);
+  background-image: url(../assets/images/alcoba100.jpeg);
   background-size: cover;
   background-position: bottom;
 }
@@ -960,7 +960,7 @@ a {
   min-height: 80vh;
   overflow: hidden;
   background-color: #171717;
-  background-image: url("../../assets/images/alcoba1.jpeg");
+  background-image: url("../assets/images/alcoba1.jpeg");
   background-size: cover;
   background-position: center;
 }
@@ -1167,7 +1167,7 @@ a {
   min-height: 100vh;
   overflow: hidden;
   background-color: #171717;
-  background-image: url("../../assets/images/unplash3.jpg");
+  background-image: url("../assets/images/unplash3.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -1432,7 +1432,7 @@ a {
   position: relative;
   min-height: 16rem;
   background-color: #d9d5ce;
-  background-image: url("../../assets/images/alcoba6.jpeg");
+  background-image: url("../assets/images/alcoba6.jpeg");
   background-size: cover;
   background-position: center;
 }
@@ -1595,7 +1595,7 @@ a {
   min-height: 42vh;
   overflow: hidden;
   background-color: #171717;
-  background-image: url("../../assets/images/unplash6.jpg");
+  background-image: url("../assets/images/unplash6.jpg");
   background-size: cover;
   background-position: center;
   filter: grayscale(0.4);
