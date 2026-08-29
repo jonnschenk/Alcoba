@@ -41,13 +41,44 @@
                         </ul>
 
                         <div class="navbar-actions">
-                            <a class="navbar-action" href="shop.html" aria-label="Buscar productos"><i class="bi bi-search"></i></a>
-                            <a class="navbar-action" href="shop.html" aria-label="Ir a la tienda"><i class="bi bi-handbag"></i></a>
+                            <button type="button" class="navbar-action navbar-action--search" id="searchToggle" aria-label="Buscar productos" aria-expanded="false" aria-controls="searchOverlay"><i class="bi bi-search"></i></button>
+                            <button type="button" class="navbar-action navbar-action--cart" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" aria-controls="cartOffcanvas" aria-label="Ver carrito">
+                                <i class="bi bi-handbag"></i>
+                                <span class="navbar-action__badge" id="cartCount" hidden>0</span>
+                            </button>
                         </div>
                     </div>
                 </div>
             </nav>
+            <div class="search-overlay" id="searchOverlay" hidden>
+                <div class="container search-overlay__inner">
+                    <form class="search-overlay__form" action="shop.html" method="get" role="search">
+                        <i class="bi bi-search search-overlay__icon" aria-hidden="true"></i>
+                        <label for="searchInput" class="visually-hidden">Buscar productos</label>
+                        <input type="search" id="searchInput" name="q" placeholder="Buscar abrigos, suéteres, accesorios…" autocomplete="off">
+                    </form>
+                    <button type="button" class="search-overlay__close" id="searchClose" aria-label="Cerrar búsqueda"><i class="bi bi-x-lg"></i></button>
+                </div>
+            </div>
         </header>
+
+        <div class="offcanvas offcanvas-end cart-offcanvas" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartOffcanvasLabel">
+            <div class="offcanvas-header">
+                <h2 class="offcanvas-title" id="cartOffcanvasLabel">Carrito</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar carrito"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="cart-items" id="cartItems"></ul>
+                <p class="cart-empty" id="cartEmpty">Tu carrito está vacío.</p>
+                <div class="cart-summary" id="cartSummary" hidden>
+                    <div class="cart-summary__row">
+                        <span>Subtotal</span>
+                        <span id="cartSubtotal">$0 USD</span>
+                    </div>
+                    <a href="#" class="btn btn-dark cart-checkout" id="cartCheckout">Finalizar compra</a>
+                </div>
+            </div>
+        </div>
 
         <main>
             <section class="about-hero">
@@ -224,5 +255,7 @@
                 offset: 80
             });
         </script>
+        <script src="../scripts/cart.js"></script>
+        <script src="../scripts/search.js"></script>
     </body>
 </html>

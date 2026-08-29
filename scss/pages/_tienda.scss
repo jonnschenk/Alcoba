@@ -77,6 +77,19 @@
   gap: 2rem 1.5rem;
 }
 
+.shop-filters__clear {
+  display: block;
+  margin: 0 0 1.5rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: vars.$color-text;
+  font-size: 0.7rem;
+  text-decoration: underline;
+  text-underline-offset: 0.2rem;
+  cursor: pointer;
+}
+
 .shop-filter {
   padding-bottom: 1rem;
   border-bottom: 1px solid vars.$color-border;
@@ -99,17 +112,31 @@
     margin: 0;
   }
 
-  a {
+  a,
+  .filter-btn {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background: none;
     color: vars.$color-text-muted;
+    font-family: inherit;
     font-size: 0.75rem;
     line-height: 1.5;
+    text-align: left;
     text-decoration: none;
+    cursor: pointer;
     transition: color vars.$transition-base;
 
     &:hover,
     &:focus {
       color: vars.$color-text;
     }
+  }
+
+  .filter-btn.is-active {
+    color: vars.$color-text;
+    font-weight: 600;
   }
 
   select {
@@ -131,8 +158,36 @@
   }
 }
 
+.shop-filter--search input {
+  width: 100%;
+  padding-block: 0.5rem;
+  border: 0;
+  border-bottom: 1px solid vars.$color-border;
+  border-radius: 0;
+  background-color: transparent;
+  color: vars.$color-text;
+  font-family: inherit;
+  font-size: 0.75rem;
+
+  &::placeholder {
+    color: vars.$color-text-muted;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: vars.$color-text;
+  }
+}
+
 .shop-products {
   min-width: 0;
+}
+
+.shop-products__empty {
+  margin: 0 0 2rem;
+  color: vars.$color-text-muted;
+  font-size: 0.8rem;
+  line-height: 1.6;
 }
 
 .products-grid {
@@ -207,9 +262,44 @@
   line-height: 1.4;
 }
 
+.product-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
 .product-card__price {
   color: vars.$color-text;
   font-weight: 500;
+}
+
+.product-card__add {
+  padding: 0.4rem 0.75rem;
+  border: 1px solid vars.$color-text;
+  background-color: transparent;
+  color: vars.$color-text;
+  font-family: inherit;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color vars.$transition-base,
+    color vars.$transition-base;
+
+  &:hover,
+  &:focus {
+    background-color: vars.$color-text;
+    color: vars.$color-surface;
+  }
+
+  &.is-added {
+    background-color: vars.$color-text;
+    color: vars.$color-surface;
+  }
 }
 
 @include mixins.respond-to(tablet) {

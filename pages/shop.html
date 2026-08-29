@@ -41,13 +41,44 @@
                         </ul>
 
                         <div class="navbar-actions">
-                            <a class="navbar-action" href="shop.html" aria-label="Buscar productos"><i class="bi bi-search"></i></a>
-                            <a class="navbar-action" href="shop.html" aria-label="Ir a la tienda"><i class="bi bi-handbag"></i></a>
+                            <button type="button" class="navbar-action navbar-action--search" id="searchToggle" aria-label="Buscar productos" aria-expanded="false" aria-controls="searchOverlay"><i class="bi bi-search"></i></button>
+                            <button type="button" class="navbar-action navbar-action--cart" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" aria-controls="cartOffcanvas" aria-label="Ver carrito">
+                                <i class="bi bi-handbag"></i>
+                                <span class="navbar-action__badge" id="cartCount" hidden>0</span>
+                            </button>
                         </div>
                     </div>
                 </div>
             </nav>
+            <div class="search-overlay" id="searchOverlay" hidden>
+                <div class="container search-overlay__inner">
+                    <form class="search-overlay__form" action="shop.html" method="get" role="search">
+                        <i class="bi bi-search search-overlay__icon" aria-hidden="true"></i>
+                        <label for="searchInput" class="visually-hidden">Buscar productos</label>
+                        <input type="search" id="searchInput" name="q" placeholder="Buscar abrigos, suéteres, accesorios…" autocomplete="off">
+                    </form>
+                    <button type="button" class="search-overlay__close" id="searchClose" aria-label="Cerrar búsqueda"><i class="bi bi-x-lg"></i></button>
+                </div>
+            </div>
         </header>
+
+        <div class="offcanvas offcanvas-end cart-offcanvas" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartOffcanvasLabel">
+            <div class="offcanvas-header">
+                <h2 class="offcanvas-title" id="cartOffcanvasLabel">Carrito</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar carrito"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="cart-items" id="cartItems"></ul>
+                <p class="cart-empty" id="cartEmpty">Tu carrito está vacío.</p>
+                <div class="cart-summary" id="cartSummary" hidden>
+                    <div class="cart-summary__row">
+                        <span>Subtotal</span>
+                        <span id="cartSubtotal">$0 USD</span>
+                    </div>
+                    <a href="#" class="btn btn-dark cart-checkout" id="cartCheckout">Finalizar compra</a>
+                </div>
+            </div>
+        </div>
 
         <main>
             <section class="shop-hero">
@@ -63,24 +94,29 @@
             <section class="shop">
                 <div class="container">
                     <div class="shop-layout">
-                        <aside class="shop-filters">
+                        <aside class="shop-filters" id="shopFilters">
+                            <button type="button" class="shop-filters__clear" id="clearFilters" hidden>Limpiar filtros</button>
+                            <div class="shop-filter shop-filter--search">
+                                <label for="shopSearch" class="section-label">Buscar</label>
+                                <input type="search" id="shopSearch" placeholder="Buscar productos..." autocomplete="off">
+                            </div>
                             <div class="shop-filter">
                                 <span class="section-label">Categorías</span>
                                 <ul>
                                     <li>
-                                        <a href="#">Abrigos</a>
+                                        <button type="button" class="filter-btn" data-filter-group="categoria" data-value="abrigos" aria-pressed="false">Abrigos</button>
                                     </li>
                                     <li>
-                                        <a href="#">Tejidos</a>
+                                        <button type="button" class="filter-btn" data-filter-group="categoria" data-value="tejidos" aria-pressed="false">Tejidos</button>
                                     </li>
                                     <li>
-                                        <a href="#">Accesorios</a>
+                                        <button type="button" class="filter-btn" data-filter-group="categoria" data-value="accesorios" aria-pressed="false">Accesorios</button>
                                     </li>
                                     <li>
-                                        <a href="#">Pantalones</a>
+                                        <button type="button" class="filter-btn" data-filter-group="categoria" data-value="pantalones" aria-pressed="false">Pantalones</button>
                                     </li>
                                     <li>
-                                        <a href="#">Calzado</a>
+                                        <button type="button" class="filter-btn" data-filter-group="categoria" data-value="calzado" aria-pressed="false">Calzado</button>
                                     </li>
                                 </ul>
                             </div>
@@ -88,16 +124,16 @@
                                 <span class="section-label">Color</span>
                                 <ul>
                                     <li>
-                                        <a href="#">Negro</a>
+                                        <button type="button" class="filter-btn" data-filter-group="color" data-value="negro" aria-pressed="false">Negro</button>
                                     </li>
                                     <li>
-                                        <a href="#">Gris</a>
+                                        <button type="button" class="filter-btn" data-filter-group="color" data-value="gris" aria-pressed="false">Gris</button>
                                     </li>
                                     <li>
-                                        <a href="#">Beige</a>
+                                        <button type="button" class="filter-btn" data-filter-group="color" data-value="beige" aria-pressed="false">Beige</button>
                                     </li>
                                     <li>
-                                        <a href="#">Blanco</a>
+                                        <button type="button" class="filter-btn" data-filter-group="color" data-value="blanco" aria-pressed="false">Blanco</button>
                                     </li>
                                 </ul>
                             </div>
@@ -105,34 +141,35 @@
                                 <span class="section-label">Talla</span>
                                 <ul>
                                     <li>
-                                        <a href="#">XS</a>
+                                        <button type="button" class="filter-btn" data-filter-group="talla" data-value="xs" aria-pressed="false">XS</button>
                                     </li>
                                     <li>
-                                        <a href="#">S</a>
+                                        <button type="button" class="filter-btn" data-filter-group="talla" data-value="s" aria-pressed="false">S</button>
                                     </li>
                                     <li>
-                                        <a href="#">M</a>
+                                        <button type="button" class="filter-btn" data-filter-group="talla" data-value="m" aria-pressed="false">M</button>
                                     </li>
                                     <li>
-                                        <a href="#">L</a>
+                                        <button type="button" class="filter-btn" data-filter-group="talla" data-value="l" aria-pressed="false">L</button>
                                     </li>
                                     <li>
-                                        <a href="#">XL</a>
+                                        <button type="button" class="filter-btn" data-filter-group="talla" data-value="xl" aria-pressed="false">XL</button>
                                     </li>
                                 </ul>
                             </div>
                             <div class="shop-filter">
                                 <span class="section-label">Ordenar</span>
-                                <select aria-label="Ordenar productos">
-                                    <option>Más recientes</option>
-                                    <option>Precio menor</option>
-                                    <option>Precio mayor</option>
+                                <select aria-label="Ordenar productos" id="sortSelect">
+                                    <option value="recientes">Más recientes</option>
+                                    <option value="precio-asc">Precio menor</option>
+                                    <option value="precio-desc">Precio mayor</option>
                                 </select>
                             </div>
                         </aside>
                         <div class="shop-products">
-                            <div class="products-grid">
-                                <article class="product-card" data-aos="fade-up">
+                            <p class="shop-products__empty" id="productsEmpty" hidden>No hay productos que coincidan con los filtros seleccionados.</p>
+                            <div class="products-grid" id="productsGrid">
+                                <article class="product-card" data-aos="fade-up" data-id="chaqueta-alpina-heavyweight" data-category="abrigos" data-color="negro gris" data-size="s m l" data-price="280">
                                     <div class="product-card__image">
                                         <img loading="lazy" src="../assets/images/abrigos.jpg" alt="Chaqueta Alpina Alcoba">
                                         <span class="product-card__badge">Nuevo</span>
@@ -140,62 +177,80 @@
                                     <div class="product-card__info">
                                         <h3 class="product-card__title">Chaqueta Alpina Heavyweight</h3>
                                         <p class="product-card__category">Colección Suiza</p>
-                                        <span class="product-card__price">$280 USD</span>
+                                        <div class="product-card__footer">
+                                            <span class="product-card__price">$280 USD</span>
+                                            <button type="button" class="product-card__add" data-add-to-cart>Añadir</button>
+                                        </div>
                                     </div>
                                 </article>
 
-                                <article class="product-card" data-aos="fade-up" data-aos-delay="100">
+                                <article class="product-card" data-aos="fade-up" data-aos-delay="100" data-id="sueter-lana-merino" data-category="tejidos" data-color="beige gris" data-size="xs s m l" data-price="160">
                                     <div class="product-card__image">
                                         <img loading="lazy" src="../assets/images/alcoba10.jpeg" alt="Suéter de Lana Nómada">
                                     </div>
                                     <div class="product-card__info">
                                         <h3 class="product-card__title">Suéter Lana Merino</h3>
                                         <p class="product-card__category">Colección Mongolia</p>
-                                        <span class="product-card__price">$160 USD</span>
+                                        <div class="product-card__footer">
+                                            <span class="product-card__price">$160 USD</span>
+                                            <button type="button" class="product-card__add" data-add-to-cart>Añadir</button>
+                                        </div>
                                     </div>
                                 </article>
 
-                                <article class="product-card" data-aos="fade-up" data-aos-delay="200">
+                                <article class="product-card" data-aos="fade-up" data-aos-delay="200" data-id="abrigo-oversized-hokkaido" data-category="abrigos" data-color="blanco beige" data-size="m l xl" data-price="340">
                                     <div class="product-card__image">
                                         <img loading="lazy" src="../assets/images/alcoba9.jpeg" alt="Abrigo Estructura Blanca">
                                     </div>
                                     <div class="product-card__info">
                                         <h3 class="product-card__title">Abrigo Oversized Hokkaido</h3>
                                         <p class="product-card__category">Colección Hokkaido</p>
-                                        <span class="product-card__price">$340 USD</span>
+                                        <div class="product-card__footer">
+                                            <span class="product-card__price">$340 USD</span>
+                                            <button type="button" class="product-card__add" data-add-to-cart>Añadir</button>
+                                        </div>
                                     </div>
                                 </article>
 
-                                <article class="product-card" data-aos="fade-up" data-aos-delay="300">
+                                <article class="product-card" data-aos="fade-up" data-aos-delay="300" data-id="bufanda-volcanica-termica" data-category="accesorios" data-color="negro beige" data-size="xs s m l xl" data-price="85">
                                     <div class="product-card__image">
                                         <img loading="lazy" src="../assets/images/accesorios.jpg" alt="Bufanda Volcánica">
                                     </div>
                                     <div class="product-card__info">
                                         <h3 class="product-card__title">Bufanda Volcánica Térmica</h3>
                                         <p class="product-card__category">Colección Islandia</p>
-                                        <span class="product-card__price">$85 USD</span>
+                                        <div class="product-card__footer">
+                                            <span class="product-card__price">$85 USD</span>
+                                            <button type="button" class="product-card__add" data-add-to-cart>Añadir</button>
+                                        </div>
                                     </div>
                                 </article>
 
-                                <article class="product-card" data-aos="fade-up" data-aos-delay="400">
+                                <article class="product-card" data-aos="fade-up" data-aos-delay="400" data-id="pantalon-termico-suiza" data-category="pantalones" data-color="negro gris" data-size="xs s m l xl" data-price="150">
                                     <div class="product-card__image">
                                         <img loading="lazy" src="../assets/images/pantalones.jpg" alt="Pantalón Térmico Suiza">
                                     </div>
                                     <div class="product-card__info">
                                         <h3 class="product-card__title">Pantalón Térmico Suiza</h3>
                                         <p class="product-card__category">Colección Suiza</p>
-                                        <span class="product-card__price">$150 USD</span>
+                                        <div class="product-card__footer">
+                                            <span class="product-card__price">$150 USD</span>
+                                            <button type="button" class="product-card__add" data-add-to-cart>Añadir</button>
+                                        </div>
                                     </div>
                                 </article>
 
-                                <article class="product-card" data-aos="fade-up" data-aos-delay="500">
+                                <article class="product-card" data-aos="fade-up" data-aos-delay="500" data-id="botas-trapper-vibram" data-category="calzado" data-color="negro beige" data-size="m l xl" data-price="310">
                                     <div class="product-card__image">
                                         <img loading="lazy" src="../assets/images/calzado.jpg" alt="Botas Trapper Vibram">
                                     </div>
                                     <div class="product-card__info">
                                         <h3 class="product-card__title">Botas Trapper Vibram</h3>
                                         <p class="product-card__category">Colección Islandia</p>
-                                        <span class="product-card__price">$310 USD</span>
+                                        <div class="product-card__footer">
+                                            <span class="product-card__price">$310 USD</span>
+                                            <button type="button" class="product-card__add" data-add-to-cart>Añadir</button>
+                                        </div>
                                     </div>
                                 </article>
                             </div>
@@ -296,5 +351,8 @@
                 offset: 80
             });
         </script>
+        <script src="../scripts/shop-filter.js"></script>
+        <script src="../scripts/cart.js"></script>
+        <script src="../scripts/search.js"></script>
     </body>
 </html>

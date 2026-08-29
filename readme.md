@@ -22,6 +22,7 @@ https://alcoba.netlify.app/
 - Bootstrap Icons
 - Google Fonts
 - AOS (Animate On Scroll)
+- JavaScript (vanilla)
 
 ## Organización de estilos
 
@@ -43,6 +44,14 @@ Cada página tiene su propio hero, con estilos específicos en su parcial de `pa
 
 Los parciales se compilan a `styles/main.css` (con source map) usando Sass.
 
+## Organización de scripts
+
+El proyecto incluye JavaScript propio en `scripts/`:
+
+- `cart.js`: carrito de compras (guardado en `localStorage`, render de items, subtotal y contador).
+- `search.js`: overlay de búsqueda (abrir/cerrar, foco automático, cierre con Escape o click afuera).
+- `shop-filter.js`: filtrado, búsqueda y orden de productos en la tienda (`shop.html`).
+
 ## Cómo ver el proyecto
 
 Abrir `index.html` en el navegador. Desde ahí se puede navegar hacia el resto de las páginas.
@@ -57,4 +66,4 @@ npm run watch   # recompila automáticamente al guardar cambios
 
 ## Notas
 
-El sitio conserva una estructura simple porque es un proyecto académico estático. No utiliza JavaScript propio; solo carga los bundles de Bootstrap (menú responsive) y AOS (animaciones al hacer scroll), ambos vía CDN.
+El sitio conserva una estructura simple porque es un proyecto académico estático. Además de los bundles de Bootstrap (menú responsive) y AOS (animaciones al hacer scroll), ambos vía CDN, utiliza JavaScript propio en `scripts/` para el carrito, la búsqueda y el filtrado de la tienda.

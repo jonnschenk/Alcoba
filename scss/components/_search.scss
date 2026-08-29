@@ -1,0 +1,93 @@
+@use "../abstracts/variables" as vars;
+@use "../abstracts/mixins" as mixins;
+
+.navbar-action {
+  &.navbar-action--search {
+    padding: 0;
+    border: 0;
+    background: none;
+    font-family: inherit;
+  }
+}
+
+.search-overlay {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 999;
+
+  width: 100%;
+  border-bottom: 1px solid vars.$color-border;
+  background-color: vars.$color-surface;
+  box-shadow: 0 0.5rem 1rem rgba(23, 23, 23, 0.06);
+}
+
+.search-overlay__inner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-block: 1rem;
+}
+
+.search-overlay__form {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.search-overlay__icon {
+  position: absolute;
+  left: 0;
+  color: vars.$color-text-muted;
+  font-size: 1rem;
+  pointer-events: none;
+}
+
+.search-overlay__form input {
+  width: 100%;
+  padding: 0.4rem 0 0.4rem 1.75rem;
+  border: 0;
+  border-bottom: 1px solid vars.$color-border;
+  border-radius: 0;
+  background: none;
+  color: vars.$color-text;
+  font-family: vars.$font-body;
+  font-size: 0.95rem;
+
+  &::placeholder {
+    color: vars.$color-text-muted;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: vars.$color-text;
+  }
+}
+
+.search-overlay__close {
+  flex-shrink: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: vars.$color-text;
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: opacity vars.$transition-base;
+
+  &:hover,
+  &:focus {
+    opacity: 0.55;
+  }
+}
+
+@include mixins.respond-to(tablet) {
+  .search-overlay__inner {
+    padding-block: 1.5rem;
+  }
+
+  .search-overlay__form input {
+    font-size: 1.1rem;
+  }
+}
