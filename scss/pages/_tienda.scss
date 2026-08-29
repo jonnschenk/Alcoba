@@ -9,17 +9,6 @@
   min-height: 42vh;
   overflow: hidden;
   background-color: vars.$color-text;
-  background-image: url("../assets/images/unplash6.jpg");
-  background-size: cover;
-  background-position: center;
-  filter: grayscale(0.4);
-}
-
-.shop-hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(23, 23, 23, 0.45);
 }
 
 .shop-hero__inner {
