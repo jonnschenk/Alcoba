@@ -3,7 +3,7 @@
 ALCOBA es un proyecto web estático de indumentaria inspirado en paisajes, arquitectura y culturas del invierno.
 
 ## URL
-https://alcoba.netlify.app/
+https://jonnschenk.github.io/Alcoba/
 
 ## Páginas
 
