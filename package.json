@@ -4,8 +4,8 @@
   "private": true,
   "description": "ALCOBA — indumentaria inspirada en las culturas del invierno",
   "scripts": {
-    "build": "sass scss/main.scss styles/main.css --style=expanded --source-map",
-    "watch": "sass scss/main.scss styles/main.css --style=expanded --source-map --watch"
+    "build": "sass scss/main.scss css/style.css --style=expanded --source-map",
+    "watch": "sass scss/main.scss css/style.css --style=expanded --source-map --watch"
   },
   "devDependencies": {
     "sass": "^1.101.0"

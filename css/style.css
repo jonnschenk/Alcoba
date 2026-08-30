@@ -459,8 +459,7 @@ a {
   display: block;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   transition: transform 0.6s ease;
 }
 
@@ -540,8 +539,7 @@ a {
   display: block;
   width: 100%;
   aspect-ratio: 3/2;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   transition: transform 0.3s ease;
 }
 .collection-card:hover {
@@ -610,8 +608,7 @@ a {
   width: 100%;
   height: 100%;
   display: block;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   aspect-ratio: 16/10;
   transition: transform 0.5s ease;
 }
@@ -791,8 +788,7 @@ a {
 .cart-item__image {
   width: 4rem;
   aspect-ratio: 3/4;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   background-color: #ffffff;
 }
 
@@ -925,9 +921,6 @@ a {
   color: #171717;
   font-family: "Noto Sans", sans-serif;
   font-size: 0.95rem;
-}
-.search-overlay__form input::-moz-placeholder {
-  color: #68645f;
 }
 .search-overlay__form input::placeholder {
   color: #68645f;
@@ -1098,8 +1091,7 @@ a {
   width: 100%;
   aspect-ratio: 3/2;
   display: block;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   transition: transform 700ms ease;
 }
 .collection-image:hover img {
@@ -1270,8 +1262,7 @@ a {
   display: block;
   width: 100%;
   aspect-ratio: 4/5;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .about-manifesto {
@@ -1350,8 +1341,7 @@ a {
   display: block;
   width: 100%;
   aspect-ratio: 16/9;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .about-editorial__caption {
@@ -1480,8 +1470,7 @@ a {
   display: block;
   width: 100%;
   aspect-ratio: 4/3;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .journal-featured__content .section-label {
@@ -1544,8 +1533,7 @@ a {
   display: block;
   width: 100%;
   aspect-ratio: 3/2;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   transition: transform 0.5s ease;
 }
 
@@ -1748,9 +1736,6 @@ a {
   font-family: inherit;
   font-size: 0.75rem;
 }
-.shop-filter--search input::-moz-placeholder {
-  color: #68645f;
-}
 .shop-filter--search input::placeholder {
   color: #68645f;
 }
@@ -1789,8 +1774,7 @@ a {
   display: block;
   width: 100%;
   aspect-ratio: 3/4;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   transition: transform 300ms ease;
 }
 
@@ -1912,4 +1896,6 @@ a {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 3rem 1.5rem;
   }
-}/*# sourceMappingURL=main.css.map */
+}
+
+/*# sourceMappingURL=style.css.map */
