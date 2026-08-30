@@ -2,8 +2,8 @@
 
 ALCOBA es un proyecto web estático de indumentaria inspirado en paisajes, arquitectura y culturas del invierno.
 
-## URL
-https://jonnschenk.github.io/Alcoba/
+🔗 Demo: [https://github.com/jonnschenk/Alcoba](https://github.com/jonnschenk/Alcoba)
+
 
 ## Páginas
 
@@ -67,3 +67,9 @@ npm run watch   # recompila automáticamente al guardar cambios
 ## Notas
 
 El sitio conserva una estructura simple porque es un proyecto académico estático. Además de los bundles de Bootstrap (menú responsive) y AOS (animaciones al hacer scroll), ambos vía CDN, utiliza JavaScript propio en `scripts/` para el carrito, la búsqueda y el filtrado de la tienda.
+
+## Contacto
+
+- Email: [jonathanrott.dev@gmail.com](mailto:jonathanrott.dev@gmail.com)
+- GitHub: [github.com/jonnschenk](https://github.com/jonnschenk)
+- LinkedIn: [linkedin.com/in/jonathan-ramírez](https://www.linkedin.com/in/jonathan-ramírez-2b0043246/)
