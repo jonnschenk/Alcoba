@@ -68,7 +68,9 @@ npm run watch   # recompila automáticamente al guardar cambios
 
 El sitio conserva una estructura simple porque es un proyecto académico estático. Además de los bundles de Bootstrap (menú responsive) y AOS (animaciones al hacer scroll), ambos vía CDN, utiliza JavaScript propio en `scripts/` para el carrito, la búsqueda y el filtrado de la tienda.
 
-## Contacto
+## Autor
+
+Jonathan M. Ramírez
 
 - Email: [jonathanrott.dev@gmail.com](mailto:jonathanrott.dev@gmail.com)
 - GitHub: [github.com/jonnschenk](https://github.com/jonnschenk)
