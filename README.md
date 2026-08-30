@@ -42,7 +42,7 @@ Cada página tiene su propio hero, con estilos específicos en su parcial de `pa
 - `.journal-hero`: hero de `journal.html`.
 - `.shop-hero`: hero de `shop.html`.
 
-Los parciales se compilan a `css/style.css` (con source map) usando Sass.
+Los parciales se compilan a `css/styles.css` (con source map) usando Sass.
 
 ## Organización de scripts
 
