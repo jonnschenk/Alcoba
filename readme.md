@@ -75,3 +75,7 @@ Jonathan M. Ramírez
 - Email: [jonathanrott.dev@gmail.com](mailto:jonathanrott.dev@gmail.com)
 - GitHub: [github.com/jonnschenk](https://github.com/jonnschenk)
 - LinkedIn: [linkedin.com/in/jonathan-ramírez](https://www.linkedin.com/in/jonathan-ramírez-2b0043246/)
+
+---
+
+© 2026 Jonathan Ramírez.
