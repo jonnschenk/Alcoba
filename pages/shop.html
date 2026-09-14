@@ -41,10 +41,10 @@
                         </ul>
 
                         <div class="navbar-actions">
-                            <button type="button" class="navbar-action navbar-action--search" id="searchToggle" aria-label="Buscar productos" aria-expanded="false" aria-controls="searchOverlay"><i class="bi bi-search"></i></button>
-                            <button type="button" class="navbar-action navbar-action--cart" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" aria-controls="cartOffcanvas" aria-label="Ver carrito">
+                            <button type="button" class="navbar-actions__action navbar-actions__action--search" id="searchToggle" aria-label="Buscar productos" aria-expanded="false" aria-controls="searchOverlay"><i class="bi bi-search"></i></button>
+                            <button type="button" class="navbar-actions__action navbar-actions__action--cart" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" aria-controls="cartOffcanvas" aria-label="Ver carrito">
                                 <i class="bi bi-handbag"></i>
-                                <span class="navbar-action__badge" id="cartCount" hidden>0</span>
+                                <span class="navbar-actions__badge" id="cartCount" hidden>0</span>
                             </button>
                         </div>
                     </div>
@@ -62,20 +62,20 @@
             </div>
         </header>
 
-        <div class="offcanvas offcanvas-end cart-offcanvas" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartOffcanvasLabel">
+        <div class="offcanvas offcanvas-end cart" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartOffcanvasLabel">
             <div class="offcanvas-header">
                 <h2 class="offcanvas-title" id="cartOffcanvasLabel">Carrito</h2>
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar carrito"></button>
             </div>
             <div class="offcanvas-body">
-                <ul class="cart-items" id="cartItems"></ul>
-                <p class="cart-empty" id="cartEmpty">Tu carrito está vacío.</p>
-                <div class="cart-summary" id="cartSummary" hidden>
-                    <div class="cart-summary__row">
+                <ul class="cart__items" id="cartItems"></ul>
+                <p class="cart__empty" id="cartEmpty">Tu carrito está vacío.</p>
+                <div class="cart__summary" id="cartSummary" hidden>
+                    <div class="cart__summary-row">
                         <span>Subtotal</span>
                         <span id="cartSubtotal">$0 USD</span>
                     </div>
-                    <a href="#" class="btn btn-dark cart-checkout" id="cartCheckout">Finalizar compra</a>
+                    <a href="#" class="btn btn-dark cart__checkout" id="cartCheckout">Finalizar compra</a>
                 </div>
             </div>
         </div>
@@ -93,7 +93,7 @@
 
             <section class="shop">
                 <div class="container">
-                    <div class="shop-layout">
+                    <div class="shop__layout">
                         <aside class="shop-filters" id="shopFilters">
                             <button type="button" class="shop-filters__clear" id="clearFilters" hidden>Limpiar filtros</button>
                             <div class="shop-filter shop-filter--search">
@@ -104,19 +104,19 @@
                                 <span class="section-label">Categorías</span>
                                 <ul>
                                     <li>
-                                        <button type="button" class="filter-btn" data-filter-group="categoria" data-value="abrigos" aria-pressed="false">Abrigos</button>
+                                        <button type="button" class="shop-filter__btn" data-filter-group="categoria" data-value="abrigos" aria-pressed="false">Abrigos</button>
                                     </li>
                                     <li>
-                                        <button type="button" class="filter-btn" data-filter-group="categoria" data-value="tejidos" aria-pressed="false">Tejidos</button>
+                                        <button type="button" class="shop-filter__btn" data-filter-group="categoria" data-value="tejidos" aria-pressed="false">Tejidos</button>
                                     </li>
                                     <li>
-                                        <button type="button" class="filter-btn" data-filter-group="categoria" data-value="accesorios" aria-pressed="false">Accesorios</button>
+                                        <button type="button" class="shop-filter__btn" data-filter-group="categoria" data-value="accesorios" aria-pressed="false">Accesorios</button>
                                     </li>
                                     <li>
-                                        <button type="button" class="filter-btn" data-filter-group="categoria" data-value="pantalones" aria-pressed="false">Pantalones</button>
+                                        <button type="button" class="shop-filter__btn" data-filter-group="categoria" data-value="pantalones" aria-pressed="false">Pantalones</button>
                                     </li>
                                     <li>
-                                        <button type="button" class="filter-btn" data-filter-group="categoria" data-value="calzado" aria-pressed="false">Calzado</button>
+                                        <button type="button" class="shop-filter__btn" data-filter-group="categoria" data-value="calzado" aria-pressed="false">Calzado</button>
                                     </li>
                                 </ul>
                             </div>
@@ -124,16 +124,16 @@
                                 <span class="section-label">Color</span>
                                 <ul>
                                     <li>
-                                        <button type="button" class="filter-btn" data-filter-group="color" data-value="negro" aria-pressed="false">Negro</button>
+                                        <button type="button" class="shop-filter__btn" data-filter-group="color" data-value="negro" aria-pressed="false">Negro</button>
                                     </li>
                                     <li>
-                                        <button type="button" class="filter-btn" data-filter-group="color" data-value="gris" aria-pressed="false">Gris</button>
+                                        <button type="button" class="shop-filter__btn" data-filter-group="color" data-value="gris" aria-pressed="false">Gris</button>
                                     </li>
                                     <li>
-                                        <button type="button" class="filter-btn" data-filter-group="color" data-value="beige" aria-pressed="false">Beige</button>
+                                        <button type="button" class="shop-filter__btn" data-filter-group="color" data-value="beige" aria-pressed="false">Beige</button>
                                     </li>
                                     <li>
-                                        <button type="button" class="filter-btn" data-filter-group="color" data-value="blanco" aria-pressed="false">Blanco</button>
+                                        <button type="button" class="shop-filter__btn" data-filter-group="color" data-value="blanco" aria-pressed="false">Blanco</button>
                                     </li>
                                 </ul>
                             </div>
@@ -141,19 +141,19 @@
                                 <span class="section-label">Talla</span>
                                 <ul>
                                     <li>
-                                        <button type="button" class="filter-btn" data-filter-group="talla" data-value="xs" aria-pressed="false">XS</button>
+                                        <button type="button" class="shop-filter__btn" data-filter-group="talla" data-value="xs" aria-pressed="false">XS</button>
                                     </li>
                                     <li>
-                                        <button type="button" class="filter-btn" data-filter-group="talla" data-value="s" aria-pressed="false">S</button>
+                                        <button type="button" class="shop-filter__btn" data-filter-group="talla" data-value="s" aria-pressed="false">S</button>
                                     </li>
                                     <li>
-                                        <button type="button" class="filter-btn" data-filter-group="talla" data-value="m" aria-pressed="false">M</button>
+                                        <button type="button" class="shop-filter__btn" data-filter-group="talla" data-value="m" aria-pressed="false">M</button>
                                     </li>
                                     <li>
-                                        <button type="button" class="filter-btn" data-filter-group="talla" data-value="l" aria-pressed="false">L</button>
+                                        <button type="button" class="shop-filter__btn" data-filter-group="talla" data-value="l" aria-pressed="false">L</button>
                                     </li>
                                     <li>
-                                        <button type="button" class="filter-btn" data-filter-group="talla" data-value="xl" aria-pressed="false">XL</button>
+                                        <button type="button" class="shop-filter__btn" data-filter-group="talla" data-value="xl" aria-pressed="false">XL</button>
                                     </li>
                                 </ul>
                             </div>
@@ -168,7 +168,7 @@
                         </aside>
                         <div class="shop-products">
                             <p class="shop-products__empty" id="productsEmpty" hidden>No hay productos que coincidan con los filtros seleccionados.</p>
-                            <div class="products-grid" id="productsGrid">
+                            <div class="shop-products__grid" id="productsGrid">
                                 <article class="product-card" data-aos="fade-up" data-id="chaqueta-alpina-heavyweight" data-category="abrigos" data-color="negro gris" data-size="s m l" data-price="280">
                                     <div class="product-card__image">
                                         <img loading="lazy" src="../assets/images/abrigos.jpg" alt="Chaqueta Alpina Alcoba">
@@ -261,11 +261,11 @@
 
             <section class="newsletter">
                 <div class="container">
-                    <div class="newsletter-content" data-aos="fade-up">
+                    <div class="newsletter__content" data-aos="fade-up">
                         <span class="section-label">Newsletter</span>
-                        <h2 class="newsletter-title">Mantente conectado con Alcoba</h2>
-                        <p class="newsletter-description">Recibe acceso anticipado a nuevas colecciones, editoriales e inspiración directamente en tu correo.</p>
-                        <form class="newsletter-form">
+                        <h2 class="newsletter__title">Mantente conectado con Alcoba</h2>
+                        <p class="newsletter__description">Recibe acceso anticipado a nuevas colecciones, editoriales e inspiración directamente en tu correo.</p>
+                        <form class="newsletter__form">
                             <input type="email" name="email" placeholder="Ingresa tu correo electrónico" required aria-label="Correo electrónico">
                             <button type="submit" class="btn btn-dark">Suscribirse</button>
                         </form>
@@ -276,12 +276,12 @@
 
         <footer class="site-footer">
             <div class="container">
-                <div class="footer-top">
-                    <div class="footer-brand">
-                        <a href="../index.html" class="footer-logo">ALCOBA</a>
+                <div class="site-footer__top">
+                    <div class="site-footer__brand">
+                        <a href="../index.html" class="site-footer__logo">ALCOBA</a>
                         <p>Designed for every season.</p>
                     </div>
-                    <div class="footer-links">
+                    <div class="site-footer__links">
                         <div>
                             <h4>Navegación</h4>
                             <ul>
@@ -335,7 +335,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="footer-bottom">
+                <div class="site-footer__bottom">
                     <p>&copy; 2026 ALCOBA. Todos los derechos reservados.</p>
                 </div>
             </div>

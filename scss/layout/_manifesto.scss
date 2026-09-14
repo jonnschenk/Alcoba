@@ -6,12 +6,12 @@
   background-color: vars.$color-background;
 }
 
-.manifesto-label {
+.manifesto__label {
   margin-bottom: 1rem;
   letter-spacing: 0.15em;
 }
 
-.manifesto-quote {
+.manifesto__quote {
   max-width: 56.25rem;
   margin: 0 auto 2rem;
   font-family: vars.$font-heading;
@@ -20,7 +20,7 @@
   color: vars.$color-text;
 }
 
-.manifesto-text {
+.manifesto__text {
   max-width: 43.75rem;
   margin: 0 auto;
   color: vars.$color-text-muted;

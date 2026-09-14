@@ -140,7 +140,7 @@
   }
 }
 
-.collection-image {
+.collection-item__image {
   overflow: hidden;
 
   img {
@@ -156,7 +156,7 @@
   }
 }
 
-.collection-content {
+.collection-item__content {
 
   span {
     display: inline-block;
@@ -167,7 +167,7 @@
     text-transform: uppercase;
   }
 
-  .collection-number {
+  .collection-item__number {
     display: block;
     margin-bottom: 0.25rem;
     color: vars.$color-text;
@@ -216,14 +216,14 @@
     gap: 5rem;
   }
 
-  .reverse {
+  .collection-item--reverse {
     grid-template-columns: 1fr 1.15fr;
 
-    .collection-image {
+    .collection-item__image {
       order: 2;
     }
 
-    .collection-content {
+    .collection-item__content {
       order: 1;
     }
   }

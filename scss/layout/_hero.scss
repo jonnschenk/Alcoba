@@ -26,14 +26,14 @@
   background: rgba(0, 0, 0, 0.35);
 }
 
-.hero-content {
+.hero__content {
   position: relative;
   z-index: 2;
   max-width: 52rem;
   padding: 2rem;
 }
 
-.hero-subtitle {
+.hero__subtitle {
   @extend %eyebrow-label;
   margin-bottom: 1rem;
   color: vars.$color-border;
@@ -41,7 +41,7 @@
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
 }
 
-.hero-title {
+.hero__title {
   margin-bottom: 1.5rem;
   color: vars.$color-background;
   font-family: vars.$font-heading;
@@ -50,7 +50,7 @@
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
 }
 
-.hero-text {
+.hero__text {
   max-width: 30rem;
   margin-bottom: 2rem;
   color: vars.$color-background;
@@ -58,7 +58,7 @@
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
 }
 
-.hero-link {
+.hero__link {
   position: relative;
   display: inline-flex;
   align-items: center;

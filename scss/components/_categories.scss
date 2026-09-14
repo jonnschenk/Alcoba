@@ -14,7 +14,7 @@
   }
 }
 
-.categories-grid {
+.categories__grid {
   display: grid;
   gap: 2.5rem 2rem;
 }
@@ -86,13 +86,13 @@
 }
 
 @include mixins.respond-to(tablet) {
-  .categories-grid {
+  .categories__grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @include mixins.respond-to(desktop) {
-  .categories-grid {
+  .categories__grid {
     grid-template-columns: repeat(4, 1fr);
     gap: 2.5rem;
   }

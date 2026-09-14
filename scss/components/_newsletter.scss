@@ -8,28 +8,28 @@
   border-top: 1px solid vars.$color-border;
 }
 
-.newsletter-content {
+.newsletter__content {
   max-width: 42rem;
   margin: 0 auto;
 }
 
-.newsletter-title {
+.newsletter__title {
   font-size: clamp(2rem, 4vw, 3rem);
 }
 
-.newsletter-description {
+.newsletter__description {
   margin: 1.5rem auto 3rem;
   max-width: 32rem;
   color: vars.$color-text-muted;
 }
 
-.newsletter-form {
+.newsletter__form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-.newsletter-form input {
+.newsletter__form input {
   padding: 1rem 1.25rem;
   border: 1px solid vars.$color-border;
   background: transparent;
@@ -41,7 +41,7 @@
   }
 }
 
-.newsletter-form button {
+.newsletter__form button {
   padding: 1rem 2rem;
   border: none;
   background-color: vars.$color-text;
@@ -57,11 +57,11 @@
 }
 
 @include mixins.respond-to(tablet) {
-  .newsletter-form {
+  .newsletter__form {
     flex-direction: row;
   }
 
-  .newsletter-form input {
+  .newsletter__form input {
     flex: 1;
   }
 }

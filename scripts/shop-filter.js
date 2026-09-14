@@ -2,7 +2,7 @@
     const grid = document.getElementById("productsGrid");
     if (!grid) return;
 
-    const filterButtons = Array.from(document.querySelectorAll(".filter-btn"));
+    const filterButtons = Array.from(document.querySelectorAll(".shop-filter__btn"));
     const sortSelect = document.getElementById("sortSelect");
     const clearButton = document.getElementById("clearFilters");
     const emptyMessage = document.getElementById("productsEmpty");
@@ -104,11 +104,11 @@
             if (set.has(value)) {
                 set.delete(value);
                 button.setAttribute("aria-pressed", "false");
-                button.classList.remove("is-active");
+                button.classList.remove("shop-filter__btn--active");
             } else {
                 set.add(value);
                 button.setAttribute("aria-pressed", "true");
-                button.classList.add("is-active");
+                button.classList.add("shop-filter__btn--active");
             }
 
             render();
@@ -131,7 +131,7 @@
             Object.values(activeFilters).forEach((set) => set.clear());
             filterButtons.forEach((button) => {
                 button.setAttribute("aria-pressed", "false");
-                button.classList.remove("is-active");
+                button.classList.remove("shop-filter__btn--active");
             });
             searchQuery = "";
             if (searchInput) searchInput.value = "";

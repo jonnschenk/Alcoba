@@ -1,8 +1,8 @@
 @use "../abstracts/variables" as vars;
 @use "../abstracts/mixins" as mixins;
 
-.navbar-action {
-  &.navbar-action--cart {
+.navbar-actions__action {
+  &.navbar-actions__action--cart {
     position: relative;
     padding: 0;
     border: 0;
@@ -11,7 +11,7 @@
   }
 }
 
-.navbar-action__badge {
+.navbar-actions__badge {
   position: absolute;
   top: -0.4rem;
   right: -0.55rem;
@@ -32,7 +32,7 @@
   line-height: 1;
 }
 
-.cart-offcanvas {
+.cart {
   width: min(24rem, 100%);
   background-color: vars.$color-surface;
 
@@ -55,14 +55,14 @@
   }
 }
 
-.cart-empty {
+.cart__empty {
   margin: 2rem 0;
   color: vars.$color-text-muted;
   font-size: 0.8rem;
   text-align: center;
 }
 
-.cart-items {
+.cart__items {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
@@ -145,13 +145,13 @@
   }
 }
 
-.cart-summary {
+.cart__summary {
   margin-top: auto;
   padding-top: 1.25rem;
   border-top: 1px solid vars.$color-border;
 }
 
-.cart-summary__row {
+.cart__summary-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -161,7 +161,7 @@
   font-weight: 600;
 }
 
-.cart-checkout {
+.cart__checkout {
   display: block;
   width: 100%;
   text-align: center;

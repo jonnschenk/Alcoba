@@ -41,10 +41,10 @@
                         </ul>
 
                         <div class="navbar-actions">
-                            <button type="button" class="navbar-action navbar-action--search" id="searchToggle" aria-label="Buscar productos" aria-expanded="false" aria-controls="searchOverlay"><i class="bi bi-search"></i></button>
-                            <button type="button" class="navbar-action navbar-action--cart" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" aria-controls="cartOffcanvas" aria-label="Ver carrito">
+                            <button type="button" class="navbar-actions__action navbar-actions__action--search" id="searchToggle" aria-label="Buscar productos" aria-expanded="false" aria-controls="searchOverlay"><i class="bi bi-search"></i></button>
+                            <button type="button" class="navbar-actions__action navbar-actions__action--cart" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" aria-controls="cartOffcanvas" aria-label="Ver carrito">
                                 <i class="bi bi-handbag"></i>
-                                <span class="navbar-action__badge" id="cartCount" hidden>0</span>
+                                <span class="navbar-actions__badge" id="cartCount" hidden>0</span>
                             </button>
                         </div>
                     </div>
@@ -62,20 +62,20 @@
             </div>
         </header>
 
-        <div class="offcanvas offcanvas-end cart-offcanvas" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartOffcanvasLabel">
+        <div class="offcanvas offcanvas-end cart" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartOffcanvasLabel">
             <div class="offcanvas-header">
                 <h2 class="offcanvas-title" id="cartOffcanvasLabel">Carrito</h2>
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar carrito"></button>
             </div>
             <div class="offcanvas-body">
-                <ul class="cart-items" id="cartItems"></ul>
-                <p class="cart-empty" id="cartEmpty">Tu carrito está vacío.</p>
-                <div class="cart-summary" id="cartSummary" hidden>
-                    <div class="cart-summary__row">
+                <ul class="cart__items" id="cartItems"></ul>
+                <p class="cart__empty" id="cartEmpty">Tu carrito está vacío.</p>
+                <div class="cart__summary" id="cartSummary" hidden>
+                    <div class="cart__summary-row">
                         <span>Subtotal</span>
                         <span id="cartSubtotal">$0 USD</span>
                     </div>
-                    <a href="#" class="btn btn-dark cart-checkout" id="cartCheckout">Finalizar compra</a>
+                    <a href="#" class="btn btn-dark cart__checkout" id="cartCheckout">Finalizar compra</a>
                 </div>
             </div>
         </div>
@@ -105,11 +105,11 @@
             <section class="collection-showcase">
                 <div class="container">
                     <article class="collection-item" id="chapter-01" data-aos="fade-up">
-                        <div class="collection-image">
+                        <div class="collection-item__image">
                             <img loading="lazy" src="../assets/images/alcoba2.jpeg" alt="Colección Suiza">
                         </div>
-                        <div class="collection-content">
-                            <span class="collection-number">01</span>
+                        <div class="collection-item__content">
+                            <span class="collection-item__number">01</span>
                             <span>Capítulo 1 | Suiza</span>
                             <h2>Refugio Alpino</h2>
                             <p>Inspirada en los refugios de montaña, la arquitectura de madera y la vida en altitud.</p>
@@ -117,12 +117,12 @@
                         </div>
                     </article>
 
-                    <article class="collection-item reverse" id="chapter-02" data-aos="fade-up">
-                        <div class="collection-image">
+                    <article class="collection-item collection-item--reverse" id="chapter-02" data-aos="fade-up">
+                        <div class="collection-item__image">
                             <img loading="lazy" src="../assets/images/alcoba3.jpeg" alt="Colección Mongolia">
                         </div>
-                        <div class="collection-content">
-                            <span class="collection-number">02</span>
+                        <div class="collection-item__content">
+                            <span class="collection-item__number">02</span>
                             <span>Capítulo 2 | Mongolia</span>
                             <h2>Invierno Nómada</h2>
                             <p>Una exploración de las capas, la movilidad y la adaptación al clima extremo.</p>
@@ -131,11 +131,11 @@
                     </article>
 
                     <article class="collection-item" id="chapter-03" data-aos="fade-up">
-                        <div class="collection-image">
+                        <div class="collection-item__image">
                             <img loading="lazy" src="../assets/images/alcoba4.jpeg" alt="Colección Islandia">
                         </div>
-                        <div class="collection-content">
-                            <span class="collection-number">03</span>
+                        <div class="collection-item__content">
+                            <span class="collection-item__number">03</span>
                             <span>Capítulo 3 | Islandia</span>
                             <h2>Silencio Volcánico</h2>
                             <p>Formas limpias, materiales resistentes y paisajes marcados por el hielo y el fuego.</p>
@@ -143,12 +143,12 @@
                         </div>
                     </article>
 
-                    <article class="collection-item reverse" id="chapter-04" data-aos="fade-up">
-                        <div class="collection-image">
+                    <article class="collection-item collection-item--reverse" id="chapter-04" data-aos="fade-up">
+                        <div class="collection-item__image">
                             <img loading="lazy" src="../assets/images/alcoba5.jpeg" alt="Colección Hokkaido">
                         </div>
-                        <div class="collection-content">
-                            <span class="collection-number">04</span>
+                        <div class="collection-item__content">
+                            <span class="collection-item__number">04</span>
                             <span>Capítulo 4 | Hokkaido</span>
                             <h2>Sombra de Nieve</h2>
                             <p>Inviernos largos, paisajes blancos y arquitectura minimalista.</p>
@@ -157,11 +157,11 @@
                     </article>
 
                     <article class="collection-item" id="chapter-05" data-aos="fade-up">
-                        <div class="collection-image">
+                        <div class="collection-item__image">
                             <img loading="lazy" src="../assets/images/alcoba13.jpeg" alt="Colección Noruega">
                         </div>
-                        <div class="collection-content">
-                            <span class="collection-number">05</span>
+                        <div class="collection-item__content">
+                            <span class="collection-item__number">05</span>
                             <span>Capítulo 5 | Noruega</span>
                             <h2>Costa de Fiordos</h2>
                             <p>Arenas negras, montañas afiladas y la calma del mar frío que moldea cada prenda.</p>
@@ -169,12 +169,12 @@
                         </div>
                     </article>
 
-                    <article class="collection-item reverse" id="chapter-06" data-aos="fade-up">
-                        <div class="collection-image">
+                    <article class="collection-item collection-item--reverse" id="chapter-06" data-aos="fade-up">
+                        <div class="collection-item__image">
                             <img loading="lazy" src="../assets/images/alcoba14.jpeg" alt="Colección Groenlandia">
                         </div>
-                        <div class="collection-content">
-                            <span class="collection-number">06</span>
+                        <div class="collection-item__content">
+                            <span class="collection-item__number">06</span>
                             <span>Capítulo 6 | Groenlandia</span>
                             <h2>Deriva Glaciar</h2>
                             <p>Tonos de hielo y aguas profundas para una colección pensada para el frío extremo.</p>
@@ -187,12 +187,12 @@
 
         <footer class="site-footer">
             <div class="container">
-                <div class="footer-top">
-                    <div class="footer-brand">
-                        <a href="../index.html" class="footer-logo">ALCOBA</a>
+                <div class="site-footer__top">
+                    <div class="site-footer__brand">
+                        <a href="../index.html" class="site-footer__logo">ALCOBA</a>
                         <p>Designed for every season.</p>
                     </div>
-                    <div class="footer-links">
+                    <div class="site-footer__links">
                         <div>
                             <h4>Navegación</h4>
                             <ul>
@@ -246,7 +246,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="footer-bottom">
+                <div class="site-footer__bottom">
                     <p>&copy; 2026 ALCOBA. Todos los derechos reservados.</p>
                 </div>
             </div>

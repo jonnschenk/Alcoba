@@ -108,8 +108,8 @@
 
             addItem({ id, name, price, image });
 
-            button.classList.add("is-added");
-            window.setTimeout(() => button.classList.remove("is-added"), 900);
+            button.classList.add("product-card__add--added");
+            window.setTimeout(() => button.classList.remove("product-card__add--added"), 900);
         });
     });
 

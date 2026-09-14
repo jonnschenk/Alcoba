@@ -7,7 +7,7 @@
   background-color: vars.$color-surface;
 }
 
-.collections-grid {
+.featured-collections__grid {
   display: grid;
   gap: 2rem;
 }
@@ -37,7 +37,7 @@
   }
 }
 
-.collection-info {
+.collection-card__info {
   padding: 1.5rem;
 
   h3 {
@@ -69,7 +69,7 @@
 }
 
 @include mixins.respond-to(tablet) {
-  .collections-grid {
+  .featured-collections__grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -79,7 +79,7 @@
     padding-block: 8rem;
   }
 
-  .collections-grid {
+  .featured-collections__grid {
     grid-template-columns: repeat(4, 1fr);
     gap: 2.5rem;
   }

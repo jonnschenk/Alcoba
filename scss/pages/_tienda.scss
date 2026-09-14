@@ -54,7 +54,7 @@
   padding-block: 3.5rem;
 }
 
-.shop-layout {
+.shop__layout {
   display: flex;
   flex-direction: column;
   gap: 3rem;
@@ -102,7 +102,7 @@
   }
 
   a,
-  .filter-btn {
+  .shop-filter__btn {
     display: block;
     width: 100%;
     padding: 0;
@@ -123,7 +123,7 @@
     }
   }
 
-  .filter-btn.is-active {
+  .shop-filter__btn.shop-filter__btn--active {
     color: vars.$color-text;
     font-weight: 600;
   }
@@ -179,7 +179,7 @@
   line-height: 1.6;
 }
 
-.products-grid {
+.shop-products__grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 2.5rem 1rem;
@@ -285,7 +285,7 @@
     color: vars.$color-surface;
   }
 
-  &.is-added {
+  &.product-card__add--added {
     background-color: vars.$color-text;
     color: vars.$color-surface;
   }
@@ -296,7 +296,7 @@
     padding-block: 5rem;
   }
 
-  .shop-layout {
+  .shop__layout {
     display: grid;
     grid-template-columns: 10rem 1fr;
     gap: 2rem;
@@ -313,7 +313,7 @@
     padding-bottom: 1.5rem;
   }
 
-  .products-grid {
+  .shop-products__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 2.5rem 1.25rem;
   }
@@ -333,12 +333,12 @@
 }
 
 @include mixins.respond-to(desktop) {
-  .shop-layout {
+  .shop__layout {
     grid-template-columns: 12rem 1fr;
     gap: 3rem;
   }
 
-  .products-grid {
+  .shop-products__grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 3rem 1.5rem;
   }

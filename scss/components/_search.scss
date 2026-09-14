@@ -1,8 +1,8 @@
 @use "../abstracts/variables" as vars;
 @use "../abstracts/mixins" as mixins;
 
-.navbar-action {
-  &.navbar-action--search {
+.navbar-actions__action {
+  &.navbar-actions__action--search {
     padding: 0;
     border: 0;
     background: none;
