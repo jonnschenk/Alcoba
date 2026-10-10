@@ -2,7 +2,7 @@
     const grid = document.getElementById("productsGrid");
     if (!grid) return;
 
-    const filterButtons = Array.from(document.querySelectorAll(".filter-btn"));
+    const filterButtons = Array.from(document.querySelectorAll(".shop-filters__button"));
     const sortSelect = document.getElementById("sortSelect");
     const clearButton = document.getElementById("clearFilters");
     const emptyMessage = document.getElementById("productsEmpty");
@@ -72,6 +72,11 @@
         return sorted;
     };
 
+    const setPressed = (button, pressed) => {
+        button.setAttribute("aria-pressed", String(pressed));
+        button.classList.toggle("is-active", pressed);
+    };
+
     const hasActiveFilters = () =>
         Object.values(activeFilters).some((set) => set.size > 0) || searchQuery !== "";
 
@@ -101,15 +106,13 @@
             const set = activeFilters[group];
             if (!set) return;
 
-            if (set.has(value)) {
-                set.delete(value);
-                button.setAttribute("aria-pressed", "false");
-                button.classList.remove("is-active");
-            } else {
+            const pressed = !set.has(value);
+            if (pressed) {
                 set.add(value);
-                button.setAttribute("aria-pressed", "true");
-                button.classList.add("is-active");
+            } else {
+                set.delete(value);
             }
+            setPressed(button, pressed);
 
             render();
         });
@@ -129,10 +132,7 @@
     if (clearButton) {
         clearButton.addEventListener("click", () => {
             Object.values(activeFilters).forEach((set) => set.clear());
-            filterButtons.forEach((button) => {
-                button.setAttribute("aria-pressed", "false");
-                button.classList.remove("is-active");
-            });
+            filterButtons.forEach((button) => setPressed(button, false));
             searchQuery = "";
             if (searchInput) searchInput.value = "";
             render();

@@ -2,6 +2,7 @@
 @use "../abstracts/mixins" as mixins;
 @use "../base/base";
 
+// Hero
 .collections-hero {
   position: relative;
   display: flex;
@@ -12,13 +13,13 @@
   background-image: url("../assets/images/alcoba1.jpeg");
   background-size: cover;
   background-position: center;
-}
 
-.collections-hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(23, 23, 23, 0.75), rgba(23, 23, 23, 0) 55%);
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(vars.$color-text, 0.75), rgba(vars.$color-text, 0) 55%);
+  }
 }
 
 .collections-hero__inner {
@@ -26,12 +27,13 @@
   z-index: 1;
   width: 100%;
   padding-block: clamp(2.5rem, 6vw, 4rem);
+  color: vars.$color-background;
 }
 
 .collections-hero__eyebrow {
   @extend %eyebrow-label;
   margin-bottom: 1.5rem;
-  color: vars.$color-background;
+  color: inherit;
   opacity: 0.75;
 }
 
@@ -40,14 +42,10 @@
   flex-direction: column;
   gap: 1.5rem;
   padding-top: 1.5rem;
-  border-top: 1px solid rgba(244, 241, 235, 0.3);
+  border-top: 1px solid rgba(vars.$color-background, 0.3);
 }
 
 .collections-hero__title {
-  margin: 0;
-  color: vars.$color-background;
-  font-family: vars.$font-heading;
-  font-weight: 400;
   font-size: clamp(2rem, 5vw, 3rem);
   line-height: 0.95;
   letter-spacing: -0.01em;
@@ -61,32 +59,16 @@
 }
 
 .collections-hero__text {
-  margin: 0 0 1rem;
-  color: vars.$color-background;
+  margin-bottom: 1rem;
   font-size: 0.9375rem;
-  line-height: 1.6;
   opacity: 0.85;
 }
 
 .collections-hero__count {
-  color: vars.$color-background;
   font-family: vars.$font-heading;
   font-size: 0.8rem;
   letter-spacing: 0.08em;
   opacity: 0.6;
-}
-
-@include mixins.respond-to(desktop) {
-  .collections-hero__row {
-    flex-direction: row;
-    align-items: flex-end;
-    justify-content: space-between;
-  }
-
-  .collections-hero__meta {
-    align-items: flex-end;
-    text-align: right;
-  }
 }
 
 .collections-hero__index {
@@ -95,26 +77,16 @@
   gap: 0.75rem 1.25rem;
   margin-top: 2rem;
   padding-top: 1.5rem;
-  border-top: 1px solid rgba(244, 241, 235, 0.3);
+  border-top: 1px solid rgba(vars.$color-background, 0.3);
 }
 
 .collections-hero__index-link {
   display: inline-flex;
   align-items: baseline;
   gap: 0.4rem;
-  color: vars.$color-background;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  @include mixins.uppercase-label;
   opacity: 0.6;
   transition: opacity vars.$transition-base;
-
-  span {
-    font-family: vars.$font-heading;
-    font-size: 0.9rem;
-    letter-spacing: normal;
-  }
 
   &:hover,
   &:focus-visible {
@@ -122,8 +94,15 @@
   }
 }
 
+.collections-hero__index-number {
+  font-family: vars.$font-heading;
+  font-size: 0.9rem;
+  letter-spacing: normal;
+}
+
+// Showcase
 .collection-showcase {
-  padding: 5rem 0;
+  padding-block: 5rem;
   background-color: vars.$color-surface;
 }
 
@@ -140,91 +119,89 @@
   }
 }
 
-.collection-image {
+.collection-item__media {
   overflow: hidden;
+}
 
-  img {
-    width: 100%;
-    aspect-ratio: 3 / 2;
-    display: block;
-    object-fit: cover;
-    transition: transform 700ms ease;
-  }
+.collection-item__image {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  transition: transform 700ms ease;
 
-  &:hover img {
+  .collection-item__media:hover & {
     transform: scale(1.045);
   }
 }
 
-.collection-content {
+.collection-item__number {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: vars.$color-text;
+  font-family: vars.$font-heading;
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  line-height: 1;
+  opacity: 0.12;
+}
 
-  span {
-    display: inline-block;
-    margin-bottom: 0.5rem;
-    color: vars.$color-text-muted;
-    font-size: 0.75rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-  }
+.collection-item__chapter {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  color: vars.$color-text-muted;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
 
-  .collection-number {
-    display: block;
-    margin-bottom: 0.25rem;
-    color: vars.$color-text;
-    font-family: vars.$font-heading;
-    font-size: clamp(3rem, 6vw, 4.5rem);
-    line-height: 1;
-    letter-spacing: normal;
-    text-transform: none;
-    opacity: 0.12;
-  }
+.collection-item__title {
+  margin-bottom: 1rem;
+  color: vars.$color-text;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
 
-  h2 {
-    margin-bottom: 1rem;
-    font-family: vars.$font-heading;
-    font-size: clamp(2rem, 4vw, 3rem);
-    color: vars.$color-text;
-  }
+.collection-item__text {
+  max-width: 32rem;
+  margin-bottom: 2rem;
+  color: vars.$color-text-muted;
+  line-height: 1.8;
+}
 
-  p {
-    max-width: 32rem;
-    margin-bottom: 2rem;
-    color: vars.$color-text-muted;
-    line-height: 1.8;
-  }
+.collection-item__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: vars.$color-text;
+  @include mixins.uppercase-label(0.8rem);
+  transition: opacity vars.$transition-base;
 
-  a {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: vars.$color-text;
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    transition: opacity vars.$transition-base;
-
-    &:hover {
-      opacity: 0.6;
-    }
+  &:hover,
+  &:focus-visible {
+    opacity: 0.6;
   }
 }
 
 @include mixins.respond-to(desktop) {
+  .collections-hero__row {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  .collections-hero__meta {
+    align-items: flex-end;
+    text-align: right;
+  }
+
   .collection-item {
     grid-template-columns: 1.15fr 1fr;
     gap: 5rem;
   }
 
-  .reverse {
+  .collection-item--reverse {
     grid-template-columns: 1fr 1.15fr;
 
-    .collection-image {
+    .collection-item__media {
       order: 2;
-    }
-
-    .collection-content {
-      order: 1;
     }
   }
 }

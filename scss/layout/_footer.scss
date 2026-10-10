@@ -6,55 +6,50 @@
   border-top: 1px solid vars.$color-border;
 }
 
-.footer-top {
+.site-footer__top {
   display: grid;
   gap: 3rem;
   padding-bottom: 3rem;
 }
 
-.footer-brand p {
+.site-footer__logo {
+  color: vars.$color-text;
+  font-family: vars.$font-heading;
+  font-size: 2rem;
+}
+
+.site-footer__tagline {
   margin-top: 1rem;
   color: vars.$color-text-muted;
 }
 
-.footer-logo {
-  font-family: vars.$font-heading;
-  font-size: 2rem;
-  color: vars.$color-text;
-}
-
-.footer-links {
+.site-footer__nav {
   display: grid;
   gap: 1rem;
 }
 
-.footer-links h4 {
+.site-footer__heading {
   margin-bottom: 1rem;
   font-size: 1rem;
   text-transform: uppercase;
 }
 
-.footer-links ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.footer-links li + li {
+.site-footer__list li + li {
   margin-top: 0.2rem;
 }
 
-.footer-links a {
+.site-footer__link {
   color: vars.$color-text-muted;
-  transition: color 0.3s ease;
+  transition: color vars.$transition-base;
+
+  &:hover,
+  &:focus-visible {
+    color: vars.$color-text;
+  }
 }
 
-.footer-links a:hover {
-  color: vars.$color-text;
-}
-
-.footer-bottom {
-  padding: 2rem 0;
+.site-footer__bottom {
+  padding-block: 2rem;
   border-top: 1px solid vars.$color-border;
   color: vars.$color-text-muted;
   font-size: 0.9rem;
@@ -62,12 +57,12 @@
 }
 
 @include mixins.respond-to(tablet) {
-  .footer-top {
+  .site-footer__top {
     grid-template-columns: 1fr 2fr;
     align-items: start;
   }
 
-  .footer-links {
+  .site-footer__nav {
     grid-template-columns: repeat(3, 1fr);
   }
 }

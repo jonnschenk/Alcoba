@@ -18,7 +18,7 @@
     <body>
         <header class="site-header">
             <nav class="navbar navbar-expand-lg navbar-light" aria-label="Navegación principal">
-                <div class="container-fluid navbar-container">
+                <div class="container-fluid site-header__container">
                     <a class="navbar-brand" href="../index.html">ALCOBA</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Abrir menú de navegación"><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="mainNavbar">
@@ -40,11 +40,11 @@
                             </li>
                         </ul>
 
-                        <div class="navbar-actions">
-                            <button type="button" class="navbar-action navbar-action--search" id="searchToggle" aria-label="Buscar productos" aria-expanded="false" aria-controls="searchOverlay"><i class="bi bi-search"></i></button>
-                            <button type="button" class="navbar-action navbar-action--cart" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" aria-controls="cartOffcanvas" aria-label="Ver carrito">
+                        <div class="site-header__actions">
+                            <button type="button" class="site-header__action" id="searchToggle" aria-label="Buscar productos" aria-expanded="false" aria-controls="searchOverlay"><i class="bi bi-search"></i></button>
+                            <button type="button" class="site-header__action site-header__action--cart" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" aria-controls="cartOffcanvas" aria-label="Ver carrito">
                                 <i class="bi bi-handbag"></i>
-                                <span class="navbar-action__badge" id="cartCount" hidden>0</span>
+                                <span class="site-header__badge" id="cartCount" hidden>0</span>
                             </button>
                         </div>
                     </div>
@@ -55,27 +55,27 @@
                     <form class="search-overlay__form" action="shop.html" method="get" role="search">
                         <i class="bi bi-search search-overlay__icon" aria-hidden="true"></i>
                         <label for="searchInput" class="visually-hidden">Buscar productos</label>
-                        <input type="search" id="searchInput" name="q" placeholder="Buscar abrigos, suéteres, accesorios…" autocomplete="off">
+                        <input type="search" class="search-overlay__input" id="searchInput" name="q" placeholder="Buscar abrigos, suéteres, accesorios…" autocomplete="off">
                     </form>
                     <button type="button" class="search-overlay__close" id="searchClose" aria-label="Cerrar búsqueda"><i class="bi bi-x-lg"></i></button>
                 </div>
             </div>
         </header>
 
-        <div class="offcanvas offcanvas-end cart-offcanvas" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartOffcanvasLabel">
-            <div class="offcanvas-header">
-                <h2 class="offcanvas-title" id="cartOffcanvasLabel">Carrito</h2>
+        <div class="offcanvas offcanvas-end cart" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartOffcanvasLabel">
+            <div class="offcanvas-header cart__header">
+                <h2 class="offcanvas-title cart__title" id="cartOffcanvasLabel">Carrito</h2>
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar carrito"></button>
             </div>
-            <div class="offcanvas-body">
-                <ul class="cart-items" id="cartItems"></ul>
-                <p class="cart-empty" id="cartEmpty">Tu carrito está vacío.</p>
-                <div class="cart-summary" id="cartSummary" hidden>
-                    <div class="cart-summary__row">
+            <div class="offcanvas-body cart__body">
+                <ul class="cart__items" id="cartItems"></ul>
+                <p class="cart__empty" id="cartEmpty">Tu carrito está vacío.</p>
+                <div class="cart__summary" id="cartSummary" hidden>
+                    <div class="cart__summary-row">
                         <span>Subtotal</span>
                         <span id="cartSubtotal">$0 USD</span>
                     </div>
-                    <a href="#" class="btn btn-dark cart-checkout" id="cartCheckout">Finalizar compra</a>
+                    <a href="#" class="btn btn-dark cart__checkout" id="cartCheckout">Finalizar compra</a>
                 </div>
             </div>
         </div>
@@ -87,7 +87,7 @@
                     <span class="about-hero__eyebrow">Nosotros</span>
                     <h1 class="about-hero__title">Conoce la historia y manifiesto de ALCOBA.</h1>
                     <p class="about-hero__text">Una firma dedicada a crear indumentaria atemporal, inspirada en la naturaleza y la arquitectura del invierno.</p>
-                    <div class="about-hero__rule--bottom"></div>
+                    <div class="about-hero__rule about-hero__rule--bottom"></div>
                 </div>
             </section>
 
@@ -95,13 +95,13 @@
                 <div class="container">
                     <div class="about-introduction__grid">
                         <div class="about-introduction__content" data-aos="fade-up">
-                            <span class="section-label">Nuestra filosofía</span>
-                            <h2>Vestir también es una forma de habitar.</h2>
-                            <p>ALCOBA explora la relación entre las personas, los espacios y las prendas que los acompañan.</p>
-                            <p>Nuestra propuesta parte de la simplicidad: siluetas limpias, materiales honestos y piezas pensadas para permanecer más allá de una temporada.</p>
+                            <span class="eyebrow about-introduction__eyebrow">Nuestra filosofía</span>
+                            <h2 class="about-introduction__title">Vestir también es una forma de habitar.</h2>
+                            <p class="about-introduction__text">ALCOBA explora la relación entre las personas, los espacios y las prendas que los acompañan.</p>
+                            <p class="about-introduction__text">Nuestra propuesta parte de la simplicidad: siluetas limpias, materiales honestos y piezas pensadas para permanecer más allá de una temporada.</p>
                         </div>
-                        <div class="about-introduction__image" data-aos="fade-up" data-aos-delay="150">
-                            <img loading="lazy" src="../assets/images/alcoba15.jpeg" alt="Universo visual de ALCOBA">
+                        <div class="about-introduction__media" data-aos="fade-up" data-aos-delay="150">
+                            <img class="about-introduction__image" loading="lazy" src="../assets/images/alcoba15.jpeg" alt="Universo visual de ALCOBA">
                         </div>
                     </div>
                 </div>
@@ -110,9 +110,9 @@
             <section class="about-manifesto">
                 <div class="container">
                     <div class="about-manifesto__content" data-aos="fade-up">
-                        <span class="section-label">Manifiesto</span>
-                        <h2>Menos ruido. Más intención.</h2>
-                        <p>Creamos prendas para permanecer, no para perseguir temporadas.</p>
+                        <span class="eyebrow about-manifesto__eyebrow">Manifiesto</span>
+                        <h2 class="about-manifesto__title">Menos ruido. Más intención.</h2>
+                        <p class="about-manifesto__text">Creamos prendas para permanecer, no para perseguir temporadas.</p>
                     </div>
                 </div>
             </section>
@@ -120,32 +120,32 @@
             <section class="about-values">
                 <div class="container">
                     <div class="section-header">
-                        <span class="section-label">Nuestros valores</span>
-                        <h2 class="section-title">Lo que define ALCOBA.</h2>
+                        <span class="eyebrow">Nuestros valores</span>
+                        <h2 class="section-header__title">Lo que define ALCOBA.</h2>
                     </div>
-                    <div class="values-grid">
+                    <div class="about-values__grid">
                         <article class="value-card" data-aos="fade-up">
-                            <span>01</span>
-                            <h3>Atemporalidad</h3>
-                            <p>Diseñamos piezas que trascienden las temporadas.</p>
+                            <span class="value-card__number">01</span>
+                            <h3 class="value-card__title">Atemporalidad</h3>
+                            <p class="value-card__text">Diseñamos piezas que trascienden las temporadas.</p>
                         </article>
 
                         <article class="value-card" data-aos="fade-up" data-aos-delay="100">
-                            <span>02</span>
-                            <h3>Materialidad</h3>
-                            <p>La textura y el material forman parte esencial de cada diseño.</p>
+                            <span class="value-card__number">02</span>
+                            <h3 class="value-card__title">Materialidad</h3>
+                            <p class="value-card__text">La textura y el material forman parte esencial de cada diseño.</p>
                         </article>
 
                         <article class="value-card" data-aos="fade-up" data-aos-delay="200">
-                            <span>03</span>
-                            <h3>Funcionalidad</h3>
-                            <p>Cada elemento tiene un propósito dentro de la prenda.</p>
+                            <span class="value-card__number">03</span>
+                            <h3 class="value-card__title">Funcionalidad</h3>
+                            <p class="value-card__text">Cada elemento tiene un propósito dentro de la prenda.</p>
                         </article>
 
                         <article class="value-card" data-aos="fade-up" data-aos-delay="300">
-                            <span>04</span>
-                            <h3>Identidad</h3>
-                            <p>Una estética propia que no depende de las tendencias.</p>
+                            <span class="value-card__number">04</span>
+                            <h3 class="value-card__title">Identidad</h3>
+                            <p class="value-card__text">Una estética propia que no depende de las tendencias.</p>
                         </article>
                     </div>
                 </div>
@@ -153,11 +153,11 @@
 
             <section class="about-editorial">
                 <div class="container">
-                    <figure class="about-editorial__image" data-aos="fade-up">
-                        <img loading="lazy" src="../assets/images/alcoba16.jpeg" alt="Detalle editorial de ALCOBA">
+                    <figure class="about-editorial__media" data-aos="fade-up">
+                        <img class="about-editorial__image" loading="lazy" src="../assets/images/alcoba16.jpeg" alt="Detalle editorial de ALCOBA">
                     </figure>
                     <div class="about-editorial__caption" data-aos="fade-up">
-                        <p>Cada temporada toma forma a partir de este mismo principio: menos piezas, mejor pensadas.</p>
+                        <p class="about-editorial__text">Cada temporada toma forma a partir de este mismo principio: menos piezas, mejor pensadas.</p>
                         <a href="collections.html" class="section-link">Ver colecciones</a>
                     </div>
                 </div>
@@ -165,13 +165,13 @@
 
             <section class="newsletter">
                 <div class="container">
-                    <div class="newsletter-content" data-aos="fade-up">
-                        <span class="section-label">Newsletter</span>
-                        <h2 class="newsletter-title">Mantente conectado con Alcoba</h2>
-                        <p class="newsletter-description">Recibe acceso anticipado a nuevas colecciones, editoriales e inspiración directamente en tu correo.</p>
-                        <form class="newsletter-form">
-                            <input type="email" name="email" placeholder="Ingresa tu correo electrónico" required aria-label="Correo electrónico">
-                            <button type="submit" class="btn btn-dark">Suscribirse</button>
+                    <div class="newsletter__content" data-aos="fade-up">
+                        <span class="eyebrow">Newsletter</span>
+                        <h2 class="newsletter__title">Mantente conectado con Alcoba</h2>
+                        <p class="newsletter__description">Recibe acceso anticipado a nuevas colecciones, editoriales e inspiración directamente en tu correo.</p>
+                        <form class="newsletter__form">
+                            <input type="email" class="newsletter__input" name="email" placeholder="Ingresa tu correo electrónico" required aria-label="Correo electrónico">
+                            <button type="submit" class="btn btn-dark newsletter__button">Suscribirse</button>
                         </form>
                     </div>
                 </div>
@@ -180,66 +180,66 @@
 
         <footer class="site-footer">
             <div class="container">
-                <div class="footer-top">
-                    <div class="footer-brand">
-                        <a href="../index.html" class="footer-logo">ALCOBA</a>
-                        <p>Designed for every season.</p>
+                <div class="site-footer__top">
+                    <div class="site-footer__brand">
+                        <a href="../index.html" class="site-footer__logo">ALCOBA</a>
+                        <p class="site-footer__tagline">Designed for every season.</p>
                     </div>
-                    <div class="footer-links">
+                    <div class="site-footer__nav">
                         <div>
-                            <h4>Navegación</h4>
-                            <ul>
+                            <h4 class="site-footer__heading">Navegación</h4>
+                            <ul class="site-footer__list">
                                 <li>
-                                    <a href="../index.html">Inicio</a>
+                                    <a class="site-footer__link" href="../index.html">Inicio</a>
                                 </li>
                                 <li>
-                                    <a href="../pages/collections.html">Colecciones</a>
+                                    <a class="site-footer__link" href="collections.html">Colecciones</a>
                                 </li>
                                 <li>
-                                    <a href="../pages/shop.html">Tienda</a>
+                                    <a class="site-footer__link" href="shop.html">Tienda</a>
                                 </li>
                                 <li>
-                                    <a href="../pages/journal.html">Journal</a>
+                                    <a class="site-footer__link" href="journal.html">Journal</a>
                                 </li>
                                 <li>
-                                    <a href="../pages/about.html">Nosotros</a>
+                                    <a class="site-footer__link" href="about.html">Nosotros</a>
                                 </li>
                             </ul>
                         </div>
                         <div>
-                            <h4>Ayuda</h4>
-                            <ul>
+                            <h4 class="site-footer__heading">Ayuda</h4>
+                            <ul class="site-footer__list">
                                 <li>
-                                    <a href="#">Contacto</a>
+                                    <a class="site-footer__link" href="#">Contacto</a>
                                 </li>
                                 <li>
-                                    <a href="#">Envíos</a>
+                                    <a class="site-footer__link" href="#">Envíos</a>
                                 </li>
                                 <li>
-                                    <a href="#">Devoluciones</a>
+                                    <a class="site-footer__link" href="#">Devoluciones</a>
                                 </li>
                                 <li>
-                                    <a href="#">Preguntas frecuentes</a>
+                                    <a class="site-footer__link" href="#">Preguntas frecuentes</a>
                                 </li>
                             </ul>
                         </div>
                         <div>
-                            <h4>Síguenos</h4>
-                            <ul>
+                            <h4 class="site-footer__heading">Síguenos</h4>
+                            <ul class="site-footer__list">
                                 <li>
-                                    <a href="#">Instagram</a>
+                                    <a class="site-footer__link" href="#">Instagram</a>
                                 </li>
                                 <li>
-                                    <a href="#">Pinterest</a>
+                                    <a class="site-footer__link" href="#">Pinterest</a>
                                 </li>
                                 <li>
-                                    <a href="#">Behance</a>
+                                    <a class="site-footer__link" href="#">Behance</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div class="footer-bottom">
+                <div class="site-footer__bottom">
                     <p>&copy; 2026 ALCOBA. Todos los derechos reservados.</p>
                 </div>
             </div>

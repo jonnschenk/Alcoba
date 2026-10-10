@@ -18,7 +18,7 @@
     <body>
         <header class="site-header">
             <nav class="navbar navbar-expand-lg navbar-light" aria-label="Navegación principal">
-                <div class="container-fluid navbar-container">
+                <div class="container-fluid site-header__container">
                     <a class="navbar-brand" href="../index.html">ALCOBA</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Abrir menú de navegación"><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="mainNavbar">
@@ -40,11 +40,11 @@
                             </li>
                         </ul>
 
-                        <div class="navbar-actions">
-                            <button type="button" class="navbar-action navbar-action--search" id="searchToggle" aria-label="Buscar productos" aria-expanded="false" aria-controls="searchOverlay"><i class="bi bi-search"></i></button>
-                            <button type="button" class="navbar-action navbar-action--cart" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" aria-controls="cartOffcanvas" aria-label="Ver carrito">
+                        <div class="site-header__actions">
+                            <button type="button" class="site-header__action" id="searchToggle" aria-label="Buscar productos" aria-expanded="false" aria-controls="searchOverlay"><i class="bi bi-search"></i></button>
+                            <button type="button" class="site-header__action site-header__action--cart" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" aria-controls="cartOffcanvas" aria-label="Ver carrito">
                                 <i class="bi bi-handbag"></i>
-                                <span class="navbar-action__badge" id="cartCount" hidden>0</span>
+                                <span class="site-header__badge" id="cartCount" hidden>0</span>
                             </button>
                         </div>
                     </div>
@@ -55,27 +55,27 @@
                     <form class="search-overlay__form" action="shop.html" method="get" role="search">
                         <i class="bi bi-search search-overlay__icon" aria-hidden="true"></i>
                         <label for="searchInput" class="visually-hidden">Buscar productos</label>
-                        <input type="search" id="searchInput" name="q" placeholder="Buscar abrigos, suéteres, accesorios…" autocomplete="off">
+                        <input type="search" class="search-overlay__input" id="searchInput" name="q" placeholder="Buscar abrigos, suéteres, accesorios…" autocomplete="off">
                     </form>
                     <button type="button" class="search-overlay__close" id="searchClose" aria-label="Cerrar búsqueda"><i class="bi bi-x-lg"></i></button>
                 </div>
             </div>
         </header>
 
-        <div class="offcanvas offcanvas-end cart-offcanvas" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartOffcanvasLabel">
-            <div class="offcanvas-header">
-                <h2 class="offcanvas-title" id="cartOffcanvasLabel">Carrito</h2>
+        <div class="offcanvas offcanvas-end cart" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartOffcanvasLabel">
+            <div class="offcanvas-header cart__header">
+                <h2 class="offcanvas-title cart__title" id="cartOffcanvasLabel">Carrito</h2>
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar carrito"></button>
             </div>
-            <div class="offcanvas-body">
-                <ul class="cart-items" id="cartItems"></ul>
-                <p class="cart-empty" id="cartEmpty">Tu carrito está vacío.</p>
-                <div class="cart-summary" id="cartSummary" hidden>
-                    <div class="cart-summary__row">
+            <div class="offcanvas-body cart__body">
+                <ul class="cart__items" id="cartItems"></ul>
+                <p class="cart__empty" id="cartEmpty">Tu carrito está vacío.</p>
+                <div class="cart__summary" id="cartSummary" hidden>
+                    <div class="cart__summary-row">
                         <span>Subtotal</span>
                         <span id="cartSubtotal">$0 USD</span>
                     </div>
-                    <a href="#" class="btn btn-dark cart-checkout" id="cartCheckout">Finalizar compra</a>
+                    <a href="#" class="btn btn-dark cart__checkout" id="cartCheckout">Finalizar compra</a>
                 </div>
             </div>
         </div>
@@ -93,73 +93,73 @@
 
             <section class="shop">
                 <div class="container">
-                    <div class="shop-layout">
+                    <div class="shop__layout">
                         <aside class="shop-filters" id="shopFilters">
                             <button type="button" class="shop-filters__clear" id="clearFilters" hidden>Limpiar filtros</button>
-                            <div class="shop-filter shop-filter--search">
-                                <label for="shopSearch" class="section-label">Buscar</label>
-                                <input type="search" id="shopSearch" placeholder="Buscar productos..." autocomplete="off">
+                            <div class="shop-filters__group">
+                                <label for="shopSearch" class="eyebrow shop-filters__label">Buscar</label>
+                                <input type="search" class="shop-filters__input" id="shopSearch" placeholder="Buscar productos..." autocomplete="off">
                             </div>
-                            <div class="shop-filter">
-                                <span class="section-label">Categorías</span>
-                                <ul>
+                            <div class="shop-filters__group">
+                                <span class="eyebrow shop-filters__label">Categorías</span>
+                                <ul class="shop-filters__list">
                                     <li>
-                                        <button type="button" class="filter-btn" data-filter-group="categoria" data-value="abrigos" aria-pressed="false">Abrigos</button>
+                                        <button type="button" class="shop-filters__button" data-filter-group="categoria" data-value="abrigos" aria-pressed="false">Abrigos</button>
                                     </li>
                                     <li>
-                                        <button type="button" class="filter-btn" data-filter-group="categoria" data-value="tejidos" aria-pressed="false">Tejidos</button>
+                                        <button type="button" class="shop-filters__button" data-filter-group="categoria" data-value="tejidos" aria-pressed="false">Tejidos</button>
                                     </li>
                                     <li>
-                                        <button type="button" class="filter-btn" data-filter-group="categoria" data-value="accesorios" aria-pressed="false">Accesorios</button>
+                                        <button type="button" class="shop-filters__button" data-filter-group="categoria" data-value="accesorios" aria-pressed="false">Accesorios</button>
                                     </li>
                                     <li>
-                                        <button type="button" class="filter-btn" data-filter-group="categoria" data-value="pantalones" aria-pressed="false">Pantalones</button>
+                                        <button type="button" class="shop-filters__button" data-filter-group="categoria" data-value="pantalones" aria-pressed="false">Pantalones</button>
                                     </li>
                                     <li>
-                                        <button type="button" class="filter-btn" data-filter-group="categoria" data-value="calzado" aria-pressed="false">Calzado</button>
+                                        <button type="button" class="shop-filters__button" data-filter-group="categoria" data-value="calzado" aria-pressed="false">Calzado</button>
                                     </li>
                                 </ul>
                             </div>
-                            <div class="shop-filter">
-                                <span class="section-label">Color</span>
-                                <ul>
+                            <div class="shop-filters__group">
+                                <span class="eyebrow shop-filters__label">Color</span>
+                                <ul class="shop-filters__list">
                                     <li>
-                                        <button type="button" class="filter-btn" data-filter-group="color" data-value="negro" aria-pressed="false">Negro</button>
+                                        <button type="button" class="shop-filters__button" data-filter-group="color" data-value="negro" aria-pressed="false">Negro</button>
                                     </li>
                                     <li>
-                                        <button type="button" class="filter-btn" data-filter-group="color" data-value="gris" aria-pressed="false">Gris</button>
+                                        <button type="button" class="shop-filters__button" data-filter-group="color" data-value="gris" aria-pressed="false">Gris</button>
                                     </li>
                                     <li>
-                                        <button type="button" class="filter-btn" data-filter-group="color" data-value="beige" aria-pressed="false">Beige</button>
+                                        <button type="button" class="shop-filters__button" data-filter-group="color" data-value="beige" aria-pressed="false">Beige</button>
                                     </li>
                                     <li>
-                                        <button type="button" class="filter-btn" data-filter-group="color" data-value="blanco" aria-pressed="false">Blanco</button>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="shop-filter">
-                                <span class="section-label">Talla</span>
-                                <ul>
-                                    <li>
-                                        <button type="button" class="filter-btn" data-filter-group="talla" data-value="xs" aria-pressed="false">XS</button>
-                                    </li>
-                                    <li>
-                                        <button type="button" class="filter-btn" data-filter-group="talla" data-value="s" aria-pressed="false">S</button>
-                                    </li>
-                                    <li>
-                                        <button type="button" class="filter-btn" data-filter-group="talla" data-value="m" aria-pressed="false">M</button>
-                                    </li>
-                                    <li>
-                                        <button type="button" class="filter-btn" data-filter-group="talla" data-value="l" aria-pressed="false">L</button>
-                                    </li>
-                                    <li>
-                                        <button type="button" class="filter-btn" data-filter-group="talla" data-value="xl" aria-pressed="false">XL</button>
+                                        <button type="button" class="shop-filters__button" data-filter-group="color" data-value="blanco" aria-pressed="false">Blanco</button>
                                     </li>
                                 </ul>
                             </div>
-                            <div class="shop-filter">
-                                <span class="section-label">Ordenar</span>
-                                <select aria-label="Ordenar productos" id="sortSelect">
+                            <div class="shop-filters__group">
+                                <span class="eyebrow shop-filters__label">Talla</span>
+                                <ul class="shop-filters__list">
+                                    <li>
+                                        <button type="button" class="shop-filters__button" data-filter-group="talla" data-value="xs" aria-pressed="false">XS</button>
+                                    </li>
+                                    <li>
+                                        <button type="button" class="shop-filters__button" data-filter-group="talla" data-value="s" aria-pressed="false">S</button>
+                                    </li>
+                                    <li>
+                                        <button type="button" class="shop-filters__button" data-filter-group="talla" data-value="m" aria-pressed="false">M</button>
+                                    </li>
+                                    <li>
+                                        <button type="button" class="shop-filters__button" data-filter-group="talla" data-value="l" aria-pressed="false">L</button>
+                                    </li>
+                                    <li>
+                                        <button type="button" class="shop-filters__button" data-filter-group="talla" data-value="xl" aria-pressed="false">XL</button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="shop-filters__group">
+                                <span class="eyebrow shop-filters__label">Ordenar</span>
+                                <select class="shop-filters__select" id="sortSelect" aria-label="Ordenar productos">
                                     <option value="recientes">Más recientes</option>
                                     <option value="precio-asc">Precio menor</option>
                                     <option value="precio-desc">Precio mayor</option>
@@ -168,10 +168,10 @@
                         </aside>
                         <div class="shop-products">
                             <p class="shop-products__empty" id="productsEmpty" hidden>No hay productos que coincidan con los filtros seleccionados.</p>
-                            <div class="products-grid" id="productsGrid">
+                            <div class="shop-products__grid" id="productsGrid">
                                 <article class="product-card" data-aos="fade-up" data-id="chaqueta-alpina-heavyweight" data-category="abrigos" data-color="negro gris" data-size="s m l" data-price="280">
-                                    <div class="product-card__image">
-                                        <img loading="lazy" src="../assets/images/abrigos.jpg" alt="Chaqueta Alpina Alcoba">
+                                    <div class="product-card__media">
+                                        <img class="product-card__image" loading="lazy" src="../assets/images/abrigos.jpg" alt="Chaqueta Alpina Alcoba">
                                         <span class="product-card__badge">Nuevo</span>
                                     </div>
                                     <div class="product-card__info">
@@ -185,8 +185,8 @@
                                 </article>
 
                                 <article class="product-card" data-aos="fade-up" data-aos-delay="100" data-id="sueter-lana-merino" data-category="tejidos" data-color="beige gris" data-size="xs s m l" data-price="160">
-                                    <div class="product-card__image">
-                                        <img loading="lazy" src="../assets/images/alcoba10.jpeg" alt="Suéter de Lana Nómada">
+                                    <div class="product-card__media">
+                                        <img class="product-card__image" loading="lazy" src="../assets/images/alcoba10.jpeg" alt="Suéter de Lana Nómada">
                                     </div>
                                     <div class="product-card__info">
                                         <h3 class="product-card__title">Suéter Lana Merino</h3>
@@ -199,8 +199,8 @@
                                 </article>
 
                                 <article class="product-card" data-aos="fade-up" data-aos-delay="200" data-id="abrigo-oversized-hokkaido" data-category="abrigos" data-color="blanco beige" data-size="m l xl" data-price="340">
-                                    <div class="product-card__image">
-                                        <img loading="lazy" src="../assets/images/alcoba9.jpeg" alt="Abrigo Estructura Blanca">
+                                    <div class="product-card__media">
+                                        <img class="product-card__image" loading="lazy" src="../assets/images/alcoba9.jpeg" alt="Abrigo Estructura Blanca">
                                     </div>
                                     <div class="product-card__info">
                                         <h3 class="product-card__title">Abrigo Oversized Hokkaido</h3>
@@ -213,8 +213,8 @@
                                 </article>
 
                                 <article class="product-card" data-aos="fade-up" data-aos-delay="300" data-id="bufanda-volcanica-termica" data-category="accesorios" data-color="negro beige" data-size="xs s m l xl" data-price="85">
-                                    <div class="product-card__image">
-                                        <img loading="lazy" src="../assets/images/accesorios.jpg" alt="Bufanda Volcánica">
+                                    <div class="product-card__media">
+                                        <img class="product-card__image" loading="lazy" src="../assets/images/accesorios.jpg" alt="Bufanda Volcánica">
                                     </div>
                                     <div class="product-card__info">
                                         <h3 class="product-card__title">Bufanda Volcánica Térmica</h3>
@@ -227,8 +227,8 @@
                                 </article>
 
                                 <article class="product-card" data-aos="fade-up" data-aos-delay="400" data-id="pantalon-termico-suiza" data-category="pantalones" data-color="negro gris" data-size="xs s m l xl" data-price="150">
-                                    <div class="product-card__image">
-                                        <img loading="lazy" src="../assets/images/pantalones.jpg" alt="Pantalón Térmico Suiza">
+                                    <div class="product-card__media">
+                                        <img class="product-card__image" loading="lazy" src="../assets/images/pantalones.jpg" alt="Pantalón Térmico Suiza">
                                     </div>
                                     <div class="product-card__info">
                                         <h3 class="product-card__title">Pantalón Térmico Suiza</h3>
@@ -241,8 +241,8 @@
                                 </article>
 
                                 <article class="product-card" data-aos="fade-up" data-aos-delay="500" data-id="botas-trapper-vibram" data-category="calzado" data-color="negro beige" data-size="m l xl" data-price="310">
-                                    <div class="product-card__image">
-                                        <img loading="lazy" src="../assets/images/calzado.jpg" alt="Botas Trapper Vibram">
+                                    <div class="product-card__media">
+                                        <img class="product-card__image" loading="lazy" src="../assets/images/calzado.jpg" alt="Botas Trapper Vibram">
                                     </div>
                                     <div class="product-card__info">
                                         <h3 class="product-card__title">Botas Trapper Vibram</h3>
@@ -261,13 +261,13 @@
 
             <section class="newsletter">
                 <div class="container">
-                    <div class="newsletter-content" data-aos="fade-up">
-                        <span class="section-label">Newsletter</span>
-                        <h2 class="newsletter-title">Mantente conectado con Alcoba</h2>
-                        <p class="newsletter-description">Recibe acceso anticipado a nuevas colecciones, editoriales e inspiración directamente en tu correo.</p>
-                        <form class="newsletter-form">
-                            <input type="email" name="email" placeholder="Ingresa tu correo electrónico" required aria-label="Correo electrónico">
-                            <button type="submit" class="btn btn-dark">Suscribirse</button>
+                    <div class="newsletter__content" data-aos="fade-up">
+                        <span class="eyebrow">Newsletter</span>
+                        <h2 class="newsletter__title">Mantente conectado con Alcoba</h2>
+                        <p class="newsletter__description">Recibe acceso anticipado a nuevas colecciones, editoriales e inspiración directamente en tu correo.</p>
+                        <form class="newsletter__form">
+                            <input type="email" class="newsletter__input" name="email" placeholder="Ingresa tu correo electrónico" required aria-label="Correo electrónico">
+                            <button type="submit" class="btn btn-dark newsletter__button">Suscribirse</button>
                         </form>
                     </div>
                 </div>
@@ -276,66 +276,66 @@
 
         <footer class="site-footer">
             <div class="container">
-                <div class="footer-top">
-                    <div class="footer-brand">
-                        <a href="../index.html" class="footer-logo">ALCOBA</a>
-                        <p>Designed for every season.</p>
+                <div class="site-footer__top">
+                    <div class="site-footer__brand">
+                        <a href="../index.html" class="site-footer__logo">ALCOBA</a>
+                        <p class="site-footer__tagline">Designed for every season.</p>
                     </div>
-                    <div class="footer-links">
+                    <div class="site-footer__nav">
                         <div>
-                            <h4>Navegación</h4>
-                            <ul>
+                            <h4 class="site-footer__heading">Navegación</h4>
+                            <ul class="site-footer__list">
                                 <li>
-                                    <a href="../index.html">Inicio</a>
+                                    <a class="site-footer__link" href="../index.html">Inicio</a>
                                 </li>
                                 <li>
-                                    <a href="../pages/collections.html">Colecciones</a>
+                                    <a class="site-footer__link" href="collections.html">Colecciones</a>
                                 </li>
                                 <li>
-                                    <a href="../pages/shop.html">Tienda</a>
+                                    <a class="site-footer__link" href="shop.html">Tienda</a>
                                 </li>
                                 <li>
-                                    <a href="../pages/journal.html">Journal</a>
+                                    <a class="site-footer__link" href="journal.html">Journal</a>
                                 </li>
                                 <li>
-                                    <a href="../pages/about.html">Nosotros</a>
+                                    <a class="site-footer__link" href="about.html">Nosotros</a>
                                 </li>
                             </ul>
                         </div>
                         <div>
-                            <h4>Ayuda</h4>
-                            <ul>
+                            <h4 class="site-footer__heading">Ayuda</h4>
+                            <ul class="site-footer__list">
                                 <li>
-                                    <a href="#">Contacto</a>
+                                    <a class="site-footer__link" href="#">Contacto</a>
                                 </li>
                                 <li>
-                                    <a href="#">Envíos</a>
+                                    <a class="site-footer__link" href="#">Envíos</a>
                                 </li>
                                 <li>
-                                    <a href="#">Devoluciones</a>
+                                    <a class="site-footer__link" href="#">Devoluciones</a>
                                 </li>
                                 <li>
-                                    <a href="#">Preguntas frecuentes</a>
+                                    <a class="site-footer__link" href="#">Preguntas frecuentes</a>
                                 </li>
                             </ul>
                         </div>
                         <div>
-                            <h4>Síguenos</h4>
-                            <ul>
+                            <h4 class="site-footer__heading">Síguenos</h4>
+                            <ul class="site-footer__list">
                                 <li>
-                                    <a href="#">Instagram</a>
+                                    <a class="site-footer__link" href="#">Instagram</a>
                                 </li>
                                 <li>
-                                    <a href="#">Pinterest</a>
+                                    <a class="site-footer__link" href="#">Pinterest</a>
                                 </li>
                                 <li>
-                                    <a href="#">Behance</a>
+                                    <a class="site-footer__link" href="#">Behance</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div class="footer-bottom">
+                <div class="site-footer__bottom">
                     <p>&copy; 2026 ALCOBA. Todos los derechos reservados.</p>
                 </div>
             </div>

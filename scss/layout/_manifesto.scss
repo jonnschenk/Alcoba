@@ -1,26 +1,28 @@
 @use "../abstracts/variables" as vars;
+@use "../base/base";
 
 .manifesto {
   padding-block: 4rem;
-  text-align: center;
   background-color: vars.$color-background;
+  text-align: center;
 }
 
-.manifesto-label {
+.manifesto__label {
+  @extend %eyebrow-label;
   margin-bottom: 1rem;
   letter-spacing: 0.15em;
 }
 
-.manifesto-quote {
+.manifesto__quote {
   max-width: 56.25rem;
   margin: 0 auto 2rem;
+  color: vars.$color-text;
   font-family: vars.$font-heading;
   font-size: clamp(1rem, 3vw, 2.5rem);
   line-height: 1.15;
-  color: vars.$color-text;
 }
 
-.manifesto-text {
+.manifesto__text {
   max-width: 43.75rem;
   margin: 0 auto;
   color: vars.$color-text-muted;

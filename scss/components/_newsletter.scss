@@ -3,37 +3,36 @@
 
 .newsletter {
   padding-block: 8rem;
-  text-align: center;
   background-color: vars.$color-surface;
   border-top: 1px solid vars.$color-border;
+  text-align: center;
 }
 
-.newsletter-content {
+.newsletter__content {
   max-width: 42rem;
-  margin: 0 auto;
+  margin-inline: auto;
 }
 
-.newsletter-title {
+.newsletter__title {
   font-size: clamp(2rem, 4vw, 3rem);
 }
 
-.newsletter-description {
-  margin: 1.5rem auto 3rem;
+.newsletter__description {
   max-width: 32rem;
+  margin: 1.5rem auto 3rem;
   color: vars.$color-text-muted;
 }
 
-.newsletter-form {
+.newsletter__form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-.newsletter-form input {
+.newsletter__input {
   padding: 1rem 1.25rem;
   border: 1px solid vars.$color-border;
   background: transparent;
-  font: inherit;
 
   &:focus {
     outline: none;
@@ -41,14 +40,13 @@
   }
 }
 
-.newsletter-form button {
+.newsletter__button {
   padding: 1rem 2rem;
-  border: none;
+  border: 0;
   background-color: vars.$color-text;
   color: vars.$color-background;
   font: inherit;
   font-weight: 600;
-  cursor: pointer;
   transition: opacity vars.$transition-base;
 
   &:hover {
@@ -57,11 +55,11 @@
 }
 
 @include mixins.respond-to(tablet) {
-  .newsletter-form {
+  .newsletter__form {
     flex-direction: row;
   }
 
-  .newsletter-form input {
+  .newsletter__input {
     flex: 1;
   }
 }

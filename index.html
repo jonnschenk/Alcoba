@@ -18,7 +18,7 @@
     <body>
         <header class="site-header">
             <nav class="navbar navbar-expand-lg navbar-light" aria-label="Navegación principal">
-                <div class="container-fluid navbar-container">
+                <div class="container-fluid site-header__container">
                     <a class="navbar-brand" href="index.html">ALCOBA</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Abrir menú de navegación"><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="mainNavbar">
@@ -40,11 +40,11 @@
                             </li>
                         </ul>
 
-                        <div class="navbar-actions">
-                            <button type="button" class="navbar-action navbar-action--search" id="searchToggle" aria-label="Buscar productos" aria-expanded="false" aria-controls="searchOverlay"><i class="bi bi-search"></i></button>
-                            <button type="button" class="navbar-action navbar-action--cart" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" aria-controls="cartOffcanvas" aria-label="Ver carrito">
+                        <div class="site-header__actions">
+                            <button type="button" class="site-header__action" id="searchToggle" aria-label="Buscar productos" aria-expanded="false" aria-controls="searchOverlay"><i class="bi bi-search"></i></button>
+                            <button type="button" class="site-header__action site-header__action--cart" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" aria-controls="cartOffcanvas" aria-label="Ver carrito">
                                 <i class="bi bi-handbag"></i>
-                                <span class="navbar-action__badge" id="cartCount" hidden>0</span>
+                                <span class="site-header__badge" id="cartCount" hidden>0</span>
                             </button>
                         </div>
                     </div>
@@ -55,27 +55,27 @@
                     <form class="search-overlay__form" action="pages/shop.html" method="get" role="search">
                         <i class="bi bi-search search-overlay__icon" aria-hidden="true"></i>
                         <label for="searchInput" class="visually-hidden">Buscar productos</label>
-                        <input type="search" id="searchInput" name="q" placeholder="Buscar abrigos, suéteres, accesorios…" autocomplete="off">
+                        <input type="search" class="search-overlay__input" id="searchInput" name="q" placeholder="Buscar abrigos, suéteres, accesorios…" autocomplete="off">
                     </form>
                     <button type="button" class="search-overlay__close" id="searchClose" aria-label="Cerrar búsqueda"><i class="bi bi-x-lg"></i></button>
                 </div>
             </div>
         </header>
 
-        <div class="offcanvas offcanvas-end cart-offcanvas" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartOffcanvasLabel">
-            <div class="offcanvas-header">
-                <h2 class="offcanvas-title" id="cartOffcanvasLabel">Carrito</h2>
+        <div class="offcanvas offcanvas-end cart" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartOffcanvasLabel">
+            <div class="offcanvas-header cart__header">
+                <h2 class="offcanvas-title cart__title" id="cartOffcanvasLabel">Carrito</h2>
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar carrito"></button>
             </div>
-            <div class="offcanvas-body">
-                <ul class="cart-items" id="cartItems"></ul>
-                <p class="cart-empty" id="cartEmpty">Tu carrito está vacío.</p>
-                <div class="cart-summary" id="cartSummary" hidden>
-                    <div class="cart-summary__row">
+            <div class="offcanvas-body cart__body">
+                <ul class="cart__items" id="cartItems"></ul>
+                <p class="cart__empty" id="cartEmpty">Tu carrito está vacío.</p>
+                <div class="cart__summary" id="cartSummary" hidden>
+                    <div class="cart__summary-row">
                         <span>Subtotal</span>
                         <span id="cartSubtotal">$0 USD</span>
                     </div>
-                    <a href="#" class="btn btn-dark cart-checkout" id="cartCheckout">Finalizar compra</a>
+                    <a href="#" class="btn btn-dark cart__checkout" id="cartCheckout">Finalizar compra</a>
                 </div>
             </div>
         </div>
@@ -83,66 +83,66 @@
         <main>
             <section class="hero">
                 <div class="container">
-                    <div class="hero-content" data-aos="fade-up">
-                        <span class="hero-subtitle">Colección Invernal 2026</span>
-                        <h1 class="hero-title">El Refugio Alpino</h1>
-                        <p class="hero-text">Descubre prendas atemporales creadas para acompañarte temporada tras temporada.</p>
-                        <a href="pages/collections.html" class="hero-link">Explorar colección →</a>
+                    <div class="hero__content" data-aos="fade-up">
+                        <span class="hero__eyebrow">Colección Invernal 2026</span>
+                        <h1 class="hero__title">El Refugio Alpino</h1>
+                        <p class="hero__text">Descubre prendas atemporales creadas para acompañarte temporada tras temporada.</p>
+                        <a href="pages/collections.html" class="hero__link">Explorar colección →</a>
                     </div>
                 </div>
             </section>
 
             <section class="manifesto">
                 <div class="container" data-aos="fade-up">
-                    <span class="manifesto-label">Nuestro manifiesto</span>
-                    <blockquote class="manifesto-quote">No diseñamos para seguir tendencias. Diseñamos piezas que acompañan el paso del tiempo.</blockquote>
-                    <p class="manifesto-text">ALCOBA nace de la arquitectura, los paisajes del norte y la idea de un guardarropa consciente. Cada colección busca equilibrio entre funcionalidad, diseño y permanencia.</p>
+                    <span class="manifesto__label">Nuestro manifiesto</span>
+                    <blockquote class="manifesto__quote">No diseñamos para seguir tendencias. Diseñamos piezas que acompañan el paso del tiempo.</blockquote>
+                    <p class="manifesto__text">ALCOBA nace de la arquitectura, los paisajes del norte y la idea de un guardarropa consciente. Cada colección busca equilibrio entre funcionalidad, diseño y permanencia.</p>
                 </div>
             </section>
 
             <section class="featured-collections">
                 <div class="container">
                     <div class="section-header section-header--split">
-                        <div>
-                            <span class="section-label">Colecciones</span>
-                            <h2 class="section-title">Historias inspiradas en el invierno</h2>
+                        <div class="section-header__intro">
+                            <span class="eyebrow">Colecciones</span>
+                            <h2 class="section-header__title">Historias inspiradas en el invierno</h2>
                         </div>
                         <a href="pages/collections.html" class="section-link">Ver todas</a>
                     </div>
-                    <div class="collections-grid">
+                    <div class="featured-collections__grid">
                         <article class="collection-card" data-aos="fade-up">
-                            <img loading="lazy" src="assets/images/alcoba2.jpeg" alt="Colección Suiza">
-                            <div class="collection-info">
-                                <h3>Suiza</h3>
-                                <p>Refugio Alpino</p>
-                                <a href="pages/collections.html#chapter-01">Explorar →</a>
+                            <img class="collection-card__image" loading="lazy" src="assets/images/alcoba2.jpeg" alt="Colección Suiza">
+                            <div class="collection-card__info">
+                                <h3 class="collection-card__title">Suiza</h3>
+                                <p class="collection-card__subtitle">Refugio Alpino</p>
+                                <a class="collection-card__link" href="pages/collections.html#chapter-01">Explorar →</a>
                             </div>
                         </article>
 
                         <article class="collection-card" data-aos="fade-up" data-aos-delay="100">
-                            <img loading="lazy" src="assets/images/alcoba3.jpeg" alt="Colección Mongolia">
-                            <div class="collection-info">
-                                <h3>Mongolia</h3>
-                                <p>Invierno Nómada</p>
-                                <a href="pages/collections.html#chapter-02">Explorar →</a>
+                            <img class="collection-card__image" loading="lazy" src="assets/images/alcoba3.jpeg" alt="Colección Mongolia">
+                            <div class="collection-card__info">
+                                <h3 class="collection-card__title">Mongolia</h3>
+                                <p class="collection-card__subtitle">Invierno Nómada</p>
+                                <a class="collection-card__link" href="pages/collections.html#chapter-02">Explorar →</a>
                             </div>
                         </article>
 
                         <article class="collection-card" data-aos="fade-up" data-aos-delay="200">
-                            <img loading="lazy" src="assets/images/alcoba4.jpeg" alt="Colección Islandia">
-                            <div class="collection-info">
-                                <h3>Islandia</h3>
-                                <p>Silencio volcánico</p>
-                                <a href="pages/collections.html#chapter-03">Explorar →</a>
+                            <img class="collection-card__image" loading="lazy" src="assets/images/alcoba4.jpeg" alt="Colección Islandia">
+                            <div class="collection-card__info">
+                                <h3 class="collection-card__title">Islandia</h3>
+                                <p class="collection-card__subtitle">Silencio volcánico</p>
+                                <a class="collection-card__link" href="pages/collections.html#chapter-03">Explorar →</a>
                             </div>
                         </article>
 
                         <article class="collection-card" data-aos="fade-up" data-aos-delay="300">
-                            <img loading="lazy" src="assets/images/alcoba5.jpeg" alt="Colección Hokkaido">
-                            <div class="collection-info">
-                                <h3>Hokkaido</h3>
-                                <p>Sombra de Nieve</p>
-                                <a href="pages/collections.html#chapter-04">Explorar →</a>
+                            <img class="collection-card__image" loading="lazy" src="assets/images/alcoba5.jpeg" alt="Colección Hokkaido">
+                            <div class="collection-card__info">
+                                <h3 class="collection-card__title">Hokkaido</h3>
+                                <p class="collection-card__subtitle">Sombra de Nieve</p>
+                                <a class="collection-card__link" href="pages/collections.html#chapter-04">Explorar →</a>
                             </div>
                         </article>
                     </div>
@@ -152,14 +152,14 @@
             <section class="categories">
                 <div class="container">
                     <div class="section-header">
-                        <span class="section-label">Shop</span>
-                        <h2 class="section-title">Explora por categoría</h2>
-                        <p class="section-description">Prendas esenciales diseñadas para permanecer más allá de una temporada.</p>
+                        <span class="eyebrow">Shop</span>
+                        <h2 class="section-header__title">Explora por categoría</h2>
+                        <p class="section-header__description categories__description">Prendas esenciales diseñadas para permanecer más allá de una temporada.</p>
                     </div>
-                    <div class="categories-grid">
+                    <div class="categories__grid">
                         <a href="pages/shop.html" class="category-card" data-aos="fade-up">
                             <div class="category-card__media">
-                                <img loading="lazy" src="assets/images/alcoba9.jpeg" alt="Categoría Abrigos">
+                                <img class="category-card__image" loading="lazy" src="assets/images/alcoba9.jpeg" alt="Categoría Abrigos">
                             </div>
                             <div class="category-card__caption">
                                 <span class="category-card__index">01</span>
@@ -168,7 +168,7 @@
                         </a>
                         <a href="pages/shop.html" class="category-card" data-aos="fade-up" data-aos-delay="100">
                             <div class="category-card__media">
-                                <img loading="lazy" src="assets/images/alcoba10.jpeg" alt="Categoría Tejidos">
+                                <img class="category-card__image" loading="lazy" src="assets/images/alcoba10.jpeg" alt="Categoría Tejidos">
                             </div>
                             <div class="category-card__caption">
                                 <span class="category-card__index">02</span>
@@ -177,7 +177,7 @@
                         </a>
                         <a href="pages/shop.html" class="category-card" data-aos="fade-up" data-aos-delay="200">
                             <div class="category-card__media">
-                                <img loading="lazy" src="assets/images/alcoba11.jpeg" alt="Categoría Accesorios">
+                                <img class="category-card__image" loading="lazy" src="assets/images/alcoba11.jpeg" alt="Categoría Accesorios">
                             </div>
                             <div class="category-card__caption">
                                 <span class="category-card__index">03</span>
@@ -186,7 +186,7 @@
                         </a>
                         <a href="pages/shop.html" class="category-card" data-aos="fade-up" data-aos-delay="300">
                             <div class="category-card__media">
-                                <img loading="lazy" src="assets/images/alcoba12.jpeg" alt="Categoría Calzado">
+                                <img class="category-card__image" loading="lazy" src="assets/images/alcoba12.jpeg" alt="Categoría Calzado">
                             </div>
                             <div class="category-card__caption">
                                 <span class="category-card__index">04</span>
@@ -200,21 +200,21 @@
             <section class="journal">
                 <div class="container">
                     <div class="section-header section-header--split">
-                        <div>
-                            <span class="section-label">Journal</span>
-                            <h2 class="section-title">Historias de invierno</h2>
+                        <div class="section-header__intro">
+                            <span class="eyebrow">Journal</span>
+                            <h2 class="section-header__title">Historias de invierno</h2>
                         </div>
                         <a href="pages/journal.html" class="section-link">Ver todas</a>
                     </div>
                     <article class="journal-feature" data-aos="fade-up">
-                        <div class="journal-image">
-                            <img loading="lazy" src="assets/images/nosotros.jpg" alt="Paisaje nevado que inspira la colección">
+                        <div class="journal-feature__media">
+                            <img class="journal-feature__image" loading="lazy" src="assets/images/nosotros.jpg" alt="Paisaje nevado que inspira la colección">
                         </div>
-                        <div class="journal-content">
-                            <span class="journal-category">Inspiración</span>
-                            <h3>The Quiet Beauty of Winter</h3>
-                            <p>Descubre cómo la arquitectura nórdica, los paisajes nevados y las texturas naturales inspiran la filosofía y las colecciones de ALCOBA.</p>
-                            <a href="pages/journal.html" class="journal-link">Leer más →</a>
+                        <div class="journal-feature__content">
+                            <span class="journal-feature__category">Inspiración</span>
+                            <h3 class="journal-feature__title">The Quiet Beauty of Winter</h3>
+                            <p class="journal-feature__text">Descubre cómo la arquitectura nórdica, los paisajes nevados y las texturas naturales inspiran la filosofía y las colecciones de ALCOBA.</p>
+                            <a href="pages/journal.html" class="journal-feature__link">Leer más →</a>
                         </div>
                     </article>
                 </div>
@@ -222,13 +222,13 @@
 
             <section class="newsletter">
                 <div class="container">
-                    <div class="newsletter-content" data-aos="fade-up">
-                        <span class="section-label">Newsletter</span>
-                        <h2 class="newsletter-title">Mantente conectado con Alcoba</h2>
-                        <p class="newsletter-description">Recibe acceso anticipado a nuevas colecciones, editoriales e inspiración directamente en tu correo.</p>
-                        <form class="newsletter-form">
-                            <input type="email" name="email" placeholder="Ingresa tu correo electrónico" required aria-label="Correo electrónico">
-                            <button type="submit" class="btn btn-dark">Suscribirse</button>
+                    <div class="newsletter__content" data-aos="fade-up">
+                        <span class="eyebrow">Newsletter</span>
+                        <h2 class="newsletter__title">Mantente conectado con Alcoba</h2>
+                        <p class="newsletter__description">Recibe acceso anticipado a nuevas colecciones, editoriales e inspiración directamente en tu correo.</p>
+                        <form class="newsletter__form">
+                            <input type="email" class="newsletter__input" name="email" placeholder="Ingresa tu correo electrónico" required aria-label="Correo electrónico">
+                            <button type="submit" class="btn btn-dark newsletter__button">Suscribirse</button>
                         </form>
                     </div>
                 </div>
@@ -237,66 +237,66 @@
 
         <footer class="site-footer">
             <div class="container">
-                <div class="footer-top">
-                    <div class="footer-brand">
-                        <a href="index.html" class="footer-logo">ALCOBA</a>
-                        <p>Designed for every season.</p>
+                <div class="site-footer__top">
+                    <div class="site-footer__brand">
+                        <a href="index.html" class="site-footer__logo">ALCOBA</a>
+                        <p class="site-footer__tagline">Designed for every season.</p>
                     </div>
-                    <div class="footer-links">
+                    <div class="site-footer__nav">
                         <div>
-                            <h4>Navegación</h4>
-                            <ul>
+                            <h4 class="site-footer__heading">Navegación</h4>
+                            <ul class="site-footer__list">
                                 <li>
-                                    <a href="index.html">Inicio</a>
+                                    <a class="site-footer__link" href="index.html">Inicio</a>
                                 </li>
                                 <li>
-                                    <a href="pages/collections.html">Colecciones</a>
+                                    <a class="site-footer__link" href="pages/collections.html">Colecciones</a>
                                 </li>
                                 <li>
-                                    <a href="pages/shop.html">Tienda</a>
+                                    <a class="site-footer__link" href="pages/shop.html">Tienda</a>
                                 </li>
                                 <li>
-                                    <a href="pages/journal.html">Journal</a>
+                                    <a class="site-footer__link" href="pages/journal.html">Journal</a>
                                 </li>
                                 <li>
-                                    <a href="pages/about.html">Nosotros</a>
+                                    <a class="site-footer__link" href="pages/about.html">Nosotros</a>
                                 </li>
                             </ul>
                         </div>
                         <div>
-                            <h4>Ayuda</h4>
-                            <ul>
+                            <h4 class="site-footer__heading">Ayuda</h4>
+                            <ul class="site-footer__list">
                                 <li>
-                                    <a href="#">Contacto</a>
+                                    <a class="site-footer__link" href="#">Contacto</a>
                                 </li>
                                 <li>
-                                    <a href="#">Envíos</a>
+                                    <a class="site-footer__link" href="#">Envíos</a>
                                 </li>
                                 <li>
-                                    <a href="#">Devoluciones</a>
+                                    <a class="site-footer__link" href="#">Devoluciones</a>
                                 </li>
                                 <li>
-                                    <a href="#">Preguntas frecuentes</a>
+                                    <a class="site-footer__link" href="#">Preguntas frecuentes</a>
                                 </li>
                             </ul>
                         </div>
                         <div>
-                            <h4>Síguenos</h4>
-                            <ul>
+                            <h4 class="site-footer__heading">Síguenos</h4>
+                            <ul class="site-footer__list">
                                 <li>
-                                    <a href="#">Instagram</a>
+                                    <a class="site-footer__link" href="#">Instagram</a>
                                 </li>
                                 <li>
-                                    <a href="#">Pinterest</a>
+                                    <a class="site-footer__link" href="#">Pinterest</a>
                                 </li>
                                 <li>
-                                    <a href="#">Behance</a>
+                                    <a class="site-footer__link" href="#">Behance</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div class="footer-bottom">
+                <div class="site-footer__bottom">
                     <p>&copy; 2026 ALCOBA. Todos los derechos reservados.</p>
                 </div>
             </div>

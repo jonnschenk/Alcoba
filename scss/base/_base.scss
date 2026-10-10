@@ -1,4 +1,5 @@
 @use "../abstracts/variables" as vars;
+@use "../abstracts/mixins" as mixins;
 
 body {
   min-width: 320px;
@@ -29,50 +30,24 @@ a {
 %eyebrow-label {
   display: inline-block;
   color: vars.$color-text-muted;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  @include mixins.uppercase-label;
 }
 
-.section-label,
-.manifesto-label,
-.journal-category {
+.eyebrow {
   @extend %eyebrow-label;
 }
 
 .section-link {
-  position: relative;
   flex-shrink: 0;
   padding-bottom: 0.2rem;
   color: vars.$color-text;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  @include mixins.uppercase-label;
   white-space: nowrap;
   transition: color vars.$transition-base;
-
-  &::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 1px;
-    background-color: currentColor;
-    transform: scaleX(0.35);
-    transform-origin: left;
-    transition: transform vars.$transition-base;
-  }
+  @include mixins.underline-reveal;
 
   &:hover,
   &:focus-visible {
     color: vars.$color-text-muted;
-  }
-
-  &:hover::after,
-  &:focus-visible::after {
-    transform: scaleX(1);
   }
 }

@@ -2,18 +2,16 @@
 @use "../abstracts/mixins" as mixins;
 @use "../base/base";
 
+// Hero
 .shop-hero {
-  position: relative;
   display: flex;
   align-items: flex-end;
   min-height: 42vh;
-  overflow: hidden;
   background-color: vars.$color-text;
+  color: vars.$color-background;
 }
 
 .shop-hero__inner {
-  position: relative;
-  z-index: 1;
   display: flex;
   flex-wrap: wrap;
   align-items: flex-end;
@@ -21,45 +19,39 @@
   gap: 1rem;
   width: 100%;
   padding-block: 2rem;
-  border-top: 1px solid rgba(244, 241, 235, 0.3);
+  border-top: 1px solid rgba(vars.$color-background, 0.3);
 }
 
 .shop-hero__eyebrow {
   @extend %eyebrow-label;
   display: block;
   margin-bottom: 0.75rem;
-  color: vars.$color-background;
+  color: inherit;
   opacity: 0.75;
 }
 
 .shop-hero__title {
-  margin: 0;
-  color: vars.$color-background;
-  font-family: vars.$font-heading;
-  font-weight: 400;
   font-size: clamp(2rem, 5vw, 3rem);
-  line-height: 1.1;
 }
 
 .shop-hero__text {
   max-width: 20rem;
-  margin: 0;
-  color: vars.$color-background;
   font-size: 0.85rem;
-  line-height: 1.6;
   opacity: 0.85;
 }
 
+// Layout
 .shop {
   padding-block: 3.5rem;
 }
 
-.shop-layout {
+.shop__layout {
   display: flex;
   flex-direction: column;
   gap: 3rem;
 }
 
+// Filters
 .shop-filters {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -67,119 +59,76 @@
 }
 
 .shop-filters__clear {
+  @include mixins.button-reset;
   display: block;
-  margin: 0 0 1.5rem;
-  padding: 0;
-  border: 0;
-  background: none;
+  margin-bottom: 1.5rem;
   color: vars.$color-text;
   font-size: 0.7rem;
   text-decoration: underline;
   text-underline-offset: 0.2rem;
+}
+
+.shop-filters__group {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid vars.$color-border;
+}
+
+.shop-filters__label {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.shop-filters__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.shop-filters__button {
+  @include mixins.button-reset;
+  display: block;
+  width: 100%;
+  color: vars.$color-text-muted;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  text-align: left;
+  transition: color vars.$transition-base;
+
+  &:hover,
+  &:focus-visible,
+  &.is-active {
+    color: vars.$color-text;
+  }
+
+  &.is-active {
+    font-weight: 600;
+  }
+}
+
+.shop-filters__input,
+.shop-filters__select {
+  @include mixins.field-underline;
+  padding-block: 0.5rem;
+  font-size: 0.75rem;
+}
+
+.shop-filters__select {
+  color: vars.$color-text-muted;
   cursor: pointer;
 }
 
-.shop-filter {
-  padding-bottom: 1rem;
-  border-bottom: 1px solid vars.$color-border;
-
-  .section-label {
-    display: block;
-    margin-bottom: 1rem;
-  }
-
-  ul {
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  li {
-    margin: 0;
-  }
-
-  a,
-  .filter-btn {
-    display: block;
-    width: 100%;
-    padding: 0;
-    border: 0;
-    background: none;
-    color: vars.$color-text-muted;
-    font-family: inherit;
-    font-size: 0.75rem;
-    line-height: 1.5;
-    text-align: left;
-    text-decoration: none;
-    cursor: pointer;
-    transition: color vars.$transition-base;
-
-    &:hover,
-    &:focus {
-      color: vars.$color-text;
-    }
-  }
-
-  .filter-btn.is-active {
-    color: vars.$color-text;
-    font-weight: 600;
-  }
-
-  select {
-    width: 100%;
-    padding-block: 0.5rem;
-    border: 0;
-    border-bottom: 1px solid vars.$color-border;
-    border-radius: 0;
-    background-color: transparent;
-    color: vars.$color-text-muted;
-    font-family: inherit;
-    font-size: 0.75rem;
-    cursor: pointer;
-
-    &:focus {
-      outline: none;
-      border-color: vars.$color-text;
-    }
-  }
-}
-
-.shop-filter--search input {
-  width: 100%;
-  padding-block: 0.5rem;
-  border: 0;
-  border-bottom: 1px solid vars.$color-border;
-  border-radius: 0;
-  background-color: transparent;
-  color: vars.$color-text;
-  font-family: inherit;
-  font-size: 0.75rem;
-
-  &::placeholder {
-    color: vars.$color-text-muted;
-  }
-
-  &:focus {
-    outline: none;
-    border-color: vars.$color-text;
-  }
-}
-
+// Products
 .shop-products {
   min-width: 0;
 }
 
 .shop-products__empty {
-  margin: 0 0 2rem;
+  margin-bottom: 2rem;
   color: vars.$color-text-muted;
   font-size: 0.8rem;
-  line-height: 1.6;
 }
 
-.products-grid {
+.shop-products__grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 2.5rem 1rem;
@@ -189,22 +138,19 @@
   min-width: 0;
 }
 
-.product-card__image {
+.product-card__media {
   position: relative;
   overflow: hidden;
   background-color: vars.$color-surface;
-
-  img {
-    display: block;
-    width: 100%;
-    aspect-ratio: 3 / 4;
-    object-fit: cover;
-    transition: transform vars.$transition-base;
-  }
 }
 
-.product-card:hover {
-  .product-card__image img {
+.product-card__image {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  transition: transform vars.$transition-base;
+
+  .product-card:hover & {
     transform: scale(1.02);
   }
 }
@@ -213,17 +159,11 @@
   position: absolute;
   top: 0.75rem;
   left: 0.75rem;
-
   padding: 0.35rem 0.5rem;
-
   background-color: vars.$color-text;
   color: vars.$color-surface;
-
-  font-size: 0.6rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  @include mixins.uppercase-label(0.6rem);
   line-height: 1;
-  text-transform: uppercase;
 }
 
 .product-card__info {
@@ -231,23 +171,17 @@
 }
 
 .product-card__title {
-  margin: 0 0 0.3rem;
-
+  margin-bottom: 0.3rem;
   color: vars.$color-text;
-
   font-size: 0.75rem;
   font-weight: 600;
   line-height: 1.4;
 }
 
-.product-card__category,
-.product-card__price {
-  font-size: 0.65rem;
-}
-
 .product-card__category {
-  margin: 0 0 0.4rem;
+  margin-bottom: 0.4rem;
   color: vars.$color-text-muted;
+  font-size: 0.65rem;
   line-height: 1.4;
 }
 
@@ -260,6 +194,7 @@
 
 .product-card__price {
   color: vars.$color-text;
+  font-size: 0.65rem;
   font-weight: 500;
 }
 
@@ -269,10 +204,7 @@
   background-color: transparent;
   color: vars.$color-text;
   font-family: inherit;
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  @include mixins.uppercase-label(0.65rem, 0.04em);
   white-space: nowrap;
   cursor: pointer;
   transition:
@@ -280,11 +212,7 @@
     color vars.$transition-base;
 
   &:hover,
-  &:focus {
-    background-color: vars.$color-text;
-    color: vars.$color-surface;
-  }
-
+  &:focus-visible,
   &.is-added {
     background-color: vars.$color-text;
     color: vars.$color-surface;
@@ -296,7 +224,7 @@
     padding-block: 5rem;
   }
 
-  .shop-layout {
+  .shop__layout {
     display: grid;
     grid-template-columns: 10rem 1fr;
     gap: 2rem;
@@ -309,12 +237,11 @@
     gap: 2.5rem;
   }
 
-  .shop-filter {
+  .shop-filters__group {
     padding-bottom: 1.5rem;
   }
 
-  .products-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .shop-products__grid {
     gap: 2.5rem 1.25rem;
   }
 
@@ -333,12 +260,12 @@
 }
 
 @include mixins.respond-to(desktop) {
-  .shop-layout {
+  .shop__layout {
     grid-template-columns: 12rem 1fr;
     gap: 3rem;
   }
 
-  .products-grid {
+  .shop-products__grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 3rem 1.5rem;
   }

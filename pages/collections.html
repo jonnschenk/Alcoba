@@ -18,7 +18,7 @@
     <body>
         <header class="site-header">
             <nav class="navbar navbar-expand-lg navbar-light" aria-label="Navegación principal">
-                <div class="container-fluid navbar-container">
+                <div class="container-fluid site-header__container">
                     <a class="navbar-brand" href="../index.html">ALCOBA</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Abrir menú de navegación"><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="mainNavbar">
@@ -40,11 +40,11 @@
                             </li>
                         </ul>
 
-                        <div class="navbar-actions">
-                            <button type="button" class="navbar-action navbar-action--search" id="searchToggle" aria-label="Buscar productos" aria-expanded="false" aria-controls="searchOverlay"><i class="bi bi-search"></i></button>
-                            <button type="button" class="navbar-action navbar-action--cart" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" aria-controls="cartOffcanvas" aria-label="Ver carrito">
+                        <div class="site-header__actions">
+                            <button type="button" class="site-header__action" id="searchToggle" aria-label="Buscar productos" aria-expanded="false" aria-controls="searchOverlay"><i class="bi bi-search"></i></button>
+                            <button type="button" class="site-header__action site-header__action--cart" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" aria-controls="cartOffcanvas" aria-label="Ver carrito">
                                 <i class="bi bi-handbag"></i>
-                                <span class="navbar-action__badge" id="cartCount" hidden>0</span>
+                                <span class="site-header__badge" id="cartCount" hidden>0</span>
                             </button>
                         </div>
                     </div>
@@ -55,27 +55,27 @@
                     <form class="search-overlay__form" action="shop.html" method="get" role="search">
                         <i class="bi bi-search search-overlay__icon" aria-hidden="true"></i>
                         <label for="searchInput" class="visually-hidden">Buscar productos</label>
-                        <input type="search" id="searchInput" name="q" placeholder="Buscar abrigos, suéteres, accesorios…" autocomplete="off">
+                        <input type="search" class="search-overlay__input" id="searchInput" name="q" placeholder="Buscar abrigos, suéteres, accesorios…" autocomplete="off">
                     </form>
                     <button type="button" class="search-overlay__close" id="searchClose" aria-label="Cerrar búsqueda"><i class="bi bi-x-lg"></i></button>
                 </div>
             </div>
         </header>
 
-        <div class="offcanvas offcanvas-end cart-offcanvas" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartOffcanvasLabel">
-            <div class="offcanvas-header">
-                <h2 class="offcanvas-title" id="cartOffcanvasLabel">Carrito</h2>
+        <div class="offcanvas offcanvas-end cart" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartOffcanvasLabel">
+            <div class="offcanvas-header cart__header">
+                <h2 class="offcanvas-title cart__title" id="cartOffcanvasLabel">Carrito</h2>
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar carrito"></button>
             </div>
-            <div class="offcanvas-body">
-                <ul class="cart-items" id="cartItems"></ul>
-                <p class="cart-empty" id="cartEmpty">Tu carrito está vacío.</p>
-                <div class="cart-summary" id="cartSummary" hidden>
-                    <div class="cart-summary__row">
+            <div class="offcanvas-body cart__body">
+                <ul class="cart__items" id="cartItems"></ul>
+                <p class="cart__empty" id="cartEmpty">Tu carrito está vacío.</p>
+                <div class="cart__summary" id="cartSummary" hidden>
+                    <div class="cart__summary-row">
                         <span>Subtotal</span>
                         <span id="cartSubtotal">$0 USD</span>
                     </div>
-                    <a href="#" class="btn btn-dark cart-checkout" id="cartCheckout">Finalizar compra</a>
+                    <a href="#" class="btn btn-dark cart__checkout" id="cartCheckout">Finalizar compra</a>
                 </div>
             </div>
         </div>
@@ -92,12 +92,12 @@
                         </div>
                     </div>
                     <nav class="collections-hero__index" aria-label="Índice de capítulos">
-                        <a class="collections-hero__index-link" href="#chapter-01"><span>01</span> Suiza</a>
-                        <a class="collections-hero__index-link" href="#chapter-02"><span>02</span> Mongolia</a>
-                        <a class="collections-hero__index-link" href="#chapter-03"><span>03</span> Islandia</a>
-                        <a class="collections-hero__index-link" href="#chapter-04"><span>04</span> Hokkaido</a>
-                        <a class="collections-hero__index-link" href="#chapter-05"><span>05</span> Noruega</a>
-                        <a class="collections-hero__index-link" href="#chapter-06"><span>06</span> Groenlandia</a>
+                        <a class="collections-hero__index-link" href="#chapter-01"><span class="collections-hero__index-number">01</span> Suiza</a>
+                        <a class="collections-hero__index-link" href="#chapter-02"><span class="collections-hero__index-number">02</span> Mongolia</a>
+                        <a class="collections-hero__index-link" href="#chapter-03"><span class="collections-hero__index-number">03</span> Islandia</a>
+                        <a class="collections-hero__index-link" href="#chapter-04"><span class="collections-hero__index-number">04</span> Hokkaido</a>
+                        <a class="collections-hero__index-link" href="#chapter-05"><span class="collections-hero__index-number">05</span> Noruega</a>
+                        <a class="collections-hero__index-link" href="#chapter-06"><span class="collections-hero__index-number">06</span> Groenlandia</a>
                     </nav>
                 </div>
             </section>
@@ -105,80 +105,80 @@
             <section class="collection-showcase">
                 <div class="container">
                     <article class="collection-item" id="chapter-01" data-aos="fade-up">
-                        <div class="collection-image">
-                            <img loading="lazy" src="../assets/images/alcoba2.jpeg" alt="Colección Suiza">
+                        <div class="collection-item__media">
+                            <img class="collection-item__image" loading="lazy" src="../assets/images/alcoba2.jpeg" alt="Colección Suiza">
                         </div>
-                        <div class="collection-content">
-                            <span class="collection-number">01</span>
-                            <span>Capítulo 1 | Suiza</span>
-                            <h2>Refugio Alpino</h2>
-                            <p>Inspirada en los refugios de montaña, la arquitectura de madera y la vida en altitud.</p>
-                            <a href="#">Explorar colección →</a>
+                        <div class="collection-item__content">
+                            <span class="collection-item__number">01</span>
+                            <span class="collection-item__chapter">Capítulo 1 | Suiza</span>
+                            <h2 class="collection-item__title">Refugio Alpino</h2>
+                            <p class="collection-item__text">Inspirada en los refugios de montaña, la arquitectura de madera y la vida en altitud.</p>
+                            <a class="collection-item__link" href="shop.html?q=suiza">Explorar colección →</a>
                         </div>
                     </article>
 
-                    <article class="collection-item reverse" id="chapter-02" data-aos="fade-up">
-                        <div class="collection-image">
-                            <img loading="lazy" src="../assets/images/alcoba3.jpeg" alt="Colección Mongolia">
+                    <article class="collection-item collection-item--reverse" id="chapter-02" data-aos="fade-up">
+                        <div class="collection-item__media">
+                            <img class="collection-item__image" loading="lazy" src="../assets/images/alcoba3.jpeg" alt="Colección Mongolia">
                         </div>
-                        <div class="collection-content">
-                            <span class="collection-number">02</span>
-                            <span>Capítulo 2 | Mongolia</span>
-                            <h2>Invierno Nómada</h2>
-                            <p>Una exploración de las capas, la movilidad y la adaptación al clima extremo.</p>
-                            <a href="#">Explorar colección →</a>
+                        <div class="collection-item__content">
+                            <span class="collection-item__number">02</span>
+                            <span class="collection-item__chapter">Capítulo 2 | Mongolia</span>
+                            <h2 class="collection-item__title">Invierno Nómada</h2>
+                            <p class="collection-item__text">Una exploración de las capas, la movilidad y la adaptación al clima extremo.</p>
+                            <a class="collection-item__link" href="shop.html?q=mongolia">Explorar colección →</a>
                         </div>
                     </article>
 
                     <article class="collection-item" id="chapter-03" data-aos="fade-up">
-                        <div class="collection-image">
-                            <img loading="lazy" src="../assets/images/alcoba4.jpeg" alt="Colección Islandia">
+                        <div class="collection-item__media">
+                            <img class="collection-item__image" loading="lazy" src="../assets/images/alcoba4.jpeg" alt="Colección Islandia">
                         </div>
-                        <div class="collection-content">
-                            <span class="collection-number">03</span>
-                            <span>Capítulo 3 | Islandia</span>
-                            <h2>Silencio Volcánico</h2>
-                            <p>Formas limpias, materiales resistentes y paisajes marcados por el hielo y el fuego.</p>
-                            <a href="#">Explorar colección →</a>
+                        <div class="collection-item__content">
+                            <span class="collection-item__number">03</span>
+                            <span class="collection-item__chapter">Capítulo 3 | Islandia</span>
+                            <h2 class="collection-item__title">Silencio Volcánico</h2>
+                            <p class="collection-item__text">Formas limpias, materiales resistentes y paisajes marcados por el hielo y el fuego.</p>
+                            <a class="collection-item__link" href="shop.html?q=islandia">Explorar colección →</a>
                         </div>
                     </article>
 
-                    <article class="collection-item reverse" id="chapter-04" data-aos="fade-up">
-                        <div class="collection-image">
-                            <img loading="lazy" src="../assets/images/alcoba5.jpeg" alt="Colección Hokkaido">
+                    <article class="collection-item collection-item--reverse" id="chapter-04" data-aos="fade-up">
+                        <div class="collection-item__media">
+                            <img class="collection-item__image" loading="lazy" src="../assets/images/alcoba5.jpeg" alt="Colección Hokkaido">
                         </div>
-                        <div class="collection-content">
-                            <span class="collection-number">04</span>
-                            <span>Capítulo 4 | Hokkaido</span>
-                            <h2>Sombra de Nieve</h2>
-                            <p>Inviernos largos, paisajes blancos y arquitectura minimalista.</p>
-                            <a href="#">Explorar colección →</a>
+                        <div class="collection-item__content">
+                            <span class="collection-item__number">04</span>
+                            <span class="collection-item__chapter">Capítulo 4 | Hokkaido</span>
+                            <h2 class="collection-item__title">Sombra de Nieve</h2>
+                            <p class="collection-item__text">Inviernos largos, paisajes blancos y arquitectura minimalista.</p>
+                            <a class="collection-item__link" href="shop.html?q=hokkaido">Explorar colección →</a>
                         </div>
                     </article>
 
                     <article class="collection-item" id="chapter-05" data-aos="fade-up">
-                        <div class="collection-image">
-                            <img loading="lazy" src="../assets/images/alcoba13.jpeg" alt="Colección Noruega">
+                        <div class="collection-item__media">
+                            <img class="collection-item__image" loading="lazy" src="../assets/images/alcoba13.jpeg" alt="Colección Noruega">
                         </div>
-                        <div class="collection-content">
-                            <span class="collection-number">05</span>
-                            <span>Capítulo 5 | Noruega</span>
-                            <h2>Costa de Fiordos</h2>
-                            <p>Arenas negras, montañas afiladas y la calma del mar frío que moldea cada prenda.</p>
-                            <a href="#">Explorar colección →</a>
+                        <div class="collection-item__content">
+                            <span class="collection-item__number">05</span>
+                            <span class="collection-item__chapter">Capítulo 5 | Noruega</span>
+                            <h2 class="collection-item__title">Costa de Fiordos</h2>
+                            <p class="collection-item__text">Arenas negras, montañas afiladas y la calma del mar frío que moldea cada prenda.</p>
+                            <a class="collection-item__link" href="shop.html">Explorar colección →</a>
                         </div>
                     </article>
 
-                    <article class="collection-item reverse" id="chapter-06" data-aos="fade-up">
-                        <div class="collection-image">
-                            <img loading="lazy" src="../assets/images/alcoba14.jpeg" alt="Colección Groenlandia">
+                    <article class="collection-item collection-item--reverse" id="chapter-06" data-aos="fade-up">
+                        <div class="collection-item__media">
+                            <img class="collection-item__image" loading="lazy" src="../assets/images/alcoba14.jpeg" alt="Colección Groenlandia">
                         </div>
-                        <div class="collection-content">
-                            <span class="collection-number">06</span>
-                            <span>Capítulo 6 | Groenlandia</span>
-                            <h2>Deriva Glaciar</h2>
-                            <p>Tonos de hielo y aguas profundas para una colección pensada para el frío extremo.</p>
-                            <a href="#">Explorar colección →</a>
+                        <div class="collection-item__content">
+                            <span class="collection-item__number">06</span>
+                            <span class="collection-item__chapter">Capítulo 6 | Groenlandia</span>
+                            <h2 class="collection-item__title">Deriva Glaciar</h2>
+                            <p class="collection-item__text">Tonos de hielo y aguas profundas para una colección pensada para el frío extremo.</p>
+                            <a class="collection-item__link" href="shop.html">Explorar colección →</a>
                         </div>
                     </article>
                 </div>
@@ -187,66 +187,66 @@
 
         <footer class="site-footer">
             <div class="container">
-                <div class="footer-top">
-                    <div class="footer-brand">
-                        <a href="../index.html" class="footer-logo">ALCOBA</a>
-                        <p>Designed for every season.</p>
+                <div class="site-footer__top">
+                    <div class="site-footer__brand">
+                        <a href="../index.html" class="site-footer__logo">ALCOBA</a>
+                        <p class="site-footer__tagline">Designed for every season.</p>
                     </div>
-                    <div class="footer-links">
+                    <div class="site-footer__nav">
                         <div>
-                            <h4>Navegación</h4>
-                            <ul>
+                            <h4 class="site-footer__heading">Navegación</h4>
+                            <ul class="site-footer__list">
                                 <li>
-                                    <a href="../index.html">Inicio</a>
+                                    <a class="site-footer__link" href="../index.html">Inicio</a>
                                 </li>
                                 <li>
-                                    <a href="../pages/collections.html">Colecciones</a>
+                                    <a class="site-footer__link" href="collections.html">Colecciones</a>
                                 </li>
                                 <li>
-                                    <a href="../pages/shop.html">Tienda</a>
+                                    <a class="site-footer__link" href="shop.html">Tienda</a>
                                 </li>
                                 <li>
-                                    <a href="../pages/journal.html">Journal</a>
+                                    <a class="site-footer__link" href="journal.html">Journal</a>
                                 </li>
                                 <li>
-                                    <a href="../pages/about.html">Nosotros</a>
+                                    <a class="site-footer__link" href="about.html">Nosotros</a>
                                 </li>
                             </ul>
                         </div>
                         <div>
-                            <h4>Ayuda</h4>
-                            <ul>
+                            <h4 class="site-footer__heading">Ayuda</h4>
+                            <ul class="site-footer__list">
                                 <li>
-                                    <a href="#">Contacto</a>
+                                    <a class="site-footer__link" href="#">Contacto</a>
                                 </li>
                                 <li>
-                                    <a href="#">Envíos</a>
+                                    <a class="site-footer__link" href="#">Envíos</a>
                                 </li>
                                 <li>
-                                    <a href="#">Devoluciones</a>
+                                    <a class="site-footer__link" href="#">Devoluciones</a>
                                 </li>
                                 <li>
-                                    <a href="#">Preguntas frecuentes</a>
+                                    <a class="site-footer__link" href="#">Preguntas frecuentes</a>
                                 </li>
                             </ul>
                         </div>
                         <div>
-                            <h4>Síguenos</h4>
-                            <ul>
+                            <h4 class="site-footer__heading">Síguenos</h4>
+                            <ul class="site-footer__list">
                                 <li>
-                                    <a href="#">Instagram</a>
+                                    <a class="site-footer__link" href="#">Instagram</a>
                                 </li>
                                 <li>
-                                    <a href="#">Pinterest</a>
+                                    <a class="site-footer__link" href="#">Pinterest</a>
                                 </li>
                                 <li>
-                                    <a href="#">Behance</a>
+                                    <a class="site-footer__link" href="#">Behance</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div class="footer-bottom">
+                <div class="site-footer__bottom">
                     <p>&copy; 2026 ALCOBA. Todos los derechos reservados.</p>
                 </div>
             </div>

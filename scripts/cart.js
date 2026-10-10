@@ -4,18 +4,30 @@
     const assetPrefix = inPages ? "../" : "";
     const shopHref = inPages ? "shop.html" : "pages/shop.html";
 
+    const isValidItem = (item) =>
+        item &&
+        typeof item.id === "string" &&
+        typeof item.name === "string" &&
+        typeof item.image === "string" &&
+        Number.isFinite(item.price) &&
+        Number.isInteger(item.qty) &&
+        item.qty > 0;
+
     const readCart = () => {
         try {
-            const raw = localStorage.getItem(STORAGE_KEY);
-            const parsed = raw ? JSON.parse(raw) : [];
-            return Array.isArray(parsed) ? parsed : [];
+            const parsed = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+            return Array.isArray(parsed) ? parsed.filter(isValidItem) : [];
         } catch {
             return [];
         }
     };
 
     const writeCart = (cart) => {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
+        try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
+        } catch {
+            // Storage unavailable (private mode, quota): the cart still works for this page view.
+        }
     };
 
     let cart = readCart();
@@ -33,6 +45,46 @@
 
     const normalizeImage = (src) => assetPrefix + src.replace(/^(\.\.\/)+/, "");
 
+    const createElement = (tag,  Name, text) => {
+        const element = document.createElement(tag);
+        if (className) element.className = className;
+        if (text !== undefined) element.textContent = text;
+        return element;
+    };
+
+    const createButton = (className, label, text, data) => {
+        const button = createElement("button", className, text);
+        button.type = "button";
+        button.setAttribute("aria-label", label);
+        Object.assign(button.dataset, data);
+        return button;
+    };
+
+    const createCartItem = (item) => {
+        const li = createElement("li", "cart-item");
+        li.dataset.id = item.id;
+
+        const image = createElement("img", "cart-item__image");
+        image.src = normalizeImage(item.image);
+        image.alt = item.name;
+
+        const info = createElement("div", "cart-item__info");
+        const qty = createElement("div", "cart-item__qty");
+        qty.append(
+            createButton("cart-item__qty-button", "Reducir cantidad", "\u2212", { qty: "-1" }),
+            createElement("span", "cart-item__qty-value", String(item.qty)),
+            createButton("cart-item__qty-button", "Aumentar cantidad", "+", { qty: "1" })
+        );
+        info.append(
+            createElement("p", "cart-item__title", item.name),
+            createElement("span", "cart-item__price", formatPrice(item.price)),
+            qty
+        );
+
+        li.append(image, info, createButton("cart-item__remove", "Eliminar producto", "\u00d7", { remove: "" }));
+        return li;
+    };
+
     const render = () => {
         const totalCount = cart.reduce((sum, item) => sum + item.qty, 0);
 
@@ -43,7 +95,7 @@
 
         if (!cartItemsEl) return;
 
-        cartItemsEl.innerHTML = "";
+        cartItemsEl.replaceChildren();
 
         if (cart.length === 0) {
             if (cartEmptyEl) cartEmptyEl.hidden = false;
@@ -57,25 +109,7 @@
         const subtotal = cart.reduce((sum, item) => sum + item.qty * item.price, 0);
         if (cartSubtotalEl) cartSubtotalEl.textContent = formatPrice(subtotal);
 
-        cart.forEach((item) => {
-            const li = document.createElement("li");
-            li.className = "cart-item";
-            li.dataset.id = item.id;
-            li.innerHTML = `
-                <img class="cart-item__image" src="${normalizeImage(item.image)}" alt="${item.name}">
-                <div class="cart-item__info">
-                    <p class="cart-item__title">${item.name}</p>
-                    <span class="cart-item__price">${formatPrice(item.price)}</span>
-                    <div class="cart-item__qty">
-                        <button type="button" data-qty="-1" aria-label="Reducir cantidad">&minus;</button>
-                        <span>${item.qty}</span>
-                        <button type="button" data-qty="1" aria-label="Aumentar cantidad">+</button>
-                    </div>
-                </div>
-                <button type="button" class="cart-item__remove" data-remove aria-label="Eliminar producto">&times;</button>
-            `;
-            cartItemsEl.appendChild(li);
-        });
+        cartItemsEl.append(...cart.map(createCartItem));
     };
 
     const saveAndRender = () => {
@@ -100,9 +134,8 @@
 
             const id = card.dataset.id;
             const name = card.querySelector(".product-card__title")?.textContent.trim();
-            const priceText = card.querySelector(".product-card__price")?.textContent || "0";
-            const price = Number(priceText.replace(/[^0-9.]/g, "")) || 0;
-            const image = card.querySelector("img")?.getAttribute("src") || "";
+            const price = Number(card.dataset.price) || 0;
+            const image = card.querySelector(".product-card__image")?.getAttribute("src") || "";
 
             if (!id || !name) return;
 
