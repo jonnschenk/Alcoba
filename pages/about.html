@@ -17,36 +17,34 @@
 
     <body>
         <header class="site-header">
-            <nav class="navbar navbar-expand-lg navbar-light" aria-label="Navegación principal">
+            <nav class="navbar" aria-label="Navegación principal">
                 <div class="container-fluid site-header__container">
+                    <button type="button" class="site-header__action site-header__menu-toggle" data-bs-toggle="offcanvas" data-bs-target="#menuOffcanvas" aria-controls="menuOffcanvas" aria-label="Abrir menú"><i class="bi bi-list"></i></button>
                     <a class="navbar-brand" href="../index.html">ALCOBA</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Abrir menú de navegación"><span class="navbar-toggler-icon"></span></button>
-                    <div class="collapse navbar-collapse" id="mainNavbar">
-                        <ul class="navbar-nav mx-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="../index.html">Inicio</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="collections.html">Colecciones</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="shop.html">Tienda</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="journal.html">Journal</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="about.html">Nosotros</a>
-                            </li>
-                        </ul>
+                    <ul class="navbar-nav site-header__links">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="collections.html">Colecciones</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="shop.html">Tienda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="journal.html">Journal</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="about.html">Nosotros</a>
+                        </li>
+                    </ul>
 
-                        <div class="site-header__actions">
-                            <button type="button" class="site-header__action" id="searchToggle" aria-label="Buscar productos" aria-expanded="false" aria-controls="searchOverlay"><i class="bi bi-search"></i></button>
-                            <button type="button" class="site-header__action site-header__action--cart" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" aria-controls="cartOffcanvas" aria-label="Ver carrito">
-                                <i class="bi bi-handbag"></i>
-                                <span class="site-header__badge" id="cartCount" hidden>0</span>
-                            </button>
-                        </div>
+                    <div class="site-header__actions">
+                        <button type="button" class="site-header__action" id="searchToggle" aria-label="Buscar productos" aria-expanded="false" aria-controls="searchOverlay"><i class="bi bi-search"></i></button>
+                        <button type="button" class="site-header__action site-header__action--cart" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" aria-controls="cartOffcanvas" aria-label="Ver carrito">
+                            <i class="bi bi-handbag"></i>
+                            <span class="site-header__badge" id="cartCount" hidden>0</span>
+                        </button>
                     </div>
                 </div>
             </nav>
@@ -62,6 +60,61 @@
             </div>
         </header>
 
+        <div class="offcanvas offcanvas-start side-menu" tabindex="-1" id="menuOffcanvas" aria-labelledby="menuOffcanvasLabel">
+            <div class="offcanvas-header side-menu__header">
+                <h2 class="offcanvas-title side-menu__title" id="menuOffcanvasLabel">Menú</h2>
+                <button type="button" class="side-menu__close" data-bs-dismiss="offcanvas" aria-label="Cerrar menú"><i class="bi bi-x-lg"></i></button>
+            </div>
+            <div class="offcanvas-body side-menu__body">
+                <!-- On desktop these pages are already in the header, so they only show on smaller screens -->
+                <nav class="side-menu__pages" aria-label="Páginas">
+                    <ul class="side-menu__list">
+                        <li><a class="side-menu__link" href="../index.html">Inicio</a></li>
+                        <li><a class="side-menu__link" href="collections.html">Colecciones</a></li>
+                        <li><a class="side-menu__link" href="shop.html">Tienda</a></li>
+                        <li><a class="side-menu__link" href="journal.html">Journal</a></li>
+                        <li><a class="side-menu__link is-active" aria-current="page" href="about.html">Nosotros</a></li>
+                    </ul>
+                </nav>
+                <div class="side-menu__group">
+                    <h3 class="side-menu__heading">Comprar por categoría</h3>
+                    <ul class="side-menu__sublist">
+                        <li><a class="side-menu__sublink" href="shop.html?categoria=abrigos">Abrigos</a></li>
+                        <li><a class="side-menu__sublink" href="shop.html?categoria=tejidos">Tejidos</a></li>
+                        <li><a class="side-menu__sublink" href="shop.html?categoria=accesorios">Accesorios</a></li>
+                        <li><a class="side-menu__sublink" href="shop.html?categoria=pantalones">Pantalones</a></li>
+                        <li><a class="side-menu__sublink" href="shop.html?categoria=calzado">Calzado</a></li>
+                        <li><a class="side-menu__sublink" href="shop.html">Ver todo</a></li>
+                    </ul>
+                </div>
+                <div class="side-menu__group">
+                    <h3 class="side-menu__heading">Colecciones</h3>
+                    <ul class="side-menu__sublist">
+                        <li><a class="side-menu__sublink" href="collections.html#chapter-01">Suiza</a></li>
+                        <li><a class="side-menu__sublink" href="collections.html#chapter-02">Mongolia</a></li>
+                        <li><a class="side-menu__sublink" href="collections.html#chapter-03">Islandia</a></li>
+                        <li><a class="side-menu__sublink" href="collections.html#chapter-04">Hokkaido</a></li>
+                        <li><a class="side-menu__sublink" href="collections.html#chapter-05">Noruega</a></li>
+                        <li><a class="side-menu__sublink" href="collections.html#chapter-06">Groenlandia</a></li>
+                    </ul>
+                </div>
+                <div class="side-menu__group">
+                    <h3 class="side-menu__heading">Ayuda</h3>
+                    <ul class="side-menu__sublist">
+                        <li><a class="side-menu__sublink" href="help.html#envios">Envíos</a></li>
+                        <li><a class="side-menu__sublink" href="help.html#devoluciones">Devoluciones</a></li>
+                        <li><a class="side-menu__sublink" href="help.html#preguntas-frecuentes">Preguntas frecuentes</a></li>
+                        <li><a class="side-menu__sublink" href="help.html#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="side-menu__social">
+                    <a class="side-menu__social-link" href="https://www.instagram.com/nathan.rott/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="bi bi-instagram" aria-hidden="true"></i></a>
+                    <a class="side-menu__social-link" href="https://www.linkedin.com/in/jonathan-ram%C3%ADrez-2b0043246/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
+                    <a class="side-menu__social-link" href="https://github.com/jonnschenk" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bi bi-github" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+
         <div class="offcanvas offcanvas-end cart" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartOffcanvasLabel">
             <div class="offcanvas-header cart__header">
                 <h2 class="offcanvas-title cart__title" id="cartOffcanvasLabel">Carrito</h2>
@@ -75,7 +128,7 @@
                         <span>Subtotal</span>
                         <span id="cartSubtotal">$0 USD</span>
                     </div>
-                    <a href="#" class="btn btn-dark cart__checkout" id="cartCheckout">Finalizar compra</a>
+                    <a href="checkout.html" class="btn btn-dark cart__checkout">Finalizar compra</a>
                 </div>
             </div>
         </div>
@@ -210,16 +263,16 @@
                             <h4 class="site-footer__heading">Ayuda</h4>
                             <ul class="site-footer__list">
                                 <li>
-                                    <a class="site-footer__link" href="#">Contacto</a>
+                                    <a class="site-footer__link" href="help.html#contacto">Contacto</a>
                                 </li>
                                 <li>
-                                    <a class="site-footer__link" href="#">Envíos</a>
+                                    <a class="site-footer__link" href="help.html#envios">Envíos</a>
                                 </li>
                                 <li>
-                                    <a class="site-footer__link" href="#">Devoluciones</a>
+                                    <a class="site-footer__link" href="help.html#devoluciones">Devoluciones</a>
                                 </li>
                                 <li>
-                                    <a class="site-footer__link" href="#">Preguntas frecuentes</a>
+                                    <a class="site-footer__link" href="help.html#preguntas-frecuentes">Preguntas frecuentes</a>
                                 </li>
                             </ul>
                         </div>
@@ -227,13 +280,13 @@
                             <h4 class="site-footer__heading">Síguenos</h4>
                             <ul class="site-footer__list">
                                 <li>
-                                    <a class="site-footer__link" href="#">Instagram</a>
+                                    <a class="site-footer__link" href="https://www.instagram.com/nathan.rott/" target="_blank" rel="noopener noreferrer">Instagram</a>
                                 </li>
                                 <li>
-                                    <a class="site-footer__link" href="#">Pinterest</a>
+                                    <a class="site-footer__link" href="https://www.linkedin.com/in/jonathan-ram%C3%ADrez-2b0043246/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                                 </li>
                                 <li>
-                                    <a class="site-footer__link" href="#">Behance</a>
+                                    <a class="site-footer__link" href="https://github.com/jonnschenk" target="_blank" rel="noopener noreferrer">GitHub</a>
                                 </li>
                             </ul>
                         </div>
@@ -257,5 +310,7 @@
         </script>
         <script src="../scripts/cart.js"></script>
         <script src="../scripts/search.js"></script>
+        <script src="../scripts/side-menu.js"></script>
+        <script src="../scripts/newsletter.js"></script>
     </body>
 </html>

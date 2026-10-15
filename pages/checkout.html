@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Finalizar compra | Alcoba</title>
+        <meta name="description" content="Completa tu pedido en ALCOBA.">
+        <meta name="keywords" content="ALCOBA, tienda, ropa de invierno, abrigos, suéteres, accesorios, moda minimalista">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Noto+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+        <link rel="stylesheet" href="../css/styles.css">
+    </head>
+
+    <body>
+        <header class="site-header">
+            <nav class="navbar" aria-label="Navegación principal">
+                <div class="container-fluid site-header__container">
+                    <button type="button" class="site-header__action site-header__menu-toggle" data-bs-toggle="offcanvas" data-bs-target="#menuOffcanvas" aria-controls="menuOffcanvas" aria-label="Abrir menú"><i class="bi bi-list"></i></button>
+                    <a class="navbar-brand" href="../index.html">ALCOBA</a>
+                    <ul class="navbar-nav site-header__links">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="collections.html">Colecciones</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="shop.html">Tienda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="journal.html">Journal</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">Nosotros</a>
+                        </li>
+                    </ul>
+
+                    <div class="site-header__actions">
+                        <button type="button" class="site-header__action" id="searchToggle" aria-label="Buscar productos" aria-expanded="false" aria-controls="searchOverlay"><i class="bi bi-search"></i></button>
+                        <button type="button" class="site-header__action site-header__action--cart" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" aria-controls="cartOffcanvas" aria-label="Ver carrito">
+                            <i class="bi bi-handbag"></i>
+                            <span class="site-header__badge" id="cartCount" hidden>0</span>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+            <div class="search-overlay" id="searchOverlay" hidden>
+                <div class="container search-overlay__inner">
+                    <form class="search-overlay__form" action="shop.html" method="get" role="search">
+                        <i class="bi bi-search search-overlay__icon" aria-hidden="true"></i>
+                        <label for="searchInput" class="visually-hidden">Buscar productos</label>
+                        <input type="search" class="search-overlay__input" id="searchInput" name="q" placeholder="Buscar abrigos, suéteres, accesorios…" autocomplete="off">
+                    </form>
+                    <button type="button" class="search-overlay__close" id="searchClose" aria-label="Cerrar búsqueda"><i class="bi bi-x-lg"></i></button>
+                </div>
+            </div>
+        </header>
+
+        <div class="offcanvas offcanvas-start side-menu" tabindex="-1" id="menuOffcanvas" aria-labelledby="menuOffcanvasLabel">
+            <div class="offcanvas-header side-menu__header">
+                <h2 class="offcanvas-title side-menu__title" id="menuOffcanvasLabel">Menú</h2>
+                <button type="button" class="side-menu__close" data-bs-dismiss="offcanvas" aria-label="Cerrar menú"><i class="bi bi-x-lg"></i></button>
+            </div>
+            <div class="offcanvas-body side-menu__body">
+                <!-- On desktop these pages are already in the header, so they only show on smaller screens -->
+                <nav class="side-menu__pages" aria-label="Páginas">
+                    <ul class="side-menu__list">
+                        <li><a class="side-menu__link" href="../index.html">Inicio</a></li>
+                        <li><a class="side-menu__link" href="collections.html">Colecciones</a></li>
+                        <li><a class="side-menu__link" href="shop.html">Tienda</a></li>
+                        <li><a class="side-menu__link" href="journal.html">Journal</a></li>
+                        <li><a class="side-menu__link" href="about.html">Nosotros</a></li>
+                    </ul>
+                </nav>
+                <div class="side-menu__group">
+                    <h3 class="side-menu__heading">Comprar por categoría</h3>
+                    <ul class="side-menu__sublist">
+                        <li><a class="side-menu__sublink" href="shop.html?categoria=abrigos">Abrigos</a></li>
+                        <li><a class="side-menu__sublink" href="shop.html?categoria=tejidos">Tejidos</a></li>
+                        <li><a class="side-menu__sublink" href="shop.html?categoria=accesorios">Accesorios</a></li>
+                        <li><a class="side-menu__sublink" href="shop.html?categoria=pantalones">Pantalones</a></li>
+                        <li><a class="side-menu__sublink" href="shop.html?categoria=calzado">Calzado</a></li>
+                        <li><a class="side-menu__sublink" href="shop.html">Ver todo</a></li>
+                    </ul>
+                </div>
+                <div class="side-menu__group">
+                    <h3 class="side-menu__heading">Colecciones</h3>
+                    <ul class="side-menu__sublist">
+                        <li><a class="side-menu__sublink" href="collections.html#chapter-01">Suiza</a></li>
+                        <li><a class="side-menu__sublink" href="collections.html#chapter-02">Mongolia</a></li>
+                        <li><a class="side-menu__sublink" href="collections.html#chapter-03">Islandia</a></li>
+                        <li><a class="side-menu__sublink" href="collections.html#chapter-04">Hokkaido</a></li>
+                        <li><a class="side-menu__sublink" href="collections.html#chapter-05">Noruega</a></li>
+                        <li><a class="side-menu__sublink" href="collections.html#chapter-06">Groenlandia</a></li>
+                    </ul>
+                </div>
+                <div class="side-menu__group">
+                    <h3 class="side-menu__heading">Ayuda</h3>
+                    <ul class="side-menu__sublist">
+                        <li><a class="side-menu__sublink" href="help.html#envios">Envíos</a></li>
+                        <li><a class="side-menu__sublink" href="help.html#devoluciones">Devoluciones</a></li>
+                        <li><a class="side-menu__sublink" href="help.html#preguntas-frecuentes">Preguntas frecuentes</a></li>
+                        <li><a class="side-menu__sublink" href="help.html#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="side-menu__social">
+                    <a class="side-menu__social-link" href="https://www.instagram.com/nathan.rott/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="bi bi-instagram" aria-hidden="true"></i></a>
+                    <a class="side-menu__social-link" href="https://www.linkedin.com/in/jonathan-ram%C3%ADrez-2b0043246/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
+                    <a class="side-menu__social-link" href="https://github.com/jonnschenk" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bi bi-github" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="offcanvas offcanvas-end cart" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartOffcanvasLabel">
+            <div class="offcanvas-header cart__header">
+                <h2 class="offcanvas-title cart__title" id="cartOffcanvasLabel">Carrito</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar carrito"></button>
+            </div>
+            <div class="offcanvas-body cart__body">
+                <ul class="cart__items" id="cartItems"></ul>
+                <p class="cart__empty" id="cartEmpty">Tu carrito está vacío.</p>
+                <div class="cart__summary" id="cartSummary" hidden>
+                    <div class="cart__summary-row">
+                        <span>Subtotal</span>
+                        <span id="cartSubtotal">$0 USD</span>
+                    </div>
+                    <a href="checkout.html" class="btn btn-dark cart__checkout">Finalizar compra</a>
+                </div>
+            </div>
+        </div>
+
+        <main>
+            <section class="page-intro">
+                <div class="container">
+                    <span class="eyebrow">Checkout</span>
+                    <h1 class="page-intro__title">Finalizar compra</h1>
+                </div>
+            </section>
+
+            <section class="checkout">
+                <div class="container">
+                    <div class="checkout__empty" id="checkoutEmpty" hidden>
+                        <p>Tu carrito está vacío.</p>
+                        <a href="shop.html" class="btn btn-dark">Ir a la tienda</a>
+                    </div>
+
+                    <div class="checkout__layout" id="checkoutLayout" hidden>
+                        <form class="checkout__form" id="checkoutForm" novalidate>
+                            <fieldset class="checkout__fieldset">
+                                <legend class="checkout__legend">Datos de contacto</legend>
+                                <div class="checkout__field">
+                                    <label for="checkoutName" class="checkout__label">Nombre completo</label>
+                                    <input type="text" class="checkout__input" id="checkoutName" name="name" autocomplete="name" required>
+                                    <p class="checkout__error">Escribe tu nombre.</p>
+                                </div>
+                                <div class="checkout__field">
+                                    <label for="checkoutEmail" class="checkout__label">Correo electrónico</label>
+                                    <input type="email" class="checkout__input" id="checkoutEmail" name="email" autocomplete="email" required>
+                                    <p class="checkout__error">Escribe un correo válido.</p>
+                                </div>
+                                <div class="checkout__field">
+                                    <label for="checkoutPhone" class="checkout__label">Teléfono</label>
+                                    <input type="tel" class="checkout__input" id="checkoutPhone" name="phone" autocomplete="tel" pattern="[0-9 +()-]{8,}" required>
+                                    <p class="checkout__error">Escribe un teléfono de al menos 8 dígitos.</p>
+                                </div>
+                            </fieldset>
+
+                            <fieldset class="checkout__fieldset">
+                                <legend class="checkout__legend">Dirección de envío</legend>
+                                <div class="checkout__field">
+                                    <label for="checkoutAddress" class="checkout__label">Calle y número</label>
+                                    <input type="text" class="checkout__input" id="checkoutAddress" name="address" autocomplete="street-address" required>
+                                    <p class="checkout__error">Escribe tu dirección.</p>
+                                </div>
+                                <div class="checkout__row">
+                                    <div class="checkout__field">
+                                        <label for="checkoutCity" class="checkout__label">Ciudad</label>
+                                        <input type="text" class="checkout__input" id="checkoutCity" name="city" autocomplete="address-level2" required>
+                                        <p class="checkout__error">Escribe tu ciudad.</p>
+                                    </div>
+                                    <div class="checkout__field">
+                                        <label for="checkoutZip" class="checkout__label">Código postal</label>
+                                        <input type="text" class="checkout__input" id="checkoutZip" name="zip" autocomplete="postal-code" inputmode="numeric" pattern="[0-9]{5}" required>
+                                        <p class="checkout__error">El código postal tiene 5 dígitos.</p>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <fieldset class="checkout__fieldset">
+                                <legend class="checkout__legend">Método de pago</legend>
+                                <label class="checkout__option">
+                                    <input type="radio" name="payment" value="Tarjeta" checked>
+                                    <span>Tarjeta de crédito o débito</span>
+                                    <span class="checkout__brands" aria-hidden="true">VISA · MC · AMEX</span>
+                                </label>
+
+                                <div class="card-payment" id="cardPayment">
+                                    <div class="card-preview" id="cardPreview" aria-hidden="true">
+                                        <div class="card-preview__top">
+                                            <span class="card-preview__chip"></span>
+                                            <span class="card-preview__brand" id="cardPreviewBrand"></span>
+                                        </div>
+                                        <p class="card-preview__number" id="cardPreviewNumber">•••• •••• •••• ••••</p>
+                                        <div class="card-preview__bottom">
+                                            <div>
+                                                <span class="card-preview__label">Titular</span>
+                                                <p class="card-preview__value" id="cardPreviewName">NOMBRE APELLIDO</p>
+                                            </div>
+                                            <div>
+                                                <span class="card-preview__label">Vence</span>
+                                                <p class="card-preview__value" id="cardPreviewExpiry">MM/AA</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="checkout__field">
+                                        <label for="cardNumber" class="checkout__label">Número de tarjeta</label>
+                                        <input type="text" class="checkout__input" id="cardNumber" inputmode="numeric" autocomplete="off" placeholder="1234 5678 9012 3456" maxlength="19" required>
+                                        <p class="checkout__error">Escribe un número de tarjeta válido.</p>
+                                    </div>
+                                    <div class="checkout__field">
+                                        <label for="cardName" class="checkout__label">Nombre en la tarjeta</label>
+                                        <input type="text" class="checkout__input" id="cardName" autocomplete="off" required>
+                                        <p class="checkout__error">Escribe el nombre como aparece en la tarjeta.</p>
+                                    </div>
+                                    <div class="checkout__row checkout__row--even">
+                                        <div class="checkout__field">
+                                            <label for="cardExpiry" class="checkout__label">Vencimiento</label>
+                                            <input type="text" class="checkout__input" id="cardExpiry" inputmode="numeric" autocomplete="off" placeholder="MM/AA" maxlength="5" required>
+                                            <p class="checkout__error">Escribe una fecha vigente (MM/AA).</p>
+                                        </div>
+                                        <div class="checkout__field">
+                                            <label for="cardCvv" class="checkout__label">CVV</label>
+                                            <input type="password" class="checkout__input" id="cardCvv" inputmode="numeric" autocomplete="off" placeholder="•••" maxlength="4" required>
+                                            <p class="checkout__error">Escribe el código de 3 o 4 dígitos.</p>
+                                        </div>
+                                    </div>
+                                    <p class="card-payment__notice"><i class="bi bi-info-circle" aria-hidden="true"></i> Tienda de demostración: no se realiza ningún cargo y los datos de la tarjeta no se guardan ni se envían.</p>
+                                </div>
+
+                                <label class="checkout__option">
+                                    <input type="radio" name="payment" value="Transferencia bancaria">
+                                    <span>Transferencia bancaria</span>
+                                </label>
+                                <label class="checkout__option">
+                                    <input type="radio" name="payment" value="Pago contra entrega">
+                                    <span>Pago contra entrega</span>
+                                </label>
+                            </fieldset>
+
+                            <button type="submit" class="btn btn-dark checkout__submit">Confirmar pedido</button>
+                        </form>
+
+                        <aside class="checkout__summary" aria-labelledby="checkoutSummaryTitle">
+                            <h2 class="checkout__summary-title" id="checkoutSummaryTitle">Tu pedido</h2>
+                            <ul class="checkout__items" id="checkoutItems"></ul>
+                            <dl class="checkout__totals">
+                                <div class="checkout__total-row">
+                                    <dt>Subtotal</dt>
+                                    <dd id="checkoutSubtotal">$0 USD</dd>
+                                </div>
+                                <div class="checkout__total-row">
+                                    <dt>Envío</dt>
+                                    <dd id="checkoutShipping">$0 USD</dd>
+                                </div>
+                                <div class="checkout__total-row checkout__total-row--grand">
+                                    <dt>Total</dt>
+                                    <dd id="checkoutTotal">$0 USD</dd>
+                                </div>
+                            </dl>
+                            <p class="checkout__note" id="checkoutShippingNote"></p>
+                        </aside>
+                    </div>
+
+                    <div class="checkout__success" id="checkoutSuccess" hidden tabindex="-1">
+                        <i class="bi bi-check-circle checkout__success-icon" aria-hidden="true"></i>
+                        <h2 class="checkout__success-title">¡Gracias por tu compra!</h2>
+                        <p>Tu pedido <strong id="checkoutOrderNumber"></strong> fue confirmado. Enviamos el resumen a <strong id="checkoutOrderEmail"></strong>.</p>
+                        <a href="shop.html" class="btn btn-dark">Seguir comprando</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container">
+                <div class="site-footer__top">
+                    <div class="site-footer__brand">
+                        <a href="../index.html" class="site-footer__logo">ALCOBA</a>
+                        <p class="site-footer__tagline">Designed for every season.</p>
+                    </div>
+                    <div class="site-footer__nav">
+                        <div>
+                            <h4 class="site-footer__heading">Navegación</h4>
+                            <ul class="site-footer__list">
+                                <li>
+                                    <a class="site-footer__link" href="../index.html">Inicio</a>
+                                </li>
+                                <li>
+                                    <a class="site-footer__link" href="collections.html">Colecciones</a>
+                                </li>
+                                <li>
+                                    <a class="site-footer__link" href="shop.html">Tienda</a>
+                                </li>
+                                <li>
+                                    <a class="site-footer__link" href="journal.html">Journal</a>
+                                </li>
+                                <li>
+                                    <a class="site-footer__link" href="about.html">Nosotros</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="site-footer__heading">Ayuda</h4>
+                            <ul class="site-footer__list">
+                                <li>
+                                    <a class="site-footer__link" href="help.html#contacto">Contacto</a>
+                                </li>
+                                <li>
+                                    <a class="site-footer__link" href="help.html#envios">Envíos</a>
+                                </li>
+                                <li>
+                                    <a class="site-footer__link" href="help.html#devoluciones">Devoluciones</a>
+                                </li>
+                                <li>
+                                    <a class="site-footer__link" href="help.html#preguntas-frecuentes">Preguntas frecuentes</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="site-footer__heading">Síguenos</h4>
+                            <ul class="site-footer__list">
+                                <li>
+                                    <a class="site-footer__link" href="https://www.instagram.com/nathan.rott/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                                </li>
+                                <li>
+                                    <a class="site-footer__link" href="https://www.linkedin.com/in/jonathan-ram%C3%ADrez-2b0043246/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                                </li>
+                                <li>
+                                    <a class="site-footer__link" href="https://github.com/jonnschenk" target="_blank" rel="noopener noreferrer">GitHub</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="site-footer__bottom">
+                    <p>&copy; 2026 ALCOBA. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init({
+                duration: 700,
+                easing: 'ease-out-quart',
+                once: true,
+                offset: 80
+            });
+        </script>
+        <script src="../scripts/cart.js"></script>
+        <script src="../scripts/search.js"></script>
+        <script src="../scripts/side-menu.js"></script>
+        <script src="../scripts/card-payment.js"></script>
+        <script src="../scripts/checkout.js"></script>
+    </body>
+</html>

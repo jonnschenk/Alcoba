@@ -63,3 +63,13 @@
     flex: 1;
   }
 }
+
+.newsletter__message {
+  margin: 1.25rem 0 0;
+  color: vars.$color-text;
+  font-size: 0.85rem;
+
+  &.is-error {
+    color: #a33a2b;
+  }
+}

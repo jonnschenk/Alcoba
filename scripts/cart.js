@@ -2,7 +2,6 @@
     const STORAGE_KEY = "alcoba-cart";
     const inPages = location.pathname.includes("/pages/");
     const assetPrefix = inPages ? "../" : "";
-    const shopHref = inPages ? "shop.html" : "pages/shop.html";
 
     const isValidItem = (item) =>
         item &&
@@ -37,15 +36,12 @@
     const cartSummaryEl = document.getElementById("cartSummary");
     const cartSubtotalEl = document.getElementById("cartSubtotal");
     const cartCountEl = document.getElementById("cartCount");
-    const cartCheckoutEl = document.getElementById("cartCheckout");
-
-    if (cartCheckoutEl) cartCheckoutEl.href = shopHref;
 
     const formatPrice = (value) => `$${value.toLocaleString("en-US")} USD`;
 
     const normalizeImage = (src) => assetPrefix + src.replace(/^(\.\.\/)+/, "");
 
-    const createElement = (tag,  Name, text) => {
+    const createElement = (tag, className, text) => {
         const element = document.createElement(tag);
         if (className) element.className = className;
         if (text !== undefined) element.textContent = text;
@@ -171,6 +167,16 @@
             }
         });
     }
+
+    // Shared with checkout.js
+    window.AlcobaCart = {
+        getItems: () => cart.map((item) => ({ ...item, image: normalizeImage(item.image) })),
+        formatPrice,
+        clear: () => {
+            cart = [];
+            saveAndRender();
+        }
+    };
 
     render();
 })();

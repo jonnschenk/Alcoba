@@ -1,0 +1,320 @@
+@use "../abstracts/variables" as vars;
+@use "../abstracts/mixins" as mixins;
+
+.checkout {
+  padding-block: 3rem 6rem;
+}
+
+.checkout__empty,
+.checkout__success {
+  max-width: 32rem;
+  margin-inline: auto;
+  padding-block: 3rem;
+  text-align: center;
+
+  .btn {
+    margin-top: 1.5rem;
+    padding: 0.85rem 2rem;
+  }
+}
+
+.checkout__success:focus {
+  outline: none;
+}
+
+.checkout__success-icon {
+  display: block;
+  margin-bottom: 1rem;
+  font-size: 3rem;
+}
+
+.checkout__success-title {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.checkout__layout {
+  display: grid;
+  gap: 3rem;
+}
+
+.checkout__fieldset {
+  margin-bottom: 2.5rem;
+}
+
+.checkout__legend {
+  margin-bottom: 1.25rem;
+  font-family: vars.$font-heading;
+  font-size: 1.4rem;
+}
+
+.checkout__row {
+  display: grid;
+  gap: 0 1.5rem;
+}
+
+// Expiry + CVV stay side by side even on phones
+.checkout__row--even {
+  grid-template-columns: 1fr 1fr;
+}
+
+.checkout__field {
+  margin-bottom: 1.25rem;
+}
+
+.checkout__label {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: vars.$color-text-muted;
+  @include mixins.uppercase-label(0.7rem);
+}
+
+.checkout__input {
+  @include mixins.field-underline;
+  padding-block: 0.5rem;
+}
+
+.checkout__error {
+  display: none;
+  margin-top: 0.35rem;
+  color: #a33a2b;
+  font-size: 0.75rem;
+}
+
+.was-validated .checkout__input:invalid {
+  border-color: #a33a2b;
+
+  + .checkout__error {
+    display: block;
+  }
+}
+
+.checkout__option {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid vars.$color-border;
+  cursor: pointer;
+  transition: border-color vars.$transition-base;
+
+  &:has(input:checked) {
+    border-color: vars.$color-text;
+  }
+
+  input {
+    accent-color: vars.$color-text;
+  }
+}
+
+.checkout__brands {
+  margin-left: auto;
+  color: vars.$color-text-muted;
+  @include mixins.uppercase-label(0.6rem);
+}
+
+// Card fields (scripts/card-payment.js)
+.card-payment {
+  margin: 0.25rem 0 1.5rem;
+  padding: 1.5rem 1.25rem 0.5rem;
+  border: 1px solid vars.$color-border;
+  border-top: 0;
+  background-color: vars.$color-surface;
+}
+
+.card-payment__notice {
+  display: flex;
+  gap: 0.5rem;
+  margin: 0.25rem 0 1rem;
+  color: vars.$color-text-muted;
+  font-size: 0.72rem;
+}
+
+.card-preview {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 21rem;
+  aspect-ratio: 1.586;
+  margin: 0 auto 1.75rem;
+  padding: 1.25rem 1.4rem;
+  border-radius: 0.9rem;
+  background: linear-gradient(135deg, #2b2a28, #171717 60%, #3a3733);
+  color: #f4f1eb;
+  box-shadow: 0 1rem 2rem rgba(23, 23, 23, 0.18);
+  transition:
+    background 400ms ease,
+    transform 500ms ease;
+
+  &[data-brand="visa"] {
+    background: linear-gradient(135deg, #1f3a6b, #14264a 60%, #2c4f8c);
+  }
+
+  &[data-brand="mastercard"] {
+    background: linear-gradient(135deg, #3b2a22, #1e1714 60%, #6b3b22);
+  }
+
+  &[data-brand="amex"] {
+    background: linear-gradient(135deg, #3c5f63, #20393c 60%, #5a8287);
+  }
+
+  // Tilt while the CVV field is focused
+  &.is-cvv {
+    transform: perspective(60rem) rotateY(12deg);
+  }
+}
+
+.card-preview__top,
+.card-preview__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.card-preview__chip {
+  width: 2.4rem;
+  height: 1.8rem;
+  border-radius: 0.3rem;
+  background: linear-gradient(135deg, #d9c48f, #b39a5c);
+}
+
+.card-preview__brand {
+  font-weight: 600;
+  font-style: italic;
+  letter-spacing: 0.04em;
+}
+
+.card-preview__number {
+  margin: 0;
+  font-size: clamp(1rem, 4.5vw, 1.3rem);
+  letter-spacing: 0.12em;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.card-preview__label {
+  display: block;
+  opacity: 0.65;
+  @include mixins.uppercase-label(0.55rem);
+}
+
+.card-preview__value {
+  max-width: 12rem;
+  margin: 0;
+  overflow: hidden;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.checkout__submit {
+  width: 100%;
+  padding: 1rem 2rem;
+}
+
+// Summary first on mobile so the order total is visible before the form
+.checkout__summary {
+  order: -1;
+  align-self: start;
+  padding: 1.75rem;
+  background-color: vars.$color-surface;
+  border: 1px solid vars.$color-border;
+}
+
+.checkout__summary-title {
+  margin-bottom: 1.5rem;
+  font-size: 1.4rem;
+}
+
+.checkout__items {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid vars.$color-border;
+}
+
+.checkout__item {
+  display: grid;
+  grid-template-columns: 3.5rem 1fr auto;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.checkout__item-image {
+  width: 3.5rem;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+
+.checkout__item-name {
+  margin-bottom: 0.2rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.checkout__item-qty,
+.checkout__item-price {
+  color: vars.$color-text-muted;
+  font-size: 0.8rem;
+}
+
+.checkout__totals {
+  margin: 1.25rem 0 0;
+}
+
+.checkout__total-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.6rem;
+  font-size: 0.85rem;
+
+  dt {
+    font-weight: 400;
+  }
+
+  dd {
+    margin: 0;
+  }
+}
+
+.checkout__total-row--grand {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid vars.$color-border;
+  font-size: 1rem;
+  font-weight: 600;
+
+  dt {
+    font-weight: 600;
+  }
+}
+
+.checkout__note {
+  margin: 1rem 0 0;
+  color: vars.$color-text-muted;
+  font-size: 0.75rem;
+}
+
+@include mixins.respond-to(tablet) {
+  .checkout__row {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+@include mixins.respond-to(desktop) {
+  .checkout__layout {
+    grid-template-columns: 1.4fr 1fr;
+    gap: 5rem;
+  }
+
+  .checkout__summary {
+    order: 0;
+    position: sticky;
+    top: 7rem;
+  }
+}

@@ -1,0 +1,13 @@
+@use "../abstracts/variables" as vars;
+@use "../abstracts/mixins" as mixins;
+
+// Simple title band for utility pages (checkout, help)
+.page-intro {
+  padding-block: 4rem 2.5rem;
+  border-bottom: 1px solid vars.$color-border;
+}
+
+.page-intro__title {
+  margin-top: 0.75rem;
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+}

@@ -139,10 +139,22 @@
         });
     }
 
-    const initialQuery = new URLSearchParams(location.search).get("q");
+    const params = new URLSearchParams(location.search);
+
+    const initialQuery = params.get("q");
     if (initialQuery && searchInput) {
         searchInput.value = initialQuery;
         searchQuery = normalizeText(initialQuery);
+    }
+
+    // Links from the side menu, e.g. shop.html?categoria=abrigos
+    const initialCategory = params.get("categoria");
+    const categoryButton = filterButtons.find(
+        (button) => button.dataset.filterGroup === "categoria" && button.dataset.value === initialCategory
+    );
+    if (categoryButton) {
+        activeFilters.categoria.add(initialCategory);
+        setPressed(categoryButton, true);
     }
 
     render();

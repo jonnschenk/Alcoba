@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ayuda | Alcoba</title>
+        <meta name="description" content="Contacto, envíos, devoluciones y preguntas frecuentes de ALCOBA.">
+        <meta name="keywords" content="ALCOBA, tienda, ropa de invierno, abrigos, suéteres, accesorios, moda minimalista">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Noto+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+        <link rel="stylesheet" href="../css/styles.css">
+    </head>
+
+    <body>
+        <header class="site-header">
+            <nav class="navbar" aria-label="Navegación principal">
+                <div class="container-fluid site-header__container">
+                    <button type="button" class="site-header__action site-header__menu-toggle" data-bs-toggle="offcanvas" data-bs-target="#menuOffcanvas" aria-controls="menuOffcanvas" aria-label="Abrir menú"><i class="bi bi-list"></i></button>
+                    <a class="navbar-brand" href="../index.html">ALCOBA</a>
+                    <ul class="navbar-nav site-header__links">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="collections.html">Colecciones</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="shop.html">Tienda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="journal.html">Journal</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">Nosotros</a>
+                        </li>
+                    </ul>
+
+                    <div class="site-header__actions">
+                        <button type="button" class="site-header__action" id="searchToggle" aria-label="Buscar productos" aria-expanded="false" aria-controls="searchOverlay"><i class="bi bi-search"></i></button>
+                        <button type="button" class="site-header__action site-header__action--cart" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" aria-controls="cartOffcanvas" aria-label="Ver carrito">
+                            <i class="bi bi-handbag"></i>
+                            <span class="site-header__badge" id="cartCount" hidden>0</span>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+            <div class="search-overlay" id="searchOverlay" hidden>
+                <div class="container search-overlay__inner">
+                    <form class="search-overlay__form" action="shop.html" method="get" role="search">
+                        <i class="bi bi-search search-overlay__icon" aria-hidden="true"></i>
+                        <label for="searchInput" class="visually-hidden">Buscar productos</label>
+                        <input type="search" class="search-overlay__input" id="searchInput" name="q" placeholder="Buscar abrigos, suéteres, accesorios…" autocomplete="off">
+                    </form>
+                    <button type="button" class="search-overlay__close" id="searchClose" aria-label="Cerrar búsqueda"><i class="bi bi-x-lg"></i></button>
+                </div>
+            </div>
+        </header>
+
+        <div class="offcanvas offcanvas-start side-menu" tabindex="-1" id="menuOffcanvas" aria-labelledby="menuOffcanvasLabel">
+            <div class="offcanvas-header side-menu__header">
+                <h2 class="offcanvas-title side-menu__title" id="menuOffcanvasLabel">Menú</h2>
+                <button type="button" class="side-menu__close" data-bs-dismiss="offcanvas" aria-label="Cerrar menú"><i class="bi bi-x-lg"></i></button>
+            </div>
+            <div class="offcanvas-body side-menu__body">
+                <!-- On desktop these pages are already in the header, so they only show on smaller screens -->
+                <nav class="side-menu__pages" aria-label="Páginas">
+                    <ul class="side-menu__list">
+                        <li><a class="side-menu__link" href="../index.html">Inicio</a></li>
+                        <li><a class="side-menu__link" href="collections.html">Colecciones</a></li>
+                        <li><a class="side-menu__link" href="shop.html">Tienda</a></li>
+                        <li><a class="side-menu__link" href="journal.html">Journal</a></li>
+                        <li><a class="side-menu__link" href="about.html">Nosotros</a></li>
+                    </ul>
+                </nav>
+                <div class="side-menu__group">
+                    <h3 class="side-menu__heading">Comprar por categoría</h3>
+                    <ul class="side-menu__sublist">
+                        <li><a class="side-menu__sublink" href="shop.html?categoria=abrigos">Abrigos</a></li>
+                        <li><a class="side-menu__sublink" href="shop.html?categoria=tejidos">Tejidos</a></li>
+                        <li><a class="side-menu__sublink" href="shop.html?categoria=accesorios">Accesorios</a></li>
+                        <li><a class="side-menu__sublink" href="shop.html?categoria=pantalones">Pantalones</a></li>
+                        <li><a class="side-menu__sublink" href="shop.html?categoria=calzado">Calzado</a></li>
+                        <li><a class="side-menu__sublink" href="shop.html">Ver todo</a></li>
+                    </ul>
+                </div>
+                <div class="side-menu__group">
+                    <h3 class="side-menu__heading">Colecciones</h3>
+                    <ul class="side-menu__sublist">
+                        <li><a class="side-menu__sublink" href="collections.html#chapter-01">Suiza</a></li>
+                        <li><a class="side-menu__sublink" href="collections.html#chapter-02">Mongolia</a></li>
+                        <li><a class="side-menu__sublink" href="collections.html#chapter-03">Islandia</a></li>
+                        <li><a class="side-menu__sublink" href="collections.html#chapter-04">Hokkaido</a></li>
+                        <li><a class="side-menu__sublink" href="collections.html#chapter-05">Noruega</a></li>
+                        <li><a class="side-menu__sublink" href="collections.html#chapter-06">Groenlandia</a></li>
+                    </ul>
+                </div>
+                <div class="side-menu__group">
+                    <h3 class="side-menu__heading">Ayuda</h3>
+                    <ul class="side-menu__sublist">
+                        <li><a class="side-menu__sublink" href="help.html#envios">Envíos</a></li>
+                        <li><a class="side-menu__sublink" href="help.html#devoluciones">Devoluciones</a></li>
+                        <li><a class="side-menu__sublink" href="help.html#preguntas-frecuentes">Preguntas frecuentes</a></li>
+                        <li><a class="side-menu__sublink" href="help.html#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="side-menu__social">
+                    <a class="side-menu__social-link" href="https://www.instagram.com/nathan.rott/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="bi bi-instagram" aria-hidden="true"></i></a>
+                    <a class="side-menu__social-link" href="https://www.linkedin.com/in/jonathan-ram%C3%ADrez-2b0043246/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
+                    <a class="side-menu__social-link" href="https://github.com/jonnschenk" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bi bi-github" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="offcanvas offcanvas-end cart" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartOffcanvasLabel">
+            <div class="offcanvas-header cart__header">
+                <h2 class="offcanvas-title cart__title" id="cartOffcanvasLabel">Carrito</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar carrito"></button>
+            </div>
+            <div class="offcanvas-body cart__body">
+                <ul class="cart__items" id="cartItems"></ul>
+                <p class="cart__empty" id="cartEmpty">Tu carrito está vacío.</p>
+                <div class="cart__summary" id="cartSummary" hidden>
+                    <div class="cart__summary-row">
+                        <span>Subtotal</span>
+                        <span id="cartSubtotal">$0 USD</span>
+                    </div>
+                    <a href="checkout.html" class="btn btn-dark cart__checkout">Finalizar compra</a>
+                </div>
+            </div>
+        </div>
+
+        <main>
+            <section class="page-intro">
+                <div class="container">
+                    <span class="eyebrow">Ayuda</span>
+                    <h1 class="page-intro__title">¿En qué podemos ayudarte?</h1>
+                </div>
+            </section>
+
+            <section class="help">
+                <div class="container help__grid">
+                    <article class="help__section" id="contacto">
+                        <h2 class="help__title">Contacto</h2>
+                        <p>Escríbenos y te respondemos en menos de 24 horas hábiles.</p>
+                        <ul class="help__list">
+                            <li><i class="bi bi-envelope" aria-hidden="true"></i> <a href="mailto:jonathanrott.dev@gmail.com">jonathanrott.dev@gmail.com</a></li>
+                            <li><i class="bi bi-telephone" aria-hidden="true"></i> +52 55 1234 5678</li>
+                            <li><i class="bi bi-clock" aria-hidden="true"></i> Lunes a viernes, 9:00 a 18:00 h</li>
+                        </ul>
+                    </article>
+
+                    <article class="help__section" id="envios">
+                        <h2 class="help__title">Envíos</h2>
+                        <p>Enviamos a todo México. Los pedidos salen de nuestro taller en 1 o 2 días hábiles y llegan en 3 a 5 días hábiles.</p>
+                        <p>El envío cuesta $15 USD y es gratis en compras desde $300 USD.</p>
+                    </article>
+
+                    <article class="help__section" id="devoluciones">
+                        <h2 class="help__title">Devoluciones</h2>
+                        <p>Tienes 30 días desde que recibes tu pedido para solicitar un cambio o devolución. Las prendas deben estar sin uso y con sus etiquetas.</p>
+                        <p>Escríbenos a <a href="mailto:jonathanrott.dev@gmail.com">jonathanrott.dev@gmail.com</a> con tu número de pedido y te enviamos la guía de retorno.</p>
+                    </article>
+
+                    <article class="help__section" id="preguntas-frecuentes">
+                        <h2 class="help__title">Preguntas frecuentes</h2>
+                        <div class="accordion accordion-flush help__faq" id="faqAccordion">
+                            <div class="accordion-item">
+                                <h3 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="false" aria-controls="faq1">¿Cómo elijo mi talla?</button>
+                                </h3>
+                                <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">Nuestras prendas tienen un corte relajado. Si estás entre dos tallas, te recomendamos elegir la menor.</div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h3 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">¿Cómo cuido las prendas de lana?</button>
+                                </h3>
+                                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">Lávalas a mano con agua fría y jabón neutro, y sécalas extendidas sobre una superficie plana, lejos del sol directo.</div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h3 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">¿Qué métodos de pago aceptan?</button>
+                                </h3>
+                                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">Aceptamos tarjetas de crédito y débito (Visa, Mastercard y American Express), transferencia bancaria y pago contra entrega.</div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h3 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">¿Hacen envíos internacionales?</button>
+                                </h3>
+                                <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">Por ahora solo enviamos dentro de México. Suscríbete al newsletter para enterarte cuando abramos envíos a otros países.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container">
+                <div class="site-footer__top">
+                    <div class="site-footer__brand">
+                        <a href="../index.html" class="site-footer__logo">ALCOBA</a>
+                        <p class="site-footer__tagline">Designed for every season.</p>
+                    </div>
+                    <div class="site-footer__nav">
+                        <div>
+                            <h4 class="site-footer__heading">Navegación</h4>
+                            <ul class="site-footer__list">
+                                <li>
+                                    <a class="site-footer__link" href="../index.html">Inicio</a>
+                                </li>
+                                <li>
+                                    <a class="site-footer__link" href="collections.html">Colecciones</a>
+                                </li>
+                                <li>
+                                    <a class="site-footer__link" href="shop.html">Tienda</a>
+                                </li>
+                                <li>
+                                    <a class="site-footer__link" href="journal.html">Journal</a>
+                                </li>
+                                <li>
+                                    <a class="site-footer__link" href="about.html">Nosotros</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="site-footer__heading">Ayuda</h4>
+                            <ul class="site-footer__list">
+                                <li>
+                                    <a class="site-footer__link" href="help.html#contacto">Contacto</a>
+                                </li>
+                                <li>
+                                    <a class="site-footer__link" href="help.html#envios">Envíos</a>
+                                </li>
+                                <li>
+                                    <a class="site-footer__link" href="help.html#devoluciones">Devoluciones</a>
+                                </li>
+                                <li>
+                                    <a class="site-footer__link" href="help.html#preguntas-frecuentes">Preguntas frecuentes</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="site-footer__heading">Síguenos</h4>
+                            <ul class="site-footer__list">
+                                <li>
+                                    <a class="site-footer__link" href="https://www.instagram.com/nathan.rott/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                                </li>
+                                <li>
+                                    <a class="site-footer__link" href="https://www.linkedin.com/in/jonathan-ram%C3%ADrez-2b0043246/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                                </li>
+                                <li>
+                                    <a class="site-footer__link" href="https://github.com/jonnschenk" target="_blank" rel="noopener noreferrer">GitHub</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="site-footer__bottom">
+                    <p>&copy; 2026 ALCOBA. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init({
+                duration: 700,
+                easing: 'ease-out-quart',
+                once: true,
+                offset: 80
+            });
+        </script>
+        <script src="../scripts/cart.js"></script>
+        <script src="../scripts/search.js"></script>
+        <script src="../scripts/side-menu.js"></script>
+    </body>
+</html>

@@ -1,0 +1,66 @@
+@use "../abstracts/variables" as vars;
+@use "../abstracts/mixins" as mixins;
+
+.help {
+  padding-block: 3rem 6rem;
+}
+
+.help__grid {
+  display: grid;
+  gap: 3rem;
+}
+
+.help__section {
+  // Keep anchored sections clear of the sticky header
+  scroll-margin-top: 7rem;
+  color: vars.$color-text-muted;
+
+  p {
+    margin-bottom: 0.9rem;
+  }
+}
+
+.help__title {
+  margin-bottom: 1rem;
+  color: vars.$color-text;
+  font-size: 1.75rem;
+}
+
+.help__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+
+  i {
+    margin-right: 0.5rem;
+    color: vars.$color-text;
+  }
+}
+
+.help__faq {
+  --bs-accordion-bg: transparent;
+  --bs-accordion-active-bg: transparent;
+  --bs-accordion-active-color: #{vars.$color-text};
+  --bs-accordion-btn-focus-box-shadow: none;
+  --bs-accordion-border-color: #{vars.$color-border};
+
+  .accordion-button {
+    padding-inline: 0;
+    color: vars.$color-text;
+    font-family: vars.$font-body;
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+
+  .accordion-body {
+    padding: 0 0 1.25rem;
+    color: vars.$color-text-muted;
+  }
+}
+
+@include mixins.respond-to(desktop) {
+  .help__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem 5rem;
+  }
+}

@@ -15,9 +15,13 @@
 @use "components/journal";
 @use "components/newsletter";
 @use "components/cart";
+@use "components/side-menu";
 @use "components/search";
+@use "components/page-intro";
 
 @use "pages/collections";
 @use "pages/about";
 @use "pages/journal-page";
 @use "pages/tienda";
+@use "pages/checkout";
+@use "pages/help";

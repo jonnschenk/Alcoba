@@ -1,0 +1,123 @@
+@use "../abstracts/variables" as vars;
+@use "../abstracts/mixins" as mixins;
+
+// Left offcanvas menu (extends Bootstrap's .offcanvas)
+.side-menu {
+  --bs-offcanvas-width: min(20rem, 85%);
+  background-color: vars.$color-surface;
+}
+
+.side-menu__header {
+  padding: 1.5rem 1.25rem 1rem;
+  border-bottom: 1px solid vars.$color-border;
+}
+
+.side-menu__title {
+  color: vars.$color-text;
+  font-size: 1.3rem;
+}
+
+.side-menu__close {
+  @include mixins.button-reset;
+  margin-left: auto;
+  color: vars.$color-text;
+  font-size: 1.1rem;
+  transition: opacity vars.$transition-base;
+
+  &:hover,
+  &:focus {
+    opacity: 0.55;
+  }
+}
+
+.side-menu__body {
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem;
+}
+
+.side-menu__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.side-menu__link {
+  display: block;
+  padding-block: 0.9rem;
+  border-bottom: 1px solid vars.$color-border;
+  color: vars.$color-text-muted;
+  @include mixins.uppercase-label(0.8rem);
+  transition:
+    color vars.$transition-base,
+    padding-left vars.$transition-base;
+
+  &:hover,
+  &:focus,
+  &.is-active {
+    padding-left: 0.5rem;
+    color: vars.$color-text;
+  }
+}
+
+// Main pages: only on smaller screens, where the header links are hidden
+.side-menu__pages {
+  margin-bottom: 2rem;
+}
+
+.side-menu__group {
+  margin-bottom: 1.75rem;
+}
+
+.side-menu__heading {
+  margin-bottom: 0.75rem;
+  color: vars.$color-text;
+  font-family: vars.$font-body;
+  @include mixins.uppercase-label(0.7rem);
+}
+
+.side-menu__sublist {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.side-menu__sublink {
+  display: inline-block;
+  padding-block: 0.3rem;
+  color: vars.$color-text-muted;
+  font-size: 0.9rem;
+  transition:
+    color vars.$transition-base,
+    transform vars.$transition-base;
+
+  &:hover,
+  &:focus {
+    color: vars.$color-text;
+    transform: translateX(0.35rem);
+  }
+}
+
+.side-menu__social {
+  display: flex;
+  gap: 1.25rem;
+  margin-top: auto;
+  padding-top: 1.25rem;
+  border-top: 1px solid vars.$color-border;
+}
+
+.side-menu__social-link {
+  color: vars.$color-text;
+  font-size: 1.1rem;
+  transition: opacity vars.$transition-base;
+
+  &:hover,
+  &:focus {
+    opacity: 0.55;
+  }
+}
+
+@include mixins.respond-to(desktop) {
+  .side-menu__pages {
+    display: none;
+  }
+}
